@@ -1,0 +1,37 @@
+{
+    "basic": {
+      "text": "Basic",
+      "children": [
+        {
+          "link": "/button",
+          "text": "Button"
+        },
+        {
+          "link": "/border",
+          "text": "Border"
+        },
+        {
+          "link": "/color",
+          "text": "Color"
+        }
+      ]
+    },
+    "form": {
+        "text": "Form",
+        "children": [
+          {
+            "link": "/input",
+            "text": "Input"
+          },
+          {
+            "link": "/select",
+            "text": "Select"
+          },
+          {
+            "link": "/checkbox",
+            "text": "Checkbox"
+          }
+        ]
+    }
+  }
+  

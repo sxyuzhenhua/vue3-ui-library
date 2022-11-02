@@ -1,0 +1,37 @@
+{
+    "basic": {
+      "text": "基础",
+      "children": [
+        {
+          "link": "/button",
+          "text": "按钮"
+        },
+        {
+          "link": "/border",
+          "text": "边框"
+        },
+        {
+          "link": "/color",
+          "text": "色彩"
+        }
+      ]
+    },
+    "form": {
+        "text": "表单",
+        "children": [
+          {
+            "link": "/input",
+            "text": "输入框"
+          },
+          {
+            "link": "/select",
+            "text": "选择器"
+          },
+          {
+            "link": "/checkbox",
+            "text": "多选框"
+          }
+        ]
+    }
+  }
+  

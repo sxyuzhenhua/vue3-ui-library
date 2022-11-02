@@ -1,0 +1,12 @@
+a.header-anchor {
+    position: absolute;
+    margin-top: 0.125em;
+    margin-left: -0.87em;
+    padding-right: 0.23em;
+    font-size: 0.85em;
+    opacity: 0;
+    &:hover,
+    :focus {
+      text-decoration: none;
+    }
+  }
