@@ -1,9 +1,7 @@
 import path from 'path'
-import Inspect from 'vite-plugin-inspect'
 import { defineConfig, loadEnv } from 'vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import UnoCSS from 'unocss/vite'
-import mkcert from 'vite-plugin-mkcert'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
@@ -77,8 +75,6 @@ export default defineConfig(async ({ mode }) => {
       }),
       UnoCSS(),
       MarkdownTransform(),
-      Inspect(),
-      mkcert(),
     ],
     optimizeDeps: {
       include: optimizeDeps,

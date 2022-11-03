@@ -1,4 +1,5 @@
-import Layout from '../vitepress/components/theme.vue'
+import Layout, { globals } from '../vitepress'
+
 
 export default {
   // root component to wrap each page
@@ -11,6 +12,9 @@ export default {
     // app is the Vue 3 app instance from `createApp()`.
     // router is VitePress' custom router. `siteData` is
     // a `ref` of current site-level metadata.
+    globals.forEach(([name, Comp]) => {
+        app.component(name, Comp)
+    })
   },
 
   setup() {

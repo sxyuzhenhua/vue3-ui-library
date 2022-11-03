@@ -1,0 +1,13 @@
+{
+    "view-source": "查看 资源",
+    "hide-source": "隐藏资源",
+    "edit-in-editor": "在游乐场编辑",
+    "edit-on-github": "在github编辑",
+    "edit-in-codepen": "11Edit in Codepen.io",
+    "copy-code": "11Copy code",
+    "switch-button-option-text": "11Switch to Options API",
+    "switch-button-setup-text": "11Switch to Composition API",
+    "copy-success": "已复制!",
+    "copy-error": "浏览器不支持自动复制！"
+  }
+  

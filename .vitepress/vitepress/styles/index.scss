@@ -10,3 +10,31 @@ a.header-anchor {
       text-decoration: none;
     }
   }
+
+.doc-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: #606266;
+  
+      // Special case for handling tagged header.
+      .el-tag {
+        margin-left: 8px;
+      }
+    }
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+}
+code {
+    font-family: "JetBrains Mono", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+    background-color: #f5f7fa;
+    padding: 4px 8px;
+}

@@ -23,7 +23,6 @@ async function main() {
   console.log('dirs:::', JSON.stringify(dirs))
   const languages = dirs
     .map((dir) => dir.name)
-    .filter((item) => item !== '.DS_Store')
   const langWithoutEn = languages.filter((l) => l !== 'en-US')
   await fs.promises.mkdir(localeOutput)
 

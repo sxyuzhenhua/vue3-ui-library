@@ -27,11 +27,10 @@ const { copy, isSupported } = useClipboard({
 
 const [sourceVisible, toggleSourceVisible] = useToggle()
 const lang = useLang()
-const demoSourceUrl = 'demoSourceUrl'
 
 const formatPathDemos = computed(() => {
   const demos = {}
-
+  console.log(234, props);
   Object.keys(props.demos).forEach((key) => {
     demos[key.replace('../../examples/', '').replace('.vue', '')] =
       props.demos[key].default
@@ -53,6 +52,8 @@ const onPlaygroundClick = () => {
 
 const copyCode = async () => {
   const { $message } = vm.appContext.config.globalProperties
+  console.log(isSupported);
+  console.log($message);
   if (!isSupported) {
     $message.error(locale.value['copy-error'])
   }
@@ -73,25 +74,7 @@ const copyCode = async () => {
     <div class="example">
       <Example :file="path" :demo="formatPathDemos[path]" />
 
-      <ElDivider class="m-0" />
-
       <div class="op-btns">
-        <ElTooltip :content="locale['edit-in-editor']" :show-arrow="false">
-          <ElIcon :size="16" class="op-btn">
-            <i-ri-flask-line @click="onPlaygroundClick" />
-          </ElIcon>
-        </ElTooltip>
-        <ElTooltip :content="locale['edit-on-github']" :show-arrow="false">
-          <ElIcon
-            :size="16"
-            class="op-btn github"
-            style="color: var(--text-color-light)"
-          >
-            <a :href="demoSourceUrl" rel="noreferrer noopener" target="_blank">
-              <i-ri-github-line />
-            </a>
-          </ElIcon>
-        </ElTooltip>
         <ElTooltip :content="locale['copy-code']" :show-arrow="false">
           <ElIcon :size="16" class="op-btn" @click="copyCode">
             <i-ri-file-copy-line />
@@ -126,15 +109,15 @@ const copyCode = async () => {
 
 <style scoped lang="scss">
 .example {
-  border: 1px solid var(--border-color);
-  border-radius: var(--el-border-radius-base);
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
 
   .op-btns {
-    padding: 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    height: 2.5rem;
+    justify-content: center;
+    height: 40px;
+    border-top: 1px solid #dcdfe6;
 
     .el-icon {
       &:hover {

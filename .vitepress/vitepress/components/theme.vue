@@ -2,7 +2,7 @@
     <div class="App">
         <div class="nav">
             <div class="logo-wrap">
-                <img class="logo" src="./logo.png" alt="">
+                <img class="logo" src="../images/logo.png" alt="">
                 <span class="logo-text">Vue3 UI组件库</span>
             </div>
             <div class="nav-bar">
@@ -104,10 +104,12 @@ ul, li {
     display: flex;
 }
 .sidebar {
-    width: 200px;
+    width: 280px;
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 .sidebar ul .menu {
     display: flex;
@@ -133,5 +135,13 @@ ul, li {
       padding-left: 10px;
       box-sizing: border-box;
       color: rgba(0, 0, 0, 0.3);
+}
+.content-wrap {
+    flex: 1;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.doc-content {
+    width: 80%;
 }
 </style>
