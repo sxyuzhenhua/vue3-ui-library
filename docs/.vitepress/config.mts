@@ -2,10 +2,6 @@ import type { UserConfig } from 'vitepress'
 import { head, sidebars, nav, mdPlugin } from './config'
 import { languages } from './utils/lang'
 
-console.log('nav::::',nav);
-console.log('sidebars::::',JSON.stringify(sidebars));
-console.log('languages::', languages);
-
 const buildTransformers = () => {
     const transformer = () => {
       return {

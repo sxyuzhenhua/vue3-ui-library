@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 
-export const projRoot = resolve()
+export const projRoot = resolve('..')
 export const pkgRoot = resolve(projRoot, 'packages')
 export const compRoot = resolve(pkgRoot, 'components')
 export const themeRoot = resolve(pkgRoot, 'theme-chalk')
@@ -13,7 +13,7 @@ export const buildRoot = resolve(projRoot, 'internal', 'build')
 
 // Docs
 export const docsDirName = 'docs'
-export const docRoot = resolve()
+export const docRoot = resolve(projRoot, docsDirName)
 export const vpRoot = resolve(docRoot, '.vitepress')
 
 /** `/dist` */

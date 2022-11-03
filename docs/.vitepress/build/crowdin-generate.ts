@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import { errorAndExit } from '../utils/log'
-
 const projRoot = path.resolve(__dirname, '..', '..')
 
 // NB: this file is only for generating files that enables developers to develop the website.
@@ -20,7 +19,6 @@ async function main() {
   const dirs = await fs.promises.readdir(componentLocaleRoot, {
     withFileTypes: true,
   })
-  console.log('dirs:::', JSON.stringify(dirs))
   const languages = dirs
     .map((dir) => dir.name)
   const langWithoutEn = languages.filter((l) => l !== 'en-US')
@@ -44,14 +42,6 @@ async function main() {
     }
   })
 
-  console.log(
-    'enUS:::',
-    enUS,
-    'langWithoutEn::',
-    langWithoutEn,
-    'languagePaths::',
-    languagePaths
-  )
   await traverseDir(enUS, languagePaths, localeOutput)
   // enUS: /Users/yuzhenhua/project/element-plus/docs/.vitepress/crowdin/en-US
   // languagePaths: [
