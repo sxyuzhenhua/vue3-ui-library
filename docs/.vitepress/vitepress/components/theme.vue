@@ -20,9 +20,9 @@
             </div>
         </div>
         <section class="exclude-nav">
-            <div className="sidebar">
+            <div class="sidebar">
                 <div v-for="item in sidebars" :key="item.text">
-                    <div className="sidebar-title">{{item.text}}</div>
+                    <div class="sidebar-title">{{item.text}}</div>
                     <ul>
                         <li class="menu"  v-for="(child, childKey) in item.children" :key="childKey"><a :href="child.link" :class="{active: isMenuActive(route, child.link)}">{{child.text}}</a></li>
                     </ul>

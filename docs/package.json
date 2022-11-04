@@ -5,9 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "npm run gen-locale && vitepress dev",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "gen-locale": "rimraf .vitepress/i18n && tsx .vitepress/build/crowdin-generate.ts"
+    "docs:build": "NODE_ENV=production && vitepress build",
+    "docs:serve": "NODE_ENV=production vitepress serve . --port 5001",
+    "gen-locale": "rimraf .vitepress/i18n && tsx .vitepress/build/crowdin-generate.ts",
+    "dp-docs": "sh ./bin/deployDocs.sh"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "consola": "^2.15.3",
     "escape-html": "^1.0.3",
     "markdown-it": "^13.0.1",
-    "prismjs": "^1.29.0"
+    "prismjs": "^1.29.0",
+    "vite-plugin-pwa": "^0.12.1"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.3",

@@ -36,7 +36,6 @@ languages.forEach((lang) => {
   }
 })
 
-console.log(locales);
 
 export const config: UserConfig = {
     title: 'Vue3 UI组件库',

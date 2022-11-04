@@ -31,7 +31,6 @@ export const mdPlugin = (md: MarkdownIt) => {
     },
 
     render(tokens, idx) {
-    console.log('tokens:::',tokens, idx)
       const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
       if (tokens[idx].nesting === 1 /* means the tag is opening */) {
         const description = m && m.length > 1 ? m[1] : ''

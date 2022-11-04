@@ -9,8 +9,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     IRiCodeLine: typeof import('~icons/ri/code-line')['default']
     IRiFileCopyLine: typeof import('~icons/ri/file-copy-line')['default']
-    IRiFlaskLine: typeof import('~icons/ri/flask-line')['default']
-    IRiGithubLine: typeof import('~icons/ri/github-line')['default']
     Theme: typeof import('./.vitepress/vitepress/components/theme.vue')['default']
     Translation: typeof import('./.vitepress/vitepress/components/translation.vue')['default']
     VpDemo: typeof import('./.vitepress/vitepress/components/vp-demo.vue')['default']
