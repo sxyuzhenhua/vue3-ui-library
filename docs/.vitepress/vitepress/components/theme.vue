@@ -47,7 +47,6 @@ import { isActiveLink, isMenuActive } from '../utils/index';
 const route = useRoute()
 const navs = useNav()
 const { sidebars } = useSidebar();
-console.log('sidebars::',sidebars);
 </script>
 <style>
 html, body {

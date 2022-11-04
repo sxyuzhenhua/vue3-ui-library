@@ -4,11 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "npm run gen-locale && vitepress dev",
-    "docs:build": "NODE_ENV=production && vitepress build",
+    "dev": "npm run gen-locale && vitepress dev",
+    "build": "NODE_ENV=production && vitepress build",
     "docs:serve": "NODE_ENV=production vitepress serve . --port 5001",
     "gen-locale": "rimraf .vitepress/i18n && tsx .vitepress/build/crowdin-generate.ts",
-    "dp-docs": "sh ./bin/deployDocs.sh"
+    "dp": "sh ./bin/deployDocs.sh"
   },
   "author": "",
   "license": "ISC",
