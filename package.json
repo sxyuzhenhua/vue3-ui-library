@@ -1,13 +1,19 @@
 {
   "name": "vue3-ui-library",
   "version": "1.0.0",
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs"
+  ],
   "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "docs:build": "pnpm run -C docs build",
     "docs:dev": "pnpm run -C docs dev",
     "docs:dp": "pnpm run -C docs dp"
@@ -21,5 +27,28 @@
   "bugs": {
     "url": "https://github.com/sxyuzhenhua/vue3-ui-library/issues"
   },
-  "homepage": "https://github.com/sxyuzhenhua/vue3-ui-library#readme"
+  "homepage": "https://github.com/sxyuzhenhua/vue3-ui-library#readme",
+  "devDependencies": {
+    "@vue/test-utils": "^2.2.1",
+    "jsdom": "^20.0.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "unplugin-vue-macros": "^0.16.1"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.10",
+    "@types/lodash": "^4.14.188",
+    "@types/lodash-es": "^4.17.6",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.0",
+    "@vitest/ui": "^0.25.0",
+    "@yu/components": "workspace:^0.0.1",
+    "@yu/constants": "workspace:*",
+    "@yu/hooks": "workspace:^0.0.5",
+    "@yu/tokens": "workspace:^0.0.1",
+    "@yu/utils": "workspace:*",
+    "lodash-es": "^4.17.21",
+    "lodash-unified": "^1.0.3",
+    "run-script": "^0.1.1",
+    "vitest": "^0.25.0"
+  }
 }

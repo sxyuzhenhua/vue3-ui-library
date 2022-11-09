@@ -14,7 +14,6 @@ export function MarkdownTransform(): Plugin {
     enforce: 'pre',
     async transform(code, id) {
       if (!id.endsWith('.md')) return
-
       const componentId = path.basename(id, '.md')
       const append: Append = {
         headers: [],
@@ -25,14 +24,13 @@ export function MarkdownTransform(): Plugin {
       }
 
       code = transformVpScriptSetup(code, append)
-
       const pattern = `{${[...languages, languages[0]].join(',')}}/component`
+      console.log('languages====', pattern)
       const compPaths = await glob(pattern, {
         cwd: docRoot,
         absolute: true,
         onlyDirectories: true,
       })
-
       return combineMarkdown(
         code,
         [combineScriptSetup(append.scriptSetups), ...append.headers],
@@ -56,12 +54,10 @@ const combineMarkdown = (
   const frontmatterEnds = code.indexOf('---\n\n') + 4
   const firstSubheader = code.search(/\n## \w/)
   const sliceIndex = firstSubheader < 0 ? frontmatterEnds : firstSubheader
-
   if (headers.length > 0)
     code =
       code.slice(0, sliceIndex) + headers.join('\n') + code.slice(sliceIndex)
   code += footers.join('\n')
-
   return `${code}\n`
 }
 

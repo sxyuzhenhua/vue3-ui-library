@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, getCurrentInstance, toRef } from 'vue'
+import { computed, getCurrentInstance, toRef, ref } from 'vue'
 import { isClient, useClipboard, useToggle } from '@vueuse/core'
-// import { CaretTop } from '@element-plus/icons-vue'
+import { CaretTop } from '@element-plus/icons-vue'
 import { useLang } from '../composables/lang'
 import { usePlayground } from '../composables/use-playground'
 
@@ -25,12 +25,12 @@ const { copy, isSupported } = useClipboard({
   read: false,
 })
 
-const [sourceVisible, toggleSourceVisible] = useToggle()
+// const [sourceVisible, toggleSourceVisible] = useToggle(true)
+const sourceVisible = ref(false);
 const lang = useLang()
 
 const formatPathDemos = computed(() => {
   const demos = {}
-  console.log(234, props);
   Object.keys(props.demos).forEach((key) => {
     demos[key.replace('../../examples/', '').replace('.vue', '')] =
       props.demos[key].default
@@ -52,8 +52,8 @@ const onPlaygroundClick = () => {
 
 const copyCode = async () => {
   const { $message } = vm.appContext.config.globalProperties
-  console.log(isSupported);
-  console.log($message);
+  console.log('isSupported:::', isSupported);
+  console.log('$message:::', $message);
   if (!isSupported) {
     $message.error(locale.value['copy-error'])
   }
@@ -76,14 +76,14 @@ const copyCode = async () => {
 
       <div class="op-btns">
         <ElTooltip :content="locale['copy-code']" :show-arrow="false">
-          <ElIcon :size="16" class="op-btn" @click="copyCode">
+          <YuIcon :size="16" class="op-btn" @click="copyCode">
             <i-ri-file-copy-line />
-          </ElIcon>
+          </YuIcon>
         </ElTooltip>
         <ElTooltip :content="locale['view-source']" :show-arrow="false">
-          <ElIcon :size="16" class="op-btn" @click="toggleSourceVisible()">
+          <YuIcon :size="16" class="op-btn" @click="sourceVisible = !sourceVisible">
             <i-ri-code-line />
-          </ElIcon>
+          </YuIcon>
         </ElTooltip>
       </div>
 
@@ -95,11 +95,11 @@ const copyCode = async () => {
         <div
           v-show="sourceVisible"
           class="example-float-control"
-          @click="toggleSourceVisible(false)"
+          @click="sourceVisible = false"
         >
-          <ElIcon :size="16">
-            <!-- <CaretTop /> -->
-          </ElIcon>
+          <YuIcon :size="16">
+            <CaretTop />
+          </YuIcon>
           <span>{{ locale['hide-source'] }}</span>
         </div>
       </Transition>

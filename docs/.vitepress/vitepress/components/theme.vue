@@ -20,7 +20,7 @@
             </div>
         </div>
         <section class="exclude-nav">
-            <div class="sidebar">
+            <div class="sidebar" v-if="hasSidebar">
                 <div v-for="item in sidebars" :key="item.text">
                     <div class="sidebar-title">{{item.text}}</div>
                     <ul>
@@ -46,7 +46,7 @@ import { isActiveLink, isMenuActive } from '../utils/index';
 
 const route = useRoute()
 const navs = useNav()
-const { sidebars } = useSidebar();
+const { sidebars, hasSidebar } = useSidebar();
 </script>
 <style>
 html, body {

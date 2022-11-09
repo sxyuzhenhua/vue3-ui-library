@@ -58,6 +58,10 @@ export const config: UserConfig = {
       nav,
       features: {},
       langs: languages,
+      footer: {
+        message: 'Released under the MIT License.',
+        copyright: 'Copyright © 2022-present Yu You'
+      }
     },
     locales,
     markdown: {
