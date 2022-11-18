@@ -13,9 +13,11 @@ importers:
       '@vue/test-utils': ^2.2.1
       '@yu/components': workspace:^0.0.1
       '@yu/constants': workspace:*
+      '@yu/directives': workspace:^1.0.0
       '@yu/hooks': workspace:^0.0.5
       '@yu/tokens': workspace:^0.0.1
       '@yu/utils': workspace:*
+      dayjs: ^1.11.6
       jsdom: ^20.0.2
       lodash-es: ^4.17.21
       lodash-unified: ^1.0.3
@@ -32,9 +34,11 @@ importers:
       '@vitest/ui': 0.25.0
       '@yu/components': link:packages/components
       '@yu/constants': link:packages/constants
+      '@yu/directives': link:packages/directives
       '@yu/hooks': link:packages/hooks
       '@yu/tokens': link:packages/tokens
       '@yu/utils': link:packages/utils
+      dayjs: 1.11.6
       lodash-es: 4.17.21
       lodash-unified: 1.0.3_6vt5du6ay2thm2pqhl32dksnvu
       run-script: 0.1.1

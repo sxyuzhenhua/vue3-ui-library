@@ -13,7 +13,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { YuIcon } from '../../icon/src/icon.vue'
+// import { YuIcon } from '../../icon/src/icon.vue'
+import { YuIcon } from '@yu/components/icon'
 import { CaretTop } from '@element-plus/icons-vue'
 // import { useNamespace } from '@yu/hooks'
 import { useNamespace } from '../../../hooks/index'

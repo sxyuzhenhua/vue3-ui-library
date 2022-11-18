@@ -25,7 +25,6 @@ export function MarkdownTransform(): Plugin {
 
       code = transformVpScriptSetup(code, append)
       const pattern = `{${[...languages, languages[0]].join(',')}}/component`
-      console.log('languages====', pattern)
       const compPaths = await glob(pattern, {
         cwd: docRoot,
         absolute: true,
@@ -58,6 +57,10 @@ const combineMarkdown = (
     code =
       code.slice(0, sliceIndex) + headers.join('\n') + code.slice(sliceIndex)
   code += footers.join('\n')
+    // <script setup>
+    // const demos = import.meta.globEager('../../examples/border/*.vue')
+    // </script>
+  console.log('code', code);
   return `${code}\n`
 }
 

@@ -1,3 +1,4 @@
+import YuementPlus from 'yu-element'
 
 import Layout, { globals } from '../vitepress'
 
@@ -10,6 +11,8 @@ export default {
   NotFound: () => 'custom 404',
 
   enhanceApp({ app, router, siteData }) {
+    console.log('YuementPlus:::', YuementPlus);
+    app.use(YuementPlus)
     // app is the Vue 3 app instance from `createApp()`.
     // router is VitePress' custom router. `siteData` is
     // a `ref` of current site-level metadata.

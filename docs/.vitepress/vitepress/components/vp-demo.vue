@@ -75,7 +75,7 @@ const copyCode = async () => {
       <Example :file="path" :demo="formatPathDemos[path]" />
 
       <div class="op-btns">
-        <ElTooltip :content="locale['copy-code']" :show-arrow="false">
+        <!-- <ElTooltip :content="locale['copy-code']" :show-arrow="false">
           <YuIcon :size="16" class="op-btn" @click="copyCode">
             <i-ri-file-copy-line />
           </YuIcon>
@@ -84,12 +84,12 @@ const copyCode = async () => {
           <YuIcon :size="16" class="op-btn" @click="sourceVisible = !sourceVisible">
             <i-ri-code-line />
           </YuIcon>
-        </ElTooltip>
+        </ElTooltip> -->
       </div>
 
-      <ElCollapseTransition>
+      <!-- <ElCollapseTransition> -->
         <SourceCode v-show="sourceVisible" :source="source" />
-      </ElCollapseTransition>
+      <!-- </ElCollapseTransition> -->
 
       <Transition name="el-fade-in-linear">
         <div
@@ -97,9 +97,9 @@ const copyCode = async () => {
           class="example-float-control"
           @click="sourceVisible = false"
         >
-          <YuIcon :size="16">
+          <!-- <YuIcon :size="16">
             <CaretTop />
-          </YuIcon>
+          </YuIcon> -->
           <span>{{ locale['hide-source'] }}</span>
         </div>
       </Transition>

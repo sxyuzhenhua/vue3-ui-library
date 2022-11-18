@@ -15,11 +15,23 @@ import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
 import type { Alias } from 'vite'
 
 const alias: Alias[] = [
-  {
-    find: '~/',
-    replacement: `${path.resolve(__dirname, './.vitepress/vitepress')}/`,
-  },
-]
+    {
+      find: '~/',
+      replacement: `${path.resolve(__dirname, './.vitepress/vitepress')}/`,
+    },
+  ]
+  if (process.env.DOC_ENV !== 'production') {
+    alias.push(
+      {
+        find: /^yu-element(\/(es|lib))?$/,
+        replacement: path.resolve(projRoot, 'packages/yu-element/index.ts'),
+      },
+      {
+        find: /^yu-element\/(es|lib)\/(.*)$/,
+        replacement: `${path.resolve(projRoot, 'packages')}/$2`,
+      }
+    )
+  }
 
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
