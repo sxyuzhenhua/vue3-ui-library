@@ -1,0 +1,32 @@
+{
+  "en-US": {
+    "intro": {
+      "text": "Basics",
+      "children": [
+        {
+          "text": "Design",
+          "link": "/guide/introduce"
+        },
+        {
+          "text": "Quick Start",
+          "link": "/guide/start"
+        }
+      ]
+    }
+  },
+  "zh-CN": {
+    "intro": {
+      "text": "基础",
+      "children": [
+        {
+          "text": "介绍",
+          "link": "/guide/introduce"
+        },
+        {
+          "text": "快速开始",
+          "link": "/guide/start"
+        }
+      ]
+    }
+  }
+}

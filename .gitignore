@@ -8,10 +8,10 @@ node_modules
 # System
 .DS_Store
 
-i18n
 # Bundle
 dist
 coverage
+packages/element-plus/version.ts
 
 # local env files
 *.local
