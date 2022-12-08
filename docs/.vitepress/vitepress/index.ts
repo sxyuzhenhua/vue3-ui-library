@@ -1,5 +1,14 @@
 
 import './styles/index.scss'
+
+// for dev
+// reset
+import '../../../packages/theme-chalk/src/reset.scss'
+import '../../../packages/theme-chalk/src/index.scss'
+// for dark mode
+import '../../../packages/theme-chalk/src/dark/css-vars.scss'
+
+
 import VPDemo from './components/vp-demo.vue'
 import Layout from './components/theme.vue'
 

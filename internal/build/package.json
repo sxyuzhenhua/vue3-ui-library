@@ -1,0 +1,27 @@
+{
+  "name": "@yu/build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "start": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts",
+    "dev": "pnpm run stub",
+    "stub": "unbuild --stub"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "rollup": "^3.6.0"
+  },
+  "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.1",
+    "@pnpm/types": "^8.9.0",
+    "@types/fs-extra": "^9.0.13",
+    "unbuild": "^1.0.1",
+    "vue": "^3.2.41"
+  }
+}

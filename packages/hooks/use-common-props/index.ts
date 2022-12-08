@@ -1,10 +1,10 @@
 import { computed, inject, ref, unref } from 'vue'
 import { formContextKey, formItemContextKey } from '@yu/tokens'
-import { buildProp } from '@element-plus/utils'
-import { componentSizes } from '@element-plus/constants'
+import { buildProp } from '@yu/utils'
+import { componentSizes } from '@yu/constants'
 import { useProp } from '../use-prop'
 import { useGlobalConfig } from '../use-global-config'
-import type { ComponentSize } from '@element-plus/constants'
+import type { ComponentSize } from '@yu/constants'
 import type { MaybeRef } from '@vueuse/core'
 
 export const useSizeProp = buildProp({

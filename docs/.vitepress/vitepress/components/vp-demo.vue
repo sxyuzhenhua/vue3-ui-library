@@ -52,8 +52,6 @@ const onPlaygroundClick = () => {
 
 const copyCode = async () => {
   const { $message } = vm.appContext.config.globalProperties
-  console.log('isSupported:::', isSupported);
-  console.log('$message:::', $message);
   if (!isSupported) {
     $message.error(locale.value['copy-error'])
   }
@@ -75,16 +73,16 @@ const copyCode = async () => {
       <Example :file="path" :demo="formatPathDemos[path]" />
 
       <div class="op-btns">
-        <!-- <ElTooltip :content="locale['copy-code']" :show-arrow="false">
+        <YuTooltip :content="locale['copy-code']" :show-arrow="false">
           <YuIcon :size="16" class="op-btn" @click="copyCode">
             <i-ri-file-copy-line />
           </YuIcon>
-        </ElTooltip>
-        <ElTooltip :content="locale['view-source']" :show-arrow="false">
+        </YuTooltip>
+        <YuTooltip :content="locale['view-source']" :show-arrow="false">
           <YuIcon :size="16" class="op-btn" @click="sourceVisible = !sourceVisible">
             <i-ri-code-line />
           </YuIcon>
-        </ElTooltip> -->
+        </YuTooltip>
       </div>
 
       <!-- <ElCollapseTransition> -->

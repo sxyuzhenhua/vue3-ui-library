@@ -16,7 +16,7 @@
       "rootDir": ".",
       "types": [],
       "paths": {
-        "@yu-plus/*": ["packages/*"]
+        "@yu/*": ["packages/*"]
       }
     }
   }

@@ -1,6 +1,5 @@
 import { computed, getCurrentInstance, inject, provide, ref, unref } from 'vue'
-// import { configProviderContextKey } from '@yu/tokens'
-import { configProviderContextKey } from '../../tokens'
+import { configProviderContextKey } from '@yu/tokens'
 import { keysOf } from '@yu/utils'
 
 import type { MaybeRef } from '@vueuse/core'

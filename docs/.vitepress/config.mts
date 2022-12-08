@@ -52,8 +52,8 @@ export const config: UserConfig = {
       ],
       lastUpdated: 'Last Updated',
   
-      logo: '/logo.png',
-      logoSmall: '/logo.png',
+      logo: '/images/logo.png',
+      logoSmall: '/images/logo.png',
       sidebars,
       nav,
       features: {},

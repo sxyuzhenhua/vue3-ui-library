@@ -1,6 +1,6 @@
 import { useGlobalConfig } from '../use-global-config'
 
-export const defaultNamespace = 'el'
+export const defaultNamespace = 'yu'
 const statePrefix = 'is-'
 
 const _bem = (

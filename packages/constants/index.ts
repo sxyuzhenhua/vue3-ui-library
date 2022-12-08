@@ -4,3 +4,4 @@ export const INPUT_EVENT = 'input'
 
 export * from './key'
 export * from './aria'
+export * from './size'

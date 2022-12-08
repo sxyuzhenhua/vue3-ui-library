@@ -12,7 +12,7 @@
   import type { CSSProperties } from 'vue'
   
   defineOptions({
-    name: 'ElIcon',
+    name: 'YuIcon',
     inheritAttrs: false,
   })
   const props = defineProps(iconProps)
