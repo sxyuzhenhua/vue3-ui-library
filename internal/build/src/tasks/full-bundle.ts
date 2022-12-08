@@ -15,8 +15,8 @@ import {
   PKG_CAMELCASE_NAME,
 } from '@yu/build-constants'
 import { epOutput, epRoot, localeRoot } from '@yu/build-utils'
-import { version } from '../../../../packages/element-plus/version'
-import { ElementPlusAlias } from '../plugins/element-plus-alias'
+import { version } from '../../../../packages/yu-element/version'
+import { YuElementAlias } from '../plugins/yu-element-alias'
 import {
   formatBundleFilename,
   generateExternal,
@@ -30,7 +30,7 @@ const banner = `/*! ${PKG_BRAND_NAME} v${version} */\n`
 
 async function buildFullEntry(minify: boolean) {
   const plugins: Plugin[] = [
-    ElementPlusAlias(),
+    YuElementAlias(),
     VueMacros({
       setupComponent: false,
       setupSFC: false,

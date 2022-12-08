@@ -1,9 +1,10 @@
 <template>
-    <button>这是2</button>
-    <button>这是1</button>
-    <button>这是3</button>
     <yu-button>Default</yu-button>
-    <!-- <el-button type="primary">Primary</el-button> -->
+    <yu-button type="primary">Primary</yu-button>
+    <yu-button type="success">Success</yu-button>
+    <yu-button type="info">Info</yu-button>
+    <yu-button type="warning">Warning</yu-button>
+    <yu-button type="danger">Danger</yu-button>
   </template>
   
   <script lang="ts" setup>

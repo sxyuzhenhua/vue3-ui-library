@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import glob from 'fast-glob'
-import { docRoot, docsDirName, projRoot } from '../../../internal/path'
+import { docRoot, docsDirName, projRoot } from '@yu/build-utils'
 import { getLang, languages } from '../utils/lang'
 
 import type { Plugin } from 'vite'
