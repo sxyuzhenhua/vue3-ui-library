@@ -1,9 +1,12 @@
 import YuementPlus from 'yu-element'
 
 import Layout, { globals } from '../vitepress'
+import { define } from '../utils/types'
+import 'uno.css'
+import './style.css'
+import type { Theme } from 'vitepress'
 
-
-export default {
+export default define<Theme>({
   // root component to wrap each page
   Layout,
 
@@ -24,4 +27,4 @@ export default {
     // this function will be executed inside VitePressApp's
     // setup hook. all composition APIs are available here.
   }
-}
+})

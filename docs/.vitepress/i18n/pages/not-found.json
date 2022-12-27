@@ -1,0 +1,12 @@
+{
+  "en-US": {
+    "title": "Resource not found",
+    "button-title": "Back to Home",
+    "desc": "The page you requested does not exist"
+  },
+  "zh-CN": {
+    "title": "资源没有找到",
+    "button-title": "返回首页",
+    "desc": "你请求的页面不存在"
+  }
+}

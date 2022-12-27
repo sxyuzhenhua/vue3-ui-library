@@ -21,7 +21,6 @@
     "markdown-it": "^13.0.1",
     "prismjs": "^1.29.0",
     "rimraf": "^3.0.2",
-    "unocss": "^0.46.2",
     "vite-plugin-pwa": "^0.12.1",
     "yu-element": "npm:element-plus@^2.2.20"
   },
@@ -34,6 +33,7 @@
     "sass": "^1.55.0",
     "tsx": "^3.11.0",
     "typescript": "^4.8.4",
+    "unocss": "^0.46.3",
     "unplugin-icons": "^0.14.12",
     "unplugin-vue-components": "^0.22.8",
     "unplugin-vue-macros": "^0.15.2",

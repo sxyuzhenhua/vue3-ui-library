@@ -7,7 +7,7 @@ import autoprefixer from 'gulp-autoprefixer'
 import cleanCSS from 'gulp-clean-css'
 import rename from 'gulp-rename'
 import consola from 'consola'
-import { epOutput } from '@element-plus/build-utils'
+import { epOutput } from '@yu/build-utils'
 
 const distFolder = path.resolve(__dirname, 'dist')
 const distBundle = path.resolve(epOutput, 'theme-chalk')
@@ -35,7 +35,7 @@ function buildThemeChalk() {
     .pipe(
       rename((path) => {
         if (!noElPrefixFile.test(path.basename)) {
-          path.basename = `el-${path.basename}`
+          path.basename = `yu-${path.basename}`
         }
       })
     )

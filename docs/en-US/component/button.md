@@ -16,5 +16,14 @@ button/basic
 :::
 
 
-## Text Button
+## Disabled Button
+
+The `disabled` attribute determines if the button is disabled.
+
+:::demo Use `disabled` attribute to determine whether a button is disabled. It accepts a `Boolean` value.
+
+button/disabled
+
+:::
+
 

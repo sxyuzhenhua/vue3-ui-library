@@ -14,6 +14,8 @@ import Layout from './components/theme.vue'
 
 import type { Component } from 'vue'
 
+export { default as NotFound } from './components/vp-not-found.vue'
+
 export default Layout;
 
 // export { default as NotFound } from './components/vp-not-found.vue'
