@@ -20,7 +20,7 @@
             </div>
         </div>
         <section class="exclude-nav">
-            <div class="sidebar" v-if="hasSidebar">
+            <div class="self-sidebar" v-if="hasSidebar">
                 <div v-for="item in sidebars" :key="item.text">
                     <div class="sidebar-title">{{item.text}}</div>
                     <ul>
@@ -46,6 +46,7 @@ import { isActiveLink, isMenuActive } from '../utils/index';
 
 const route = useRoute()
 const navs = useNav()
+console.log('navs=======',navs);
 const { sidebars, hasSidebar } = useSidebar();
 </script>
 <style>
@@ -102,7 +103,7 @@ ul, li {
 .exclude-nav {
     display: flex;
 }
-.sidebar {
+.self-sidebar {
     width: 280px;
     min-height: calc(100vh - 80px);
     display: flex;
@@ -110,23 +111,23 @@ ul, li {
     padding-top: 20px;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
-.sidebar ul .menu {
+.self-sidebar ul .menu {
     display: flex;
     flex-direction: column;
 }
-.sidebar ul .menu a {
+.self-sidebar ul .menu a {
     text-decoration: none;
     line-height: 40px;
     padding-left: 20px;
     color: rgba(0, 0, 0, 0.5);
     border-left: 4px solid transparent;
 }
-.sidebar ul .menu a:hover, .sidebar ul .menu a.active{
+.self-sidebar ul .menu a:hover, .self-sidebar ul .menu a.active{
     color: #ef580c;
     background-color: rgb(238, 180, 202);
     border-left: 4px solid #ef580c;
 }
-.sidebar-title {
+.self-sidebar-title {
       font-size: 12px;
       font-weight: 700;
       margin-bottom: 8px;
@@ -139,6 +140,8 @@ ul, li {
     flex: 1;
     padding-left: 40px;
     box-sizing: border-box;
+    max-height: calc(100vh - 80px);
+    overflow-y: scroll;
 }
 .doc-content {
     width: 80%;

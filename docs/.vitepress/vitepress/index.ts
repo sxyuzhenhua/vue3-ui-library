@@ -1,6 +1,6 @@
 
-import './styles/index.scss'
-
+// import './styles/index.scss'
+// import 'normalize.css'
 // for dev
 // reset
 import '../../../packages/theme-chalk/src/reset.scss'
@@ -8,9 +8,11 @@ import '../../../packages/theme-chalk/src/index.scss'
 // for dark mode
 import '../../../packages/theme-chalk/src/dark/css-vars.scss'
 
+import './styles/css-vars.scss'
+import './styles/app.scss'
 
 import VPDemo from './components/vp-demo.vue'
-import Layout from './components/theme.vue'
+import Layout from './components/layout.vue'
 
 import type { Component } from 'vue'
 

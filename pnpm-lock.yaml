@@ -82,6 +82,8 @@ importers:
       fast-glob: ^3.2.12
       markdown-it: ^13.0.1
       markdown-it-container: ^3.0.0
+      normalize.css: ^8.0.1
+      prism-theme-vars: ^0.2.4
       prismjs: ^1.29.0
       rimraf: ^3.0.2
       sass: ^1.55.0
@@ -105,6 +107,8 @@ importers:
       consola: 2.15.3
       escape-html: 1.0.3
       markdown-it: 13.0.1
+      normalize.css: 8.0.1
+      prism-theme-vars: 0.2.4
       prismjs: 1.29.0
       rimraf: 3.0.2
       vite-plugin-pwa: 0.12.8_vite@3.2.3
@@ -8448,6 +8452,10 @@ packages:
     resolution: {integrity: sha512-Wj7+EJQ8mSuXr2iWfnujrimU35R2W4FAErEyTmJoJ7ucwTn2hOUSsRehMb5RSYkxXGTM7Y9QpvPmp++w5ftoJw==}
     dev: false
 
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+    dev: false
+
   /now-and-later/2.0.1:
     resolution: {integrity: sha512-KGvQ0cB70AQfg107Xvs/Fbu+dGmZoTRJp2TaPwcwQm3/7PteUyN2BCgk8KBMPGBUXZdVwyWS8fDCGFygBm19UQ==}
     engines: {node: '>= 0.10'}
@@ -9015,6 +9023,10 @@ packages:
 
   /printable-characters/1.0.42:
     resolution: {integrity: sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==}
+    dev: false
+
+  /prism-theme-vars/0.2.4:
+    resolution: {integrity: sha512-B3Pht+GCT87sZph7hMRLlCQXzCM0awW7Rhk08RavpqRW4LEQOeqN0uMG4QCWkul2tr8PB61YAOJGUrEW+1uuJA==}
     dev: false
 
   /prismjs/1.29.0:

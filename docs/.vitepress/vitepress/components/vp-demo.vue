@@ -95,9 +95,9 @@ const copyCode = async () => {
           class="example-float-control"
           @click="sourceVisible = false"
         >
-          <!-- <YuIcon :size="16">
+          <YuIcon :size="16">
             <CaretTop />
-          </YuIcon> -->
+          </YuIcon>
           <span>{{ locale['hide-source'] }}</span>
         </div>
       </Transition>
