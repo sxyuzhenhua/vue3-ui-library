@@ -3,9 +3,9 @@
       ref="popperContentRef"
       :style="contentStyle"
       :class="contentClass"
+      class="yuzhenhua"
       tabindex="-1"
       @mouseenter="(e) => $emit('mouseenter', e)"
-      @mouseleave="(e) => $emit('mouseleave', e)"
     >
       <yu-focus-trap
         :trapped="trapped"

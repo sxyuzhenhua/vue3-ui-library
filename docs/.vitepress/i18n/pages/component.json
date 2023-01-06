@@ -33,6 +33,15 @@
           "text": "Checkbox"
         }
       ]
+    },
+    "feedback": {
+      "text": "Feedback",
+      "children": [
+        {
+          "link": "/tooltip",
+          "text": "Tooltip"
+        }
+      ]
     }
   },
   "zh-CN": {
@@ -67,6 +76,15 @@
         {
           "link": "/checkbox",
           "text": "多选框"
+        }
+      ]
+    },
+    "feedback": {
+      "text": "反馈组件",
+      "children": [
+        {
+          "link": "/tooltip",
+          "text": "文字提示"
         }
       ]
     }

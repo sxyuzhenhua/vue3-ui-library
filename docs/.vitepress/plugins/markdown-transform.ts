@@ -60,7 +60,7 @@ const combineMarkdown = (
     // <script setup>
     // const demos = import.meta.globEager('../../examples/border/*.vue')
     // </script>
-  console.log('code', code);
+  
   return `${code}\n`
 }
 

@@ -3,39 +3,40 @@ import path from 'path'
 import { errorAndExit } from '../utils/log'
 const projRoot = path.resolve(__dirname, '..', '..')
 
-// NB: this file is only for generating files that enables developers to develop the website.
+
 const componentLocaleRoot = path.resolve(projRoot, '.vitepress/crowdin') // /Users/yuzhenhua/project/element-plus/docs/.vitepress/crowdin
 
 const exists = 'File already exists'
 
 async function main() {
-  const localeOutput = path.resolve(projRoot, '.vitepress/i18n')
-  if (fs.existsSync(localeOutput)) {
+  const localeOutput = path.resolve(projRoot, '.vitepress/i18n') //  i18n 文件路径
+  if (fs.existsSync(localeOutput)) { // i18n 文件路径是否存在，不存在报错
     throw new Error(exists)
   }
 
   console.log('Starting for build doc for developing');
   // all language should be identical since it is mirrored from crowdin.
-  const dirs = await fs.promises.readdir(componentLocaleRoot, {
+  const dirs = await fs.promises.readdir(componentLocaleRoot, {  // 读取crowdin文件夹  dirs: [{"name":"en-US"},{"name":"zh-CN"}]
     withFileTypes: true,
   })
+
+
   const languages = dirs
     .map((dir) => dir.name)
-  const langWithoutEn = languages.filter((l) => l !== 'en-US')
-  await fs.promises.mkdir(localeOutput)
+  const langWithoutEn = languages.filter((l) => l !== 'en-US') // ["zh-CN"]
+  await fs.promises.mkdir(localeOutput) // 新增目录 .vitepress/i18n
 
-  // build lang.json for telling `header>language-select` how many languages are there
-  await fs.promises.writeFile(
+  // 写入文件 i18n/lang.json    内容为： ["en-US","zh-CN"]
+  await fs.promises.writeFile(  
     path.resolve(localeOutput, 'lang.json'),
     JSON.stringify(languages),
     'utf-8'
   )
 
-  // loop through en-US
 
   const enUS = path.resolve(componentLocaleRoot, 'en-US')
   // we do not include en-US since we are currently using it as template
-  const languagePaths = langWithoutEn.map((l) => {
+  const languagePaths = langWithoutEn.map((l) => {  // 
     return {
       name: l,
       pathname: path.resolve(componentLocaleRoot, l),

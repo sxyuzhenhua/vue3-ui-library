@@ -32,6 +32,15 @@
             "text": "Checkbox"
           }
         ]
+    },
+    "feedback": {
+        "text": "Feedback",
+        "children": [
+          {
+            "link": "/tooltip",
+            "text": "Tooltip"
+          }
+        ]
     }
   }
   

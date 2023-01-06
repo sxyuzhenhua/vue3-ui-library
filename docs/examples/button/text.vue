@@ -1,22 +1,34 @@
 <template>
-    <p>Basic link button</p>
+    <p>Basic text button</p>
     <div class="flex justify-space-between mb-4 flex-wrap gap-4">
       <yu-button
         v-for="button in buttons"
         :key="button.text"
         :type="button.type"
-        link
+        text
         >{{ button.text }}</yu-button
       >
     </div>
   
-    <p>Disabled link button</p>
+    <p>Background color always on</p>
+    <div class="flex justify-space-between mb-4 flex-wrap gap-4">
+      <yu-button
+        v-for="button in buttons"
+        :key="button.text"
+        :type="button.type"
+        text
+        bg
+        >{{ button.text }}</yu-button
+      >
+    </div>
+  
+    <p>Disabled text button</p>
     <div class="flex justify-space-between flex-wrap gap-4">
       <yu-button
         v-for="button in buttons"
         :key="button.text"
         :type="button.type"
-        link
+        text
         disabled
         >{{ button.text }}</yu-button
       >

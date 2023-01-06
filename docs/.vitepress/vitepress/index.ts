@@ -1,6 +1,6 @@
 
 // import './styles/index.scss'
-// import 'normalize.css'
+import 'normalize.css'
 // for dev
 // reset
 import '../../../packages/theme-chalk/src/reset.scss'
@@ -11,8 +11,10 @@ import '../../../packages/theme-chalk/src/dark/css-vars.scss'
 import './styles/css-vars.scss'
 import './styles/app.scss'
 
-import VPDemo from './components/vp-demo.vue'
+import 'uno.css'
+
 import Layout from './components/layout.vue'
+import VPDemo from './components/vp-demo.vue'
 
 import type { Component } from 'vue'
 

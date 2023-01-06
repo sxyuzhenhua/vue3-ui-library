@@ -16,6 +16,8 @@
     "test:coverage": "vitest --coverage",
     "docs:build": "pnpm run -C docs build",
     "gen": "bash ./scripts/gc.sh",
+    "dev": "pnpm -C play dev",
+    "build:theme": "pnpm run -C packages/theme-chalk build",
     "docs:dev": "pnpm run -C docs dev",
     "docs:dp": "pnpm run -C docs dp"
   },
@@ -56,12 +58,14 @@
     "@yu/directives": "workspace:^1.0.0",
     "@yu/hooks": "workspace:^0.0.5",
     "@yu/locale": "workspace:^0.0.1",
+    "@yu/theme-chalk": "workspace:^1.0.0",
     "@yu/tokens": "workspace:^0.0.1",
     "@yu/utils": "workspace:*",
     "dayjs": "^1.11.6",
     "lodash-es": "^4.17.21",
     "lodash-unified": "^1.0.3",
     "run-script": "^0.1.1",
-    "vitest": "^0.25.0"
+    "vitest": "^0.25.0",
+    "w": "^1.1.0"
   }
 }

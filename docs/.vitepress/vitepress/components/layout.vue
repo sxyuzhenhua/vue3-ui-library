@@ -22,7 +22,7 @@
         <section class="exclude-nav">
             <div class="self-sidebar" v-if="hasSidebar">
                 <div v-for="item in sidebars" :key="item.text">
-                    <div class="sidebar-title">{{item.text}}</div>
+                    <div class="self-sidebar-title">{{item.text}}</div>
                     <ul>
                         <li class="menu"  v-for="(child, childKey) in item.children" :key="childKey"><a :href="child.link" :class="{active: isMenuActive(route, child.link)}">{{child.text}}</a></li>
                     </ul>
@@ -46,7 +46,7 @@ import { isActiveLink, isMenuActive } from '../utils/index';
 
 const route = useRoute()
 const navs = useNav()
-console.log('navs=======',navs);
+
 const { sidebars, hasSidebar } = useSidebar();
 </script>
 <style>
@@ -130,7 +130,7 @@ ul, li {
 .self-sidebar-title {
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-top: 20px;
       line-height: 24px;
       padding-left: 10px;
       box-sizing: border-box;
