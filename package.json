@@ -15,6 +15,7 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "docs:build": "pnpm run -C docs build",
+    "docs:gen-locale": "pnpm run -C docs gen-locale",
     "gen": "bash ./scripts/gc.sh",
     "dev": "pnpm -C play dev",
     "build:theme": "pnpm run -C packages/theme-chalk build",

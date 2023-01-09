@@ -15,6 +15,7 @@ import 'uno.css'
 
 import Layout from './components/layout.vue'
 import VPDemo from './components/vp-demo.vue'
+import IconList from './components/globals/icons.vue'
 
 import type { Component } from 'vue'
 
@@ -26,4 +27,5 @@ export default Layout;
 
 export const globals: [string, Component][] = [
   ['Demo', VPDemo],
+  ['IconList', IconList],
 ]

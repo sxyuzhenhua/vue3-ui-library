@@ -31,7 +31,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color var(--el-transition-duration-fast);
+  transition: background-color var(--yu-transition-duration-fast);
 }
 
 main {
@@ -209,7 +209,7 @@ li > ol {
       white-space: nowrap;
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
-      padding: 0.6em 1em;
+      padding: 1.2em 1em;
       text-align: left;
       max-width: 250px;
       white-space: pre-wrap;
@@ -227,7 +227,7 @@ li > ol {
 
 blockquote {
   margin: 1rem 0;
-  border-left: 0.2rem solid var(--el-border-color);
+  border-left: 0.2rem solid var(--yu-border-color);
   padding: 0.25rem 0 0.25rem 1rem;
   font-size: 1rem;
   color: var(--text-color-lighter);
@@ -275,7 +275,7 @@ details {
     padding: 8px 16px;
     background-color: var(--block-tip-bg-color);
     border-radius: 4px;
-    border-left: 5px solid var(--el-color-primary);
+    border-left: 5px solid var(--yu-color-primary);
     margin: 20px 0;
   }
 
@@ -283,7 +283,7 @@ details {
     padding: 8px 16px;
     background-color: var(--block-warning-bg-color);
     border-radius: 4px;
-    border-left: 5px solid var(--el-color-danger);
+    border-left: 5px solid var(--yu-color-danger);
     margin: 20px 0;
   }
 }

@@ -13,6 +13,10 @@
         {
           "link": "/color",
           "text": "Color"
+        },
+        {
+          "link": "/icon",
+          "text": "Icon"
         }
       ]
     },
@@ -33,12 +37,25 @@
           }
         ]
     },
+    "data": {
+        "text": "Data",
+        "children": [
+            {
+              "link": "/badge",
+              "text": "Badge"
+            }
+        ]
+    },
     "feedback": {
         "text": "Feedback",
         "children": [
           {
             "link": "/tooltip",
             "text": "Tooltip"
+          },
+          {
+            "link": "/message",
+            "text": "Message"
           }
         ]
     }

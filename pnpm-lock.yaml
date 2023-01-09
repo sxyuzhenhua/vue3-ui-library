@@ -81,6 +81,7 @@ importers:
       '@vue/shared': ^3.2.41
       '@vueuse/core': ^9.4.0
       chalk: ^5.1.2
+      clipboard-copy: ^4.0.1
       consola: ^2.15.3
       escape-html: ^1.0.3
       fast-glob: ^3.2.12
@@ -109,6 +110,7 @@ importers:
       '@vue/shared': 3.2.41
       '@vueuse/core': 9.5.0_vue@3.2.42
       chalk: 5.1.2
+      clipboard-copy: 4.0.1
       consola: 2.15.3
       escape-html: 1.0.3
       markdown-it: 13.0.1
@@ -3562,7 +3564,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.15
+      vite: 2.9.15_sass@1.56.1
       vue: 3.2.42
     dev: true
 
@@ -5025,6 +5027,10 @@ packages:
     resolution: {integrity: sha512-lj5zydbH786t6gpXe6oNX7CM5YKhd0CDhcXG8pKyRa2Nz5cgj1yhnNKxDi/MyPYwjyvAG5oVBeDdYCGUAgD8lQ==}
     dependencies:
       typanion: 3.12.1
+    dev: false
+
+  /clipboard-copy/4.0.1:
+    resolution: {integrity: sha512-wOlqdqziE/NNTUJsfSgXmBMIrYmfd5V0HCGsR8uAKHcg+h9NENWINcfRjtWGU77wDHC8B8ijV4hMTGYbrKovng==}
     dev: false
 
   /cliui/3.2.0:

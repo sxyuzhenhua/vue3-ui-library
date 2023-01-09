@@ -125,3 +125,25 @@ button/custom
 | auto-insert-space                   | automatically insert a space between two chinese characters             | boolean               |                                                               | —       |
 | color                               | custom button color, automatically calculate `hover` and `active` color | string                |                                                               | —       |
 | dark                                | dark mode, which automatically converts `color` to dark mode colors     | boolean               |                                                               | false   |
+
+
+## Button Slots
+
+| Name    | Description                 |
+| ------- | --------------------------- |
+| —       | customize default content   |
+| loading | customize loading component |
+| icon    | customize icon component    |
+
+## Button-Group Attributes
+
+| Name | Description                                      | Type   | Accepted Values                             | Default |
+| ---- | ------------------------------------------------ | ------ | ------------------------------------------- | ------- |
+| size | control the size of buttons in this button-group | string | large / default /small                      | —       |
+| type | control the type of buttons in this button-group | string | primary / success / warning / danger / info | —       |
+
+## Button-Group Slots
+
+| Name | Description                    | Subtags |
+| ---- | ------------------------------ | ------- |
+| -    | customize button group content | Button  |

@@ -46,7 +46,7 @@ html.dark {
   --prism-function: #82aaff;
   --prism-deleted: #bc6066;
   --prism-class: #54b1bf;
-  --prism-builtin: var(--el-color-primary-light-3);
+  --prism-builtin: var(--yu-color-primary-light-3);
   --prism-property: #c792ea;
   --prism-namespace: #db889a;
   --prism-punctuation: #89ddff;
@@ -172,7 +172,7 @@ div[class*='language-'].line-numbers-mode {
   bottom: 0;
   left: 0;
   z-index: 3;
-  border-right: 1px solid var(--el-overlay-color-lighter);
+  border-right: 1px solid var(--yu-overlay-color-lighter);
   padding: 1.25rem 0;
   width: 3.5rem;
   text-align: center;

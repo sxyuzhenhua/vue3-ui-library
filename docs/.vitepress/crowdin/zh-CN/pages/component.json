@@ -13,6 +13,10 @@
         {
           "link": "/color",
           "text": "色彩"
+        },
+        {
+          "link": "/icon",
+          "text": "图标"
         }
       ]
     },
@@ -33,12 +37,25 @@
           }
         ]
     },
+    "data": {
+        "text": "Data",
+        "children": [
+            {
+              "link": "/badge",
+              "text": "徽章"
+            }
+        ]
+    },
     "feedback": {
         "text": "反馈组件",
         "children": [
           {
             "link": "/tooltip",
             "text": "文字提示"
+          },
+          {
+            "link": "/message",
+            "text": "消息提示"
           }
         ]
     }

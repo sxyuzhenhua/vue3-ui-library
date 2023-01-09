@@ -1,5 +1,12 @@
-import type { Route } from 'vitepress'
+import {
+    endingSlashRE,
+    isActive,
+    isExternal,
+    normalize,
+  } from 'vitepress/dist/client/theme-default/utils'
 
+import type { Route } from 'vitepress'
+export * from './colors'
 
 export function createGitHubUrl(
     docsRepo: string,
