@@ -163,27 +163,27 @@
   
   defineExpose({
     /**
-     * @description el-popper component instance
+     * @description yu-popper component instance
      */
     popperRef,
     /**
-     * @description el-tooltip-content component instance
+     * @description yu-tooltip-content component instance
      */
     contentRef,
     /**
-     * @description validate current focus event is trigger inside el-tooltip-content
+     * @description validate current focus event is trigger inside yu-tooltip-content
      */
     isFocusInsideContent,
     /**
-     * @description update el-popper component instance
+     * @description update yu-popper component instance
      */
     updatePopper,
     /**
-     * @description expose onOpen function to mange el-tooltip open state
+     * @description expose onOpen function to mange yu-tooltip open state
      */
     onOpen,
     /**
-     * @description expose onOpen function to mange el-tooltip open state
+     * @description expose onOpen function to mange yu-tooltip open state
      */
     onClose,
     /**

@@ -17,6 +17,14 @@
         {
           "link": "/icon",
           "text": "Icon"
+        },
+        {
+          "link": "/link",
+          "text": "Link"
+        },
+        {
+          "link": "/scrollbar",
+          "text": "Scrollbar"
         }
       ]
     },

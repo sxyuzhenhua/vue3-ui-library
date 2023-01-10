@@ -17,6 +17,14 @@
         {
           "link": "/icon",
           "text": "图标"
+        },
+        {
+          "link": "/link",
+          "text": "链接"
+        },
+        {
+          "link": "/scrollbar",
+          "text": "滚动条"
         }
       ]
     },

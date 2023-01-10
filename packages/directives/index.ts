@@ -1,1 +1,1 @@
-export default {}
+export { vRepeatClick } from './repeat-click'
