@@ -41,6 +41,10 @@
           "text": "Select"
         },
         {
+          "link": "/input-number",
+          "text": "Input Number"
+        },
+        {
           "link": "/checkbox",
           "text": "Checkbox"
         }
@@ -109,6 +113,10 @@
         {
           "link": "/select",
           "text": "选择器"
+        },
+        {
+          "link": "/input-number",
+          "text": "数字输入框"
         },
         {
           "link": "/checkbox",

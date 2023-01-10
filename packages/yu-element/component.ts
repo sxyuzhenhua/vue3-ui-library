@@ -8,6 +8,8 @@ import { YuBadge } from '@yu/components/badge'
 import { YuLink } from '@yu/components/link'
 import { YuScrollbar } from '@yu/components/scrollbar'
 import { YuSlider } from '@yu/components/slider'
+import { YuInput } from '@yu/components/input'
+import { YuInputNumber } from '@yu/components/input-number'
 
 
 import type { Plugin } from 'vue'
@@ -24,4 +26,6 @@ export default [
     YuLink,
     YuScrollbar,
     YuSlider,
+    YuInput,
+    YuInputNumber,
 ] as Plugin[]

@@ -40,6 +40,10 @@
             "text": "Select"
           },
           {
+            "link": "/input-number",
+            "text": "Input Number"
+          },
+          {
             "link": "/checkbox",
             "text": "Checkbox"
           }

@@ -40,6 +40,10 @@
             "text": "选择器"
           },
           {
+            "link": "/input-number",
+            "text": "数字输入框"
+          },
+          {
             "link": "/checkbox",
             "text": "多选框"
           }
