@@ -27,7 +27,7 @@ async function main() {
   await fs.promises.mkdir(localeOutput) // 新增目录 .vitepress/i18n
 
   // 写入文件 i18n/lang.json    内容为： ["en-US","zh-CN"]
-  await fs.promises.writeFile(  
+  await fs.promises.writeFile(
     path.resolve(localeOutput, 'lang.json'),
     JSON.stringify(languages),
     'utf-8'
