@@ -1,6 +1,6 @@
 ---
 title: Border
-lang: en-US
+lang: zh-CN
 ---
 
 # Border 边框

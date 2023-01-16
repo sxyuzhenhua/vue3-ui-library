@@ -1,1 +1,6 @@
-### 色彩
+---
+title: Color
+lang: zh-CN
+---
+
+# Color

@@ -1,1 +1,6 @@
-### 输入框
+---
+title: Input
+lang: zh-CN
+---
+
+# Input

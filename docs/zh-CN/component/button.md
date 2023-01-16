@@ -1,6 +1,6 @@
 ---
 title: Button
-lang: en-US
+lang: zh-CN
 ---
 
 # Button 按钮

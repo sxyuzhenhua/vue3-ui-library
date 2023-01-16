@@ -1,1 +1,6 @@
-### 多选框
+---
+title: checkbox
+lang: zh-CN
+---
+
+# checkbox
