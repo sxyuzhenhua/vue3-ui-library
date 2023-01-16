@@ -1,7 +1,9 @@
 {
   "name": "@yu/build-utils",
   "version": "1.0.0",
-  "description": "",
+  "description": "Build utils for Yu Element",
+  "keywords": ["yu-element"],
+  "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,9 +12,7 @@
     "dev": "pnpm run stub",
     "stub": "unbuild --stub"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@pnpm/types": "^8.9.0",
     "unbuild": "^1.0.1"
