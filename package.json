@@ -41,6 +41,7 @@
     "@yu/build": "workspace:^1.0.0",
     "jsdom": "^20.0.2",
     "resize-observer-polyfill": "^1.5.1",
+    "type-fest": "^3.5.2",
     "unplugin-vue-macros": "^0.16.1",
     "vue-router": "^4.1.6"
   },

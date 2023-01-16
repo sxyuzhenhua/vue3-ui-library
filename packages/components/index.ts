@@ -12,6 +12,7 @@ export * from './scrollbar'
 export * from './slider'
 export * from './input'
 export * from './input-number'
+export * from './select'
 
 //plugin
 export * from './message'

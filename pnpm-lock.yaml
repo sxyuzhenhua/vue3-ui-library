@@ -33,6 +33,7 @@ importers:
       lodash-unified: ^1.0.3
       resize-observer-polyfill: ^1.5.1
       run-script: ^0.1.1
+      type-fest: ^3.5.2
       unplugin-vue-macros: ^0.16.1
       vitest: ^0.25.0
       vue-router: ^4.1.6
@@ -70,6 +71,7 @@ importers:
       '@yu/build': link:internal/build
       jsdom: 20.0.2
       resize-observer-polyfill: 1.5.1
+      type-fest: 3.5.2
       unplugin-vue-macros: 0.16.1
       vue-router: 4.1.6
 
@@ -10369,6 +10371,11 @@ packages:
     resolution: {integrity: sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg==}
     engines: {node: '>=8'}
     dev: false
+
+  /type-fest/3.5.2:
+    resolution: {integrity: sha512-Ph7S4EhXzWy0sbljEuZo0tTNoLl+K2tPauGrQpcwUWrOVneLePTuhVzcuzVJJ6RU5DsNwQZka+8YtkXXU4z9cA==}
+    engines: {node: '>=14.16'}
+    dev: true
 
   /type/1.2.0:
     resolution: {integrity: sha512-+5nt5AAniqsCnu2cEQQdpzCAh33kVx8n0VoFidKpB1dVVLAN/F+bgVOqOJqOnEnrhp222clB5p3vUlD+1QAnfg==}

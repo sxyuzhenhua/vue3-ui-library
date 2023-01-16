@@ -15,4 +15,5 @@ export * from './use-id'
 export * from './use-locale'
 export * from './use-attrs'
 export * from './use-cursor'
+export * from './use-focus'
 

@@ -10,6 +10,7 @@ import { YuScrollbar } from '@yu/components/scrollbar'
 import { YuSlider } from '@yu/components/slider'
 import { YuInput } from '@yu/components/input'
 import { YuInputNumber } from '@yu/components/input-number'
+import { YuSelect } from '@yu/components/select'
 
 
 import type { Plugin } from 'vue'
@@ -28,4 +29,5 @@ export default [
     YuSlider,
     YuInput,
     YuInputNumber,
+    YuSelect,
 ] as Plugin[]
