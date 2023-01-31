@@ -1,6 +1,7 @@
 import process from 'process'
+import consola from 'consola'
 
 export function errorAndExit(err: Error): never {
-  console.error(err)
+  consola.error(err)
   process.exit(1)
 }

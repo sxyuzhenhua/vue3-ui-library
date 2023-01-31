@@ -34,6 +34,7 @@
   "homepage": "https://github.com/sxyuzhenhua/vue3-ui-library#readme",
   "devDependencies": {
     "@esbuild-kit/cjs-loader": "^2.4.1",
+    "@pnpm/find-workspace-packages": "^5.0.14",
     "@pnpm/types": "^8.9.0",
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.10",
