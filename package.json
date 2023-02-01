@@ -18,9 +18,12 @@
     "docs:gen-locale": "pnpm run -C docs gen-locale",
     "gen": "bash ./scripts/gc.sh",
     "dev": "pnpm -C play dev",
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "docs:dev": "pnpm run -C docs dev",
-    "docs:dp": "pnpm run -C docs dp"
+    "docs:dp": "pnpm run -C docs dp",
+    "build:internal": "bash ./scripts/build-internal.sh"
   },
   "repository": {
     "type": "git",

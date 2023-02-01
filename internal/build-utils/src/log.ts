@@ -1,4 +1,5 @@
-import process from 'process'
+// @ts-nocheck
+import process from 'process' 
 import consola from 'consola'
 
 export function errorAndExit(err: Error): never {
