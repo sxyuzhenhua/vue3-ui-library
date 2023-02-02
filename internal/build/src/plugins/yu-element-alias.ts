@@ -4,8 +4,8 @@ import type { Plugin } from 'rollup'
 
 export function YuElementAlias(): Plugin {
   const themeChalk = 'theme-chalk'
-  const sourceThemeChalk = `${PKG_PREFIX}/${themeChalk}` as const
-  const bundleThemeChalk = `${PKG_NAME}/${themeChalk}` as const
+  const sourceThemeChalk = `${PKG_PREFIX}/${themeChalk}` as const // @yu/theme-chalk
+  const bundleThemeChalk = `${PKG_NAME}/${themeChalk}` as const // yu/theme-chalk
 
   return {
     name: 'yu-element-alias-plugin',
