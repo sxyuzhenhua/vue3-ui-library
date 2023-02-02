@@ -23,7 +23,7 @@
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "docs:dev": "pnpm run -C docs dev",
     "docs:dp": "pnpm run -C docs dp",
-    "build:internal": "bash ./scripts/build-internal.sh"
+    "build:vercel-docs": "bash ./scripts/vercel-build-docs.sh"
   },
   "repository": {
     "type": "git",
