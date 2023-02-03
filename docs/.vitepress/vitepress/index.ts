@@ -23,8 +23,6 @@ export { default as NotFound } from './components/vp-not-found.vue'
 
 export default Layout;
 
-// export { default as NotFound } from './components/vp-not-found.vue'
-
 export const globals: [string, Component][] = [
   ['Demo', VPDemo],
   ['IconList', IconList],

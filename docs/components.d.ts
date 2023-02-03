@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     Layout: typeof import('./.vitepress/vitepress/components/layout.vue')['default']
     MainColor: typeof import('./.vitepress/vitepress/components/globals/main-color.vue')['default']
     NeutralColor: typeof import('./.vitepress/vitepress/components/globals/neutral-color.vue')['default']
+    ParallaxHome: typeof import('./.vitepress/vitepress/components/globals/parallax-home.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SecondaryColors: typeof import('./.vitepress/vitepress/components/globals/secondary-colors.vue')['default']
@@ -30,5 +31,6 @@ declare module '@vue/runtime-core' {
     VpSidebar: typeof import('./.vitepress/vitepress/components/vp-sidebar.vue')['default']
     VpSidebarLink: typeof import('./.vitepress/vitepress/components/sidebar/vp-sidebar-link.vue')['default']
     VpSourceCode: typeof import('./.vitepress/vitepress/components/demo/vp-source-code.vue')['default']
+    Wave: typeof import('./.vitepress/vitepress/components/globals/wave.vue')['default']
   }
 }
