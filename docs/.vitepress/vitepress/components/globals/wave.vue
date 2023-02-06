@@ -1,12 +1,10 @@
 <template>
-    <ResizeObserver throttle @resize="refresh">
-      <canvas ref="canvas" v-bind="$attrs" class="wave"></canvas>
-    </ResizeObserver>
-  </template>
+    <canvas ref="canvas" v-bind="$attrs" class="wave"></canvas>
+</template>
   
   <script setup lang="ts">
   import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
-  import { isClient } from '@vexip-ui/utils'
+  const isClient = typeof window !== 'undefined'
   
   const props = defineProps({
     reverse: {
@@ -23,7 +21,7 @@
   
   function animateWave() {
     if (!isClient) return
-  
+
     // 获取画布
     const canvasEl = canvas.value!
     const canvasPen = canvasEl.getContext('2d')! // 设置波浪海域（海浪宽度，高度）
@@ -45,9 +43,8 @@
     let canceled = false
   
     canvasPen.lineWidth = lineWidth
-  
     const rootStyle = getComputedStyle(rootEl!)
-    const bgColor = rootStyle.getPropertyValue('--vxp-color-primary-opacity-8')
+    const bgColor = 'blue'
   
     // 创建静态的曲线
     function drawWave(offsetX = 0) {
@@ -62,14 +59,14 @@
         points.push([x, rand + y * waveHeight])
         canvasPen.lineTo(x, sinY + y * waveHeight)
       }
-  
+
       canvasPen.lineTo(axisLength, closeHeight)
       canvasPen.lineTo(sinX, closeHeight)
       canvasPen.lineTo(points[0][0], points[0][1])
       canvasPen.stroke()
       canvasPen.restore() // 贝塞尔曲线样式设置
       canvasPen.strokeStyle = 'transparent'
-      canvasPen.fillStyle = bgColor
+      canvasPen.fillStyle = 'pink'
       canvasPen.fill()
     }
   
@@ -110,7 +107,6 @@
       cancelAnimate()
       cancelAnimate = undefined
     }
-  
     if (isMounted && canvas.value) {
       canvas.value.setAttribute('width', `${canvas.value.offsetWidth}`)
       canvas.value.setAttribute('height', `${canvas.value.offsetHeight}`)
@@ -127,10 +123,6 @@
   
   <style lang="scss">
   .wave {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     width: 100%;
     height: 150px;
     background-color: transparent;

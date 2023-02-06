@@ -25,7 +25,11 @@
     "title": "Element Plus",
     "title_sub": "a Vue 3 based component library for designers and developers",
     "china_mirror": "China Mirror 🇨🇳",
-    "discord": "Discord"
+    "discord": "Discord",
+    "start-btn": "Get Started",
+    "component-btn": "Component",
+    "change-theme": "Change Major Color",
+    "language": "Language"
   },
   "zh-CN": {
     "1": "",
@@ -53,6 +57,10 @@
     "title": "Yu Element",
     "title_sub": "Vue3 组件库",
     "china_mirror": "China Mirror 🇨🇳",
-    "discord": "Discord"
+    "discord": "Discord",
+    "start-btn": "开始使用",
+    "component-btn": "浏览组件",
+    "change-theme": "修改主题颜色",
+    "language": "语言"
   }
 }

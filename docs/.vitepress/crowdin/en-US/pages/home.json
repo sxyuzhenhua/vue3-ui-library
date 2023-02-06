@@ -24,6 +24,10 @@
     "title": "Element Plus",
     "title_sub": "a Vue 3 based component library for designers and developers",
     "china_mirror": "China Mirror 🇨🇳",
-    "discord": "Discord"
+    "discord": "Discord",
+    "start-btn": "Get Started",
+    "component-btn": "Component",
+    "change-theme": "Change Major Color",
+    "language": "Language"
 }
   

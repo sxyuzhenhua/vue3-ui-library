@@ -3,7 +3,7 @@
         <div class="nav">
             <div class="logo-wrap">
                 <img class="logo" src="../images/logo.png" alt="">
-                <span class="logo-text">Vue3 UI组件库</span>
+                <!-- <span class="logo-text">Vue3 UI组件库</span> -->
             </div>
             <div class="nav-bar">
                 <a class="nav-item" 
@@ -32,7 +32,6 @@
             <div class="content-wrap">
                 <Content class="doc-content" />
             </div>
-
         </section>
     </div>
 </template>
@@ -48,6 +47,7 @@ const route = useRoute()
 const navs = useNav()
 
 const { sidebars, hasSidebar } = useSidebar();
+console.log('hasSidebar:::',hasSidebar)
 </script>
 <style>
 html, body {
@@ -135,15 +135,15 @@ ul, li {
       padding-left: 10px;
       box-sizing: border-box;
       color: rgba(0, 0, 0, 0.3);
+      margin-right: 40px;
 }
 .content-wrap {
     flex: 1;
-    padding-left: 40px;
     box-sizing: border-box;
     max-height: calc(100vh - 80px);
     overflow-y: scroll;
 }
 .doc-content {
-    width: 80%;
+    width: 100%;
 }
 </style>
