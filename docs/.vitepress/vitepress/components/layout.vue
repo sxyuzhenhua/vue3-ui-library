@@ -1,24 +1,6 @@
 <template>
     <div class="App">
-        <div class="nav">
-            <div class="logo-wrap">
-                <img class="logo" src="../images/logo.png" alt="">
-                <!-- <span class="logo-text">Vue3 UI组件库</span> -->
-            </div>
-            <div class="nav-bar">
-                <a class="nav-item" 
-                :class="{
-                'is-menu-link': true,
-                active: isActiveLink(
-                        route,
-                        item.activeMatch || item.link,
-                        !!item.activeMatch
-                    ),
-                }" 
-                v-for="item in navs"  :href="item.link" :key="item.link">{{item.text}}</a>
-                <Translation/>
-            </div>
-        </div>
+        <VPNav/>
         <section class="exclude-nav">
             <div class="self-sidebar" v-if="hasSidebar">
                 <div v-for="item in sidebars" :key="item.text">
@@ -37,17 +19,18 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vitepress'
-import { useNav } from '../composables/nav'
+import { useRoute, useRouter } from 'vitepress'
+import VPNav from './vp-nav.vue'
 import { useSidebar } from '../composables/sidebar';
 import Translation from './translation.vue'
 import { isActiveLink, isMenuActive } from '../utils/index';
 
 const route = useRoute()
-const navs = useNav()
+const router = useRouter()
+
 
 const { sidebars, hasSidebar } = useSidebar();
-console.log('hasSidebar:::',hasSidebar)
+
 </script>
 <style>
 html, body {
@@ -65,41 +48,7 @@ ul, li {
     display: flex;
     flex-direction: column;
 }
-.nav {
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 0 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.logo-wrap {
-    display: flex;
-    align-items: center;
-}
-.logo {
-    width: 40px;
-    height: 40px;
-}
-.logo-text {
-    color: #000000;
-    font-size: 18px;
-}
-.nav .nav-bar {
-    display:flex;
-}
-.nav-item {
-    padding: 0 16px;
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-}
-.nav-item.active {
-    color: #ef580c;
-    border-bottom: 4px solid #ef580c;
-}
+
 .exclude-nav {
     display: flex;
 }
@@ -110,6 +59,7 @@ ul, li {
     flex-direction: column;
     padding-top: 20px;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
 }
 .self-sidebar ul .menu {
     display: flex;

@@ -44,6 +44,10 @@
             "text": "数字输入框"
           },
           {
+            "link": "/color-picker",
+            "text": "ColorPicker 颜色选择器"
+          },
+          {
             "link": "/checkbox",
             "text": "多选框"
           }

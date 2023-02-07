@@ -1,5 +1,8 @@
 <template>
-    <canvas ref="canvas" v-bind="$attrs" class="wave"></canvas>
+    <div>
+        <div class="wave-block" :style="{ backgroundImage: `linear-gradient(to bottom,transparent, ${bgColor})` }"></div>
+        <canvas ref="canvas" v-bind="$attrs" class="wave"></canvas>
+    </div>
 </template>
   
   <script setup lang="ts">
@@ -18,7 +21,9 @@
   
   let isMounted = false
   let cancelAnimate: (() => void) | undefined
-  
+
+  const rootStyle = getComputedStyle(rootEl!)
+  const bgColor = rootStyle.getPropertyValue('--yu-color-primary-light-3')
   function animateWave() {
     if (!isClient) return
 
@@ -43,8 +48,6 @@
     let canceled = false
   
     canvasPen.lineWidth = lineWidth
-    const rootStyle = getComputedStyle(rootEl!)
-    const bgColor = 'blue'
   
     // 创建静态的曲线
     function drawWave(offsetX = 0) {
@@ -52,7 +55,7 @@
       canvasPen.beginPath() // 创建贝塞尔点
   
       const points: number[][] = []
-  
+      
       for (let x = sinX; x < sinX + axisLength; x += 80 / axisLength) {
         const y = -Math.sin((sinX + x) * waveWidth + offsetX)
   
@@ -66,7 +69,7 @@
       canvasPen.stroke()
       canvasPen.restore() // 贝塞尔曲线样式设置
       canvasPen.strokeStyle = 'transparent'
-      canvasPen.fillStyle = 'pink'
+      canvasPen.fillStyle = bgColor
       canvasPen.fill()
     }
   
@@ -122,6 +125,11 @@
   </script>
   
   <style lang="scss">
+
+.wave-block {
+    width: 100%;
+    height: 490px;
+}
   .wave {
     width: 100%;
     height: 150px;

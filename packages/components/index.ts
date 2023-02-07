@@ -13,6 +13,7 @@ export * from './slider'
 export * from './input'
 export * from './input-number'
 export * from './select'
+export * from './color-picker'
 
 //plugin
 export * from './message'

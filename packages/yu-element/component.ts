@@ -11,6 +11,7 @@ import { YuSlider } from '@yu/components/slider'
 import { YuInput } from '@yu/components/input'
 import { YuInputNumber } from '@yu/components/input-number'
 import { YuSelect } from '@yu/components/select'
+import { YuColorPicker } from '@yu/components/color-picker'
 
 
 import type { Plugin } from 'vue'
@@ -30,4 +31,5 @@ export default [
     YuInput,
     YuInputNumber,
     YuSelect,
+    YuColorPicker,
 ] as Plugin[]

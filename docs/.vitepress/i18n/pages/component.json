@@ -45,6 +45,10 @@
           "text": "Input Number"
         },
         {
+          "link": "/color-picker",
+          "text": "ColorPicker"
+        },
+        {
           "link": "/checkbox",
           "text": "Checkbox"
         }
@@ -117,6 +121,10 @@
         {
           "link": "/input-number",
           "text": "数字输入框"
+        },
+        {
+          "link": "/color-picker",
+          "text": "ColorPicker 颜色选择器"
         },
         {
           "link": "/checkbox",
