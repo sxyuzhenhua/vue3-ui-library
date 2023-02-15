@@ -17,8 +17,10 @@ const emit = defineEmits(['change'])
 const rootEl = document.documentElement
 const rootStyle = rootEl && getComputedStyle(rootEl)
 const majorColor = ref(rootStyle ? rootStyle.getPropertyValue('--yu-color-primary') : '')
-
+const style = rootEl.style
 watch(majorColor, value => {
+  style.setProperty('--yu-color-primary', `${value}`)
+  localStorage.setItem('--yu-color-primary', `${value}`)
   emit('change', value);
 })
 </script>

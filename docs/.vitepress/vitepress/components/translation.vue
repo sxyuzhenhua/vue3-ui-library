@@ -1,10 +1,14 @@
 <template>
-    <div class="language">
-        <span @click="isShow=!isShow">{{ homeLang['language'] }}</span>
-        <section class="language-shadow" v-show="isShow">
-            <div class="lang" v-for="l in langs" :key="l" @click="switchLang(l)">{{l}}</div>
-        </section>
-    </div>
+    <ClientOnly>
+        <yu-dropdown>
+            <span class="language">{{ homeLang['language'] }}</span>
+            <template #dropdown>
+                <yu-dropdown-menu>
+                    <yu-dropdown-item v-for="l in langs" :key="l" @click="switchLang(l)">{{l}}</yu-dropdown-item>
+                </yu-dropdown-menu>
+            </template>
+        </yu-dropdown>
+    </ClientOnly>
 </template>
 <script setup lang="ts">
 import { useTranslation } from '../composables/translation'
@@ -21,11 +25,16 @@ const isShow = ref(false)
 
 <style scoped>
 .language {
-    width: 100px;
-    color: #69b907;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
     cursor: pointer;
     position: relative;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 .language-shadow {
     position: absolute;

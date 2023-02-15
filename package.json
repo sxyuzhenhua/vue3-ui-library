@@ -20,6 +20,7 @@
     "dev": "pnpm -C play dev",
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
     "clean:dist": "rimraf dist",
+    "build": "pnpm run -C internal/build start",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "docs:dev": "pnpm run -C docs dev",
     "docs:dp": "pnpm run -C docs dp",

@@ -67,8 +67,9 @@ function changeMainColor() {
             margin: 0 auto;
         }
         .start-btn {
-            background-color: pink;
+            background-color: var(--yu-color-primary);
             border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #fff;
         }
         .browser-btn {
             background-color: #fff;

@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     IRiCodeLine: typeof import('~icons/ri/code-line')['default']
     IRiExternalLinkLine: typeof import('~icons/ri/external-link-line')['default']
     IRiFileCopyLine: typeof import('~icons/ri/file-copy-line')['default']
+    IRiTranslate2: typeof import('~icons/ri/translate2')['default']
     Layout: typeof import('./.vitepress/vitepress/components/layout.vue')['default']
     MainColor: typeof import('./.vitepress/vitepress/components/globals/main-color.vue')['default']
     NeutralColor: typeof import('./.vitepress/vitepress/components/globals/neutral-color.vue')['default']

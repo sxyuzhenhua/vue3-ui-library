@@ -9,7 +9,6 @@
                         <li class="menu"  v-for="(child, childKey) in item.children" :key="childKey"><a :href="child.link" :class="{active: isMenuActive(route, child.link)}">{{child.text}}</a></li>
                     </ul>
                 </div>  
-
             </div>
             <div class="content-wrap">
                 <Content class="doc-content" />
@@ -28,7 +27,10 @@ import { isActiveLink, isMenuActive } from '../utils/index';
 const route = useRoute()
 const router = useRouter()
 
-
+const majorColor = localStorage.getItem('--yu-color-primary')
+if(majorColor) {
+    document.documentElement.style.setProperty('--yu-color-primary', majorColor)
+}
 const { sidebars, hasSidebar } = useSidebar();
 
 </script>
@@ -73,9 +75,9 @@ ul, li {
     border-left: 4px solid transparent;
 }
 .self-sidebar ul .menu a:hover, .self-sidebar ul .menu a.active{
-    color: #ef580c;
-    background-color: rgb(238, 180, 202);
-    border-left: 4px solid #ef580c;
+    color: var(--yu-color-primary);
+    background-color: var(--yu-color-primary-light-7);
+    border-left: 4px solid var(--yu-color-primary);
 }
 .self-sidebar-title {
       font-size: 12px;

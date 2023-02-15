@@ -12,6 +12,11 @@ import { YuInput } from '@yu/components/input'
 import { YuInputNumber } from '@yu/components/input-number'
 import { YuSelect } from '@yu/components/select'
 import { YuColorPicker } from '@yu/components/color-picker'
+import {
+    YuDropdown,
+    YuDropdownItem,
+    YuDropdownMenu,
+} from '@yu/components/dropdown'
 
 
 import type { Plugin } from 'vue'
@@ -32,4 +37,7 @@ export default [
     YuInputNumber,
     YuSelect,
     YuColorPicker,
+    YuDropdown,
+    YuDropdownItem,
+    YuDropdownMenu,
 ] as Plugin[]

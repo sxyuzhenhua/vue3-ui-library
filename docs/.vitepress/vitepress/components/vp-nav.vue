@@ -68,7 +68,7 @@ const route = useRoute()
     font-weight: 700;
 }
 .nav-item.active {
-    color: #ef580c;
-    border-bottom: 4px solid #ef580c;
+    color: var(--yu-color-primary);
+    border-bottom: 4px solid  var(--yu-color-primary);
 }
 </style>

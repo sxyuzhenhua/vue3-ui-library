@@ -111,7 +111,7 @@ async function addSourceFiles(project: Project) {
         const content = await readFile(file, 'utf-8')
         const hasTsNoCheck = content.includes('@ts-nocheck')
 
-        const sfc = vueCompiler.parse(content)
+        const sfc = vueCompiler.parse(content) // Vue.js 源码编译成 TypeScript 代码
         const { script, scriptSetup } = sfc.descriptor
         if (script || scriptSetup) {
           let content =
