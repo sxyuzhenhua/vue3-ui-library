@@ -12,8 +12,9 @@
 $types: primary, success, warning, danger, error, info;
 
 // Color
-$colors: () !default;
-$colors: map.deep-merge(
+$colors: () !default; // 如果没有赋值，则使用默认值； 如果有赋值，则使用赋值
+// deep-merge 全部融合
+$colors: map.deep-merge(  
   (
     'white': #ffffff,
     'black': #000000,
@@ -50,6 +51,7 @@ $color-info: map.get($colors, 'info', 'base') !default;
 
 // https://sass-lang.com/documentation/values/maps#immutability
 // mix colors with white/black to generate light/dark level
+// mix(color1, color2, 比例) 按照一定的比例混合两个颜色        !global  表示全局变量
 @mixin set-color-mix-level(
   $type,
   $number,

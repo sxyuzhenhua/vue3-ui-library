@@ -4,7 +4,7 @@ import { keysOf } from '@yu/utils'
 
 import type { MaybeRef } from '@vueuse/core'
 import type { App, Ref } from 'vue'
-import type { ConfigProviderContext } from '../../tokens'
+import type { ConfigProviderContext } from '@yu/tokens'
 
 // this is meant to fix global methods like `ElMessage(opts)`, this way we can inject current locale
 // into the component as default injection value.

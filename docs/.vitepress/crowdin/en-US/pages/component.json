@@ -23,6 +23,10 @@
           "text": "Link"
         },
         {
+            "link": "/layout",
+            "text": "Layout"
+        },
+        {
           "link": "/scrollbar",
           "text": "Scrollbar"
         }

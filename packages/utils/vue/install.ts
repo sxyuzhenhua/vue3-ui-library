@@ -13,6 +13,7 @@ export const withInstall = <T, E extends Record<string, any>>(
     }
   }
 
+
   if (extra) {
     for (const [key, comp] of Object.entries(extra)) {
       ;(main as any)[key] = comp

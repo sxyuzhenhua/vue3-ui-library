@@ -2,7 +2,7 @@
 @use 'sass:string';
 
 @function rgb2hex($color) {
-  @return unquote('#' + #{string.slice(color.ie-hex-str($color), 4)});
+  @return unquote('#' + #{string.slice(color.ie-hex-str($color), 4)}); // unquote 删除字符串中的引号；
 }
 
 // rgba color above solid color

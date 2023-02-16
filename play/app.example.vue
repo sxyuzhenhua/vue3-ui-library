@@ -1,7 +1,13 @@
 <template>
     <div class="play-container">
-      <yu-button>test</yu-button>
-      <div v-loading="true" />
+      <!-- <yu-button>test</yu-button>
+      <div v-loading="true" /> -->
+    <yu-row>
+        <yu-col :span="6"><div style="background: red">111</div></yu-col>
+        <yu-col :span="6"><div style="background: red">111</div></yu-col>
+        <yu-col :span="6"><div style="background: red">111</div></yu-col>
+        <yu-col :span="6"><div style="background: red">111</div></yu-col>
+    </yu-row>
     </div>
 </template>
   

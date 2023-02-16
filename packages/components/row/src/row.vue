@@ -3,8 +3,8 @@
       :is="tag"
       :class="[
         ns.b(),
-        ns.is(`justify-${props.justify}`, justify !== 'start'),
-        ns.is(`align-${props.align}`, align !== 'top'),
+        ns.is(`justify-${props.justify}`, justify !== 'start'), // 类名： is-justify-space-around
+        ns.is(`align-${props.align}`, align !== 'top'), // 
       ]"
       :style="style"
     >
@@ -23,6 +23,7 @@
     name: 'YuRow',
   })
   const props = defineProps(rowProps)
+
   
   const ns = useNamespace('row')
   const gutter = computed(() => props.gutter)

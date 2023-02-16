@@ -2,7 +2,7 @@
     <component :is="tag" :class="[ns.b(), classes]" :style="style">
       <slot />
     </component>
-  </template>
+</template>
   
   <script setup lang="ts">
   import { computed, inject } from 'vue'

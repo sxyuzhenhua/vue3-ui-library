@@ -23,6 +23,10 @@
           "text": "链接"
         },
         {
+            "link": "/layout",
+            "text": "布局"
+        },
+        {
           "link": "/scrollbar",
           "text": "滚动条"
         }

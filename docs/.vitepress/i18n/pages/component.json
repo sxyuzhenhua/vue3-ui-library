@@ -24,6 +24,10 @@
           "text": "Link"
         },
         {
+          "link": "/layout",
+          "text": "Layout"
+        },
+        {
           "link": "/scrollbar",
           "text": "Scrollbar"
         }
@@ -100,6 +104,10 @@
         {
           "link": "/link",
           "text": "链接"
+        },
+        {
+          "link": "/layout",
+          "text": "布局"
         },
         {
           "link": "/scrollbar",
