@@ -28,6 +28,10 @@
           "text": "Layout"
         },
         {
+          "link": "/switch",
+          "text": "Switch"
+        },
+        {
           "link": "/scrollbar",
           "text": "Scrollbar"
         }
@@ -108,6 +112,10 @@
         {
           "link": "/layout",
           "text": "布局"
+        },
+        {
+          "link": "/switch",
+          "text": "开关"
         },
         {
           "link": "/scrollbar",

@@ -68,6 +68,10 @@ export const useCopyColor = () => {
  * @returns 
  */
 export function hexToRgb(hex, opacity) {
+    hex = hex.trim();
+    if(opacity <= 0 && opacity >=1) {
+        opacity = 0.9;
+    }
     return 'rgb(' + parseInt('0x' + hex.slice(1, 3)) + ',' + parseInt('0x' + hex.slice(3, 5))
         + ',' + parseInt('0x' + hex.slice(5, 7)) + ','+ opacity +')';
 }

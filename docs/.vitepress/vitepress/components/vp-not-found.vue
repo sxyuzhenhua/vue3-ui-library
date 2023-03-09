@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useLang } from '../composables/lang'
 import localeData from '../../i18n/pages/not-found.json'
+import Home from './icons/home.vue'
 
 const lang = useLang()
 
@@ -13,16 +14,29 @@ const goHome = () => {
 </script>
 
 <template>
-  <yu-result icon="error" :title="locale.title" :sub-title="locale.desc">
-    <template #extra>
-      <yu-button @click="goHome">{{ locale['button-title'] }}</yu-button>
-    </template>
-  </yu-result>
+    <div class="not-fount-container">
+        <h3 class="not-title">404</h3>
+        <yu-icon class="back-home" :size="80" @click="goHome"><Home /></yu-icon>
+    </div>
 </template>
 
 <style scoped>
-.yu-result {
+.not-fount-container {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+}
+.not-title {
+    font-size: 100px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.back-home{
+    width: 300px;
+    cursor: pointer;
 }
 </style>

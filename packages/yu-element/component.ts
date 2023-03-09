@@ -12,6 +12,7 @@ import { YuInput } from '@yu/components/input'
 import { YuInputNumber } from '@yu/components/input-number'
 import { YuSelect } from '@yu/components/select'
 import { YuColorPicker } from '@yu/components/color-picker'
+import { YuSwitch } from '@yu/components/switch'
 import {
     YuDropdown,
     YuDropdownItem,
@@ -40,4 +41,5 @@ export default [
     YuDropdown,
     YuDropdownItem,
     YuDropdownMenu,
+    YuSwitch,
 ] as Plugin[]

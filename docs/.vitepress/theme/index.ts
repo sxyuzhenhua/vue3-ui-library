@@ -1,6 +1,6 @@
 import YuElement from 'yu-element'
 
-import Layout,  { globals } from '../vitepress'
+import Layout,  { globals, NotFound } from '../vitepress'
 import { define } from '../utils/types'
 import 'uno.css'
 import './style.css'
@@ -11,7 +11,7 @@ export default define<Theme>({
   Layout: Layout,
 
   // this is a Vue 3 functional component
-  NotFound: () => 'custom 404',
+  NotFound,
 
   enhanceApp({ app }) {
     app.use(YuElement)

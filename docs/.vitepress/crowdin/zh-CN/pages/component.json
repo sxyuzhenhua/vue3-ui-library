@@ -27,6 +27,10 @@
             "text": "布局"
         },
         {
+            "link": "/switch",
+            "text": "开关"
+        },
+        {
           "link": "/scrollbar",
           "text": "滚动条"
         }

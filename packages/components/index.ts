@@ -15,6 +15,7 @@ export * from './input-number'
 export * from './select'
 export * from './color-picker'
 export * from './dropdown'
+export * from './switch'
 
 //plugin
 export * from './message'

@@ -7,12 +7,15 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Dark: typeof import('./.vitepress/vitepress/components/icons/dark.vue')['default']
+    Home: typeof import('./.vitepress/vitepress/components/icons/home.vue')['default']
     Icons: typeof import('./.vitepress/vitepress/components/globals/icons.vue')['default']
     IRiCodeLine: typeof import('~icons/ri/code-line')['default']
     IRiExternalLinkLine: typeof import('~icons/ri/external-link-line')['default']
     IRiFileCopyLine: typeof import('~icons/ri/file-copy-line')['default']
     IRiTranslate2: typeof import('~icons/ri/translate2')['default']
     Layout: typeof import('./.vitepress/vitepress/components/layout.vue')['default']
+    Light: typeof import('./.vitepress/vitepress/components/icons/light.vue')['default']
     MainColor: typeof import('./.vitepress/vitepress/components/globals/main-color.vue')['default']
     NeutralColor: typeof import('./.vitepress/vitepress/components/globals/neutral-color.vue')['default']
     ParallaxHome: typeof import('./.vitepress/vitepress/components/globals/parallax-home.vue')['default']

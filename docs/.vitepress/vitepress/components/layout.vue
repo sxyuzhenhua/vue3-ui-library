@@ -60,7 +60,7 @@ ul, li {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    border-right: 2px solid var(--border-color);
     margin-right: 30px;
 }
 .self-sidebar ul .menu {
@@ -71,7 +71,7 @@ ul, li {
     text-decoration: none;
     line-height: 40px;
     padding-left: 20px;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--text-color-light);
     border-left: 4px solid transparent;
 }
 .self-sidebar ul .menu a:hover, .self-sidebar ul .menu a.active{

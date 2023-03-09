@@ -2,7 +2,6 @@
 import VPThemeToggler from './navbar/VPThemeToggler.vue'
 import { useRoute } from 'vitepress'
 import { useNav } from '../composables/nav'
-import { useLang } from '../composables/lang'
 import { isActiveLink, isMenuActive } from '../utils/index';
 const { navs, jumpHome } = useNav()
 
@@ -45,7 +44,7 @@ const route = useRoute()
     justify-content: space-between;
     box-sizing: border-box;
     padding: 0 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
 }
 .logo-wrap {
     display: flex;
@@ -67,7 +66,7 @@ const route = useRoute()
     padding: 0 16px;
     text-decoration: none;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-color-light);
 }
 .nav-item:hover{
     color: var(--yu-color-primary);
