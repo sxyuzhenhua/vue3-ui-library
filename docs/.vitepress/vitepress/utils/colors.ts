@@ -60,3 +60,27 @@ export const useCopyColor = () => {
     copyColor,
   }
 }
+
+/**
+ * 16进制颜色转换成rgba
+ * @param hex 
+ * @param opacity 
+ * @returns 
+ */
+export function hexToRgb(hex, opacity) {
+    return 'rgb(' + parseInt('0x' + hex.slice(1, 3)) + ',' + parseInt('0x' + hex.slice(3, 5))
+        + ',' + parseInt('0x' + hex.slice(5, 7)) + ','+ opacity +')';
+}
+
+export function modifyColor(curColor) {
+    const rootEl = document.documentElement;
+    const style = rootEl.style;
+    style.setProperty('--yu-color-primary', curColor);
+    localStorage.setItem('--yu-color-primary', curColor)
+    style.setProperty('--yu-color-primary-light-3', hexToRgb(curColor, 0.1));
+    style.setProperty('--yu-color-primary-light-5', hexToRgb(curColor, 0.2));
+    style.setProperty('--yu-color-primary-light-7', hexToRgb(curColor, 0.3));
+    style.setProperty('--yu-color-primary-light-8', hexToRgb(curColor, 0.4));
+    style.setProperty('--yu-color-primary-light-9', hexToRgb(curColor, 0.5));
+    
+}

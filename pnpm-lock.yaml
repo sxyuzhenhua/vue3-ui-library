@@ -249,9 +249,11 @@ importers:
       vite-plugin-inspect: ^0.5.0
       vite-plugin-mkcert: ^1.7.2
       vue: ^3.2.37
+      yu-element: workspace:^1.0.0
     dependencies:
       '@element-plus/icons-vue': 2.0.10_vue@3.2.42
       vue: 3.2.42
+      yu-element: link:../packages/yu-element
     devDependencies:
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.42
       unplugin-vue-components: 0.21.2_vite@2.9.15+vue@3.2.42
@@ -4129,7 +4131,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.15_sass@1.56.1
+      vite: 2.9.15
       vue: 3.2.42
     dev: true
 

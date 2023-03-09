@@ -11,8 +11,8 @@ const homeLang = computed(() => homeLocale[lang.value])
 const wave = ref<InstanceType<typeof Wave>>()
 const waveTop = ref(494)
 
-function changeMainColor() {
-    wave.value?.refresh()
+function refreshWave() {
+  wave.value?.refresh()
 }
 
 </script>
@@ -21,15 +21,15 @@ function changeMainColor() {
         <div class="wave-container">
             <Wave ref="wave"></Wave>
             <div class="real-content">
-                <img class="pic" src="../../images/logo.png" alt="">
+                <img class="pic" src="../../images/logo.svg" alt="">
                 <h2 class="title">Yu Element</h2>
-                <section class="btn-container">
-                    <div class="home-btn start-btn">{{ homeLang['start-btn'] }}</div>
-                    <div class="home-btn browser-btn">{{ homeLang['component-btn'] }}</div>    
-                </section>
             </div>
         </div>
-       <MainColor :text="homeLang['change-theme']" @change="changeMainColor"/>
+        <section class="btn-container">
+            <yu-button type="primary">{{ homeLang['start-btn'] }}</yu-button>
+            <yu-button type="info">{{ homeLang['component-btn'] }}</yu-button>    
+        </section>
+       <MainColor :text="homeLang['change-theme']" @change="refreshWave"/>
     </section>
 </template>
 
@@ -44,7 +44,7 @@ function changeMainColor() {
             left: 50%;
             transform: translateX(-50%);
             .pic {
-                width: 300px;
+                width: 200px;
             }
         }
         .title {
@@ -64,7 +64,9 @@ function changeMainColor() {
         .btn-container {
             width: 290px;
             display: flex;
+            justify-content: center;
             margin: 0 auto;
+            margin-bottom: 10px;
         }
         .start-btn {
             background-color: var(--yu-color-primary);

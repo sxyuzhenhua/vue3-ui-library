@@ -7,6 +7,7 @@
   
   <script setup lang="ts">
   import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+  import { hexToRgb } from '../../utils/colors'
   const isClient = typeof window !== 'undefined'
   
   const props = defineProps({
@@ -16,6 +17,7 @@
     }
   })
   
+
   const canvas = ref<HTMLCanvasElement | null>(null)
   const rootEl = isClient ? document.documentElement : undefined
   
@@ -23,10 +25,10 @@
   let cancelAnimate: (() => void) | undefined
 
   const rootStyle = getComputedStyle(rootEl!)
-  const bgColor = rootStyle.getPropertyValue('--yu-color-primary-light-3')
+  let bgColor = ref(rootStyle.getPropertyValue('--yu-color-primary'))
   function animateWave() {
-    if (!isClient) return
-
+    if (!isClient) return;
+    bgColor.value = hexToRgb(rootStyle.getPropertyValue('--yu-color-primary'), 0.5)
     // 获取画布
     const canvasEl = canvas.value!
     const canvasPen = canvasEl.getContext('2d')! // 设置波浪海域（海浪宽度，高度）
@@ -69,7 +71,7 @@
       canvasPen.stroke()
       canvasPen.restore() // 贝塞尔曲线样式设置
       canvasPen.strokeStyle = 'transparent'
-      canvasPen.fillStyle = bgColor
+      canvasPen.fillStyle = bgColor.value
       canvasPen.fill()
     }
   
@@ -128,7 +130,7 @@
 
 .wave-block {
     width: 100%;
-    height: 490px;
+    height: 300px;
 }
   .wave {
     width: 100%;

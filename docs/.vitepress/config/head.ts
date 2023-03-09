@@ -5,7 +5,7 @@ export const head: HeadConfig[] = [
     'link',
     {
       rel: 'icon',
-      href: '/images/logo.png',
+      href: '/images/logo.svg',
     },
   ],
 ]

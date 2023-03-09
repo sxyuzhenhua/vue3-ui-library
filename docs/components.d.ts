@@ -32,6 +32,8 @@ declare module '@vue/runtime-core' {
     VpSidebar: typeof import('./.vitepress/vitepress/components/vp-sidebar.vue')['default']
     VpSidebarLink: typeof import('./.vitepress/vitepress/components/sidebar/vp-sidebar-link.vue')['default']
     VpSourceCode: typeof import('./.vitepress/vitepress/components/demo/vp-source-code.vue')['default']
+    VpThemeToggler: typeof import('./.vitepress/vitepress/components/navbar/vp-theme-toggler.vue')['default']
+    VPThemeToggler: typeof import('./.vitepress/vitepress/components/navbar/VPThemeToggler.vue')['default']
     Wave: typeof import('./.vitepress/vitepress/components/globals/wave.vue')['default']
   }
 }

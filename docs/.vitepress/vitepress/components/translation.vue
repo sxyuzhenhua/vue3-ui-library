@@ -25,7 +25,6 @@ const isShow = ref(false)
 
 <style scoped>
 .language {
-    color: rgba(0, 0, 0, 0.5);
     font-weight: 700;
     cursor: pointer;
     position: relative;

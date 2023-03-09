@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VPThemeToggler from './navbar/VPThemeToggler.vue'
 import { useRoute } from 'vitepress'
 import { useNav } from '../composables/nav'
 import { useLang } from '../composables/lang'
@@ -15,7 +16,7 @@ const route = useRoute()
 
 <div class="nav">
     <div class="logo-wrap">
-        <img class="logo" src="../images/logo.png" alt="" @click="jumpHome()">
+        <img class="logo" src="../images/logo.svg" alt="" @click="jumpHome()">
         <!-- <span class="logo-text">Vue3 UI组件库</span> -->
     </div>
     <div class="nav-bar">
@@ -29,6 +30,7 @@ const route = useRoute()
             ),
         }" 
         v-for="item in navs"  :href="item.link" :key="item.link">{{item.text}}</a>
+        <VPThemeToggler class="theme-toggler" />
         <Translation/>
     </div>
 </div>
@@ -64,8 +66,12 @@ const route = useRoute()
 .nav-item {
     padding: 0 16px;
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
     font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+}
+.nav-item:hover{
+    color: var(--yu-color-primary);
+    border-bottom: 4px solid  var(--yu-color-primary);
 }
 .nav-item.active {
     color: var(--yu-color-primary);

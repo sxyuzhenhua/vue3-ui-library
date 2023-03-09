@@ -1,21 +1,21 @@
 {
-    "name": "@yu/play",
-    "private": true,
-    "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
-    },
-    "dependencies": {
-      "@element-plus/icons-vue": "^2.0.6",
-      "vue": "^3.2.37"
-    },
-    "devDependencies": {
-      "@vitejs/plugin-vue": "^2.3.3",
-      "unplugin-vue-components": "0.21.2",
-      "vite": "^2.9.15",
-      "vite-plugin-inspect": "^0.5.0",
-      "vite-plugin-mkcert": "^1.7.2"
-    }
+  "name": "@yu/play",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.6",
+    "vue": "^3.2.37",
+    "yu-element": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "unplugin-vue-components": "0.21.2",
+    "vite": "^2.9.15",
+    "vite-plugin-inspect": "^0.5.0",
+    "vite-plugin-mkcert": "^1.7.2"
   }
-  
+}
