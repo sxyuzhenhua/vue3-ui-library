@@ -16,7 +16,7 @@ const route = useRoute()
 <div class="nav">
     <div class="logo-wrap">
         <img class="logo" src="../images/logo.svg" alt="" @click="jumpHome()">
-        <!-- <span class="logo-text">Vue3 UI组件库</span> -->
+        <span class="logo-text">Yu Element</span>
     </div>
     <div class="nav-bar">
         <a class="nav-item" 
@@ -56,8 +56,9 @@ const route = useRoute()
     cursor: pointer;
 }
 .logo-text {
-    color: #000000;
+    color: #212529;
     font-size: 18px;
+    margin-left: 10px;
 }
 .nav .nav-bar {
     display:flex;
