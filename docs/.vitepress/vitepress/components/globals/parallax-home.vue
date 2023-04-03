@@ -23,12 +23,13 @@ function refreshWave() {
             <div class="real-content">
                 <img class="pic" src="../../images/logo.svg" alt="">
                 <h2 class="title">Yu Element</h2>
+                <div class="desc">基于vue3的UI组件库</div>
+                <section class="btn-container">
+                    <yu-button size="large" type="primary">{{ homeLang['start-btn'] }}</yu-button>
+                    <yu-button size="large" type="info">{{ homeLang['component-btn'] }}</yu-button>    
+                </section>
             </div>
         </div>
-        <section class="btn-container">
-            <yu-button type="primary">{{ homeLang['start-btn'] }}</yu-button>
-            <yu-button type="info">{{ homeLang['component-btn'] }}</yu-button>    
-        </section>
        <MainColor :text="homeLang['change-theme']" @change="refreshWave"/>
     </section>
 </template>
@@ -44,14 +45,26 @@ function refreshWave() {
             left: 50%;
             transform: translateX(-50%);
             .pic {
+                display: block;
                 width: 200px;
+                margin: 0 auto;
             }
         }
         .title {
             font-weight: 300;
             display: flex;
             justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            font-weight: 700;
+            font-size: 34px;
+            font-family: "PingFangSC-Semibold, Microsoft YaHei, Arial -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji";
+        }
+        .desc {
+            font-size: 20px;
+            text-align: center;
+            color: #495057;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-family: "PingFangSC-Semibold, Microsoft YaHei, Arial -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji";
         }
     }
         .home-btn {
