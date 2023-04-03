@@ -1,4 +1,6 @@
 import type { UserConfig } from 'vitepress'
+import { REPO_BRANCH, REPO_PATH } from '@yu/build-constants'
+import { docsDirName } from '@yu/build-utils'
 import { head, sidebars, nav, mdPlugin } from './config'
 import { languages } from './utils/lang'
 
@@ -43,6 +45,9 @@ export const config: UserConfig = {
     lastUpdated: true,
     head,
     themeConfig: {
+        repo: REPO_PATH,
+        docsBranch: REPO_BRANCH,
+        docsDir: docsDirName,
       editLink: {
         pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
         text: 'Edit this page on GitHub'
@@ -60,7 +65,7 @@ export const config: UserConfig = {
       langs: languages,
       footer: {
         message: 'Released under the MIT License.',
-        copyright: 'Copyright © 2022-present Yu You'
+        copyright: 'Copyright © 2022-present Yu'
       }
     },
     locales,
@@ -70,10 +75,10 @@ export const config: UserConfig = {
 
     vue: {
         template: {
-        ssr: true,
-        compilerOptions: {
-            directiveTransforms: buildTransformers(),
-        },
+            ssr: true,
+            compilerOptions: {
+                directiveTransforms: buildTransformers(),
+            },
         },
     },
 

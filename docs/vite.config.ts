@@ -88,7 +88,7 @@ export default defineConfig(async ({ mode }) => {
       MarkdownTransform(),
     ],
     optimizeDeps: {
-      include: optimizeDeps,
+      include: optimizeDeps, // 默认情况下，不在 node_modules 中的，链接的包不会被预构建。使用此选项可强制预构建链接的包。
     },
   }
 })

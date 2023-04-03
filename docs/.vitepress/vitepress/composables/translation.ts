@@ -1,9 +1,10 @@
 import langs1 from '../../i18n/lang.json'
 import { useRoute, useRouter } from 'vitepress'
+import { isClient, useStorage } from '@vueuse/core'
 import { useLang } from './lang'
-// const PREFERRED_LANG_KEY = 'preferred_lang'
+import { PREFERRED_LANG_KEY } from '../constant'
 
-// const language = useStorage(PREFERRED_LANG_KEY, 'en-US')
+const language = useStorage(PREFERRED_LANG_KEY, 'en-US')
 export const useTranslation = () => {
     const router = useRouter()
     const route = useRoute()
@@ -11,7 +12,7 @@ export const useTranslation = () => {
     const switchLang = (targetLang: string) => {
         if (lang.value === targetLang) return
     
-        // language.value = targetLang
+        language.value = targetLang
     
         const firstSlash = route.path.indexOf('/', 1)
     
