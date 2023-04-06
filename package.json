@@ -17,6 +17,8 @@
     "docs:build": "pnpm run -C docs build",
     "docs:gen-locale": "pnpm run -C docs gen-locale",
     "gen": "bash ./scripts/gc.sh",
+    "gen:version": "tsx scripts/gen-version.ts",
+    "update:version": "tsx scripts/update-version.ts",
     "dev": "pnpm -C play dev",
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
     "clean:dist": "rimraf dist",
@@ -24,7 +26,10 @@
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "docs:dev": "pnpm run -C docs dev",
     "docs:dp": "pnpm run -C docs dp",
-    "build:vercel-docs": "bash ./scripts/vercel-build-docs.sh"
+    "build:vercel-docs": "bash ./scripts/vercel-build-docs.sh",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint:fix": "pnpm run lint --fix",
+    "lint:commit": "commitlint --from $(git merge-base origin/dev HEAD) --to HEAD > ./commit-lint.txt"
   },
   "repository": {
     "type": "git",
@@ -44,6 +49,7 @@
     "@types/gulp": "^4.0.10",
     "@vue/test-utils": "^2.2.1",
     "@yu/build": "workspace:^1.0.0",
+    "@yu/eslint-config": "workspace:^1.0.0",
     "jsdom": "^20.0.2",
     "resize-observer-polyfill": "^1.5.1",
     "type-fest": "^3.5.2",
