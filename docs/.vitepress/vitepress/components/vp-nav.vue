@@ -14,8 +14,8 @@ const route = useRoute()
 <template>
 
 <div class="nav">
-    <div class="logo-wrap">
-        <img class="logo" src="../images/logo.svg" alt="" @click="jumpHome()">
+    <div class="logo-wrap" @click="jumpHome()">
+        <img class="logo" src="../images/logo.svg" alt="" >
         <span class="logo-text">Yu Element</span>
     </div>
     <div class="nav-bar">

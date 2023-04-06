@@ -4,8 +4,10 @@ import MainColor from './main-color.vue'
 import { useLang } from '../../composables/lang'
 import homeLocale from '../../../i18n/pages/home.json'
 import Wave from './wave.vue'
+import { useLink } from '../../composables/home-href'
 const lang = useLang()
 const homeLang = computed(() => homeLocale[lang.value])
+const jumpLink = useLink();
 
 
 const wave = ref<InstanceType<typeof Wave>>()
@@ -23,10 +25,10 @@ function refreshWave() {
             <div class="real-content">
                 <img class="pic" src="../../images/logo.svg" alt="">
                 <h2 class="title">Yu Element</h2>
-                <div class="desc">基于vue3的UI组件库</div>
+                <div class="desc">{{homeLang['description']}}</div>
                 <section class="btn-container">
-                    <yu-button size="large" type="primary">{{ homeLang['start-btn'] }}</yu-button>
-                    <yu-button size="large" type="info">{{ homeLang['component-btn'] }}</yu-button>    
+                    <yu-button size="large" type="primary" @click="jumpLink('guide/introduce.html')">{{ homeLang['start-btn'] }}</yu-button>
+                    <yu-button size="large" type="info" @click="jumpLink('component/button.html')">{{ homeLang['component-btn'] }}</yu-button>    
                 </section>
             </div>
         </div>

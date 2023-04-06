@@ -16,6 +16,8 @@ export * from './select'
 export * from './color-picker'
 export * from './dropdown'
 export * from './switch'
+export * from './checkbox'
+export * from './form'
 
 //plugin
 export * from './message'

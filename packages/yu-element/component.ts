@@ -18,7 +18,12 @@ import {
     YuDropdownItem,
     YuDropdownMenu,
 } from '@yu/components/dropdown'
-
+import {
+    YuCheckbox,
+    YuCheckboxButton,
+    YuCheckboxGroup,
+} from '@yu/components/checkbox'
+import { YuForm, YuFormItem } from '@yu/components/form'
 
 import type { Plugin } from 'vue'
 
@@ -42,4 +47,9 @@ export default [
     YuDropdownItem,
     YuDropdownMenu,
     YuSwitch,
+    YuCheckbox,
+    YuCheckboxButton,
+    YuCheckboxGroup,
+    YuForm, 
+    YuFormItem,
 ] as Plugin[]

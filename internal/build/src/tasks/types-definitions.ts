@@ -99,7 +99,7 @@ async function addSourceFiles(project: Project) {
   )
   const epPaths = excludeFiles(
     await glob(globSourceFile, {
-      cwd: epRoot,
+      cwd: epRoot, // packages/yu-element
       onlyFiles: true,
     })
   )
