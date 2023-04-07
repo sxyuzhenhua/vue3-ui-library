@@ -1,6 +1,6 @@
-import { buildProps } from '@yu/utils'
-import type { ExtractPropTypes } from 'vue'
-import type Bar from './bar.vue'
+import { buildProps } from "@yu/utils";
+import type { ExtractPropTypes } from "vue";
+import type Bar from "./bar.vue";
 
 export const barProps = buildProps({
   always: {
@@ -17,7 +17,7 @@ export const barProps = buildProps({
     type: Number,
     default: 1,
   },
-} as const)
-export type BarProps = ExtractPropTypes<typeof barProps>
+} as const);
+export type BarProps = ExtractPropTypes<typeof barProps>;
 
-export type BarInstance = InstanceType<typeof Bar>
+export type BarInstance = InstanceType<typeof Bar>;

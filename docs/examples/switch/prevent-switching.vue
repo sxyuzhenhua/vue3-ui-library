@@ -12,33 +12,33 @@
   />
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { YuMessage } from 'yu-element'
+import { ref } from "vue";
+import { YuMessage } from "yu-element";
 
-const value1 = ref(false)
-const value2 = ref(false)
-const loading1 = ref(false)
-const loading2 = ref(false)
+const value1 = ref(false);
+const value2 = ref(false);
+const loading1 = ref(false);
+const loading2 = ref(false);
 
 const beforeChange1 = () => {
-  loading1.value = true
+  loading1.value = true;
   return new Promise((resolve) => {
     setTimeout(() => {
-      loading1.value = false
-      YuMessage.success('Switch success')
-      return resolve(true)
-    }, 1000)
-  })
-}
+      loading1.value = false;
+      YuMessage.success("Switch success");
+      return resolve(true);
+    }, 1000);
+  });
+};
 
 const beforeChange2 = () => {
-  loading2.value = true
+  loading2.value = true;
   return new Promise((_, reject) => {
     setTimeout(() => {
-      loading2.value = false
-      YuMessage.error('Switch failed')
-      return reject(new Error('Error'))
-    }, 1000)
-  })
-}
+      loading2.value = false;
+      YuMessage.error("Switch failed");
+      return reject(new Error("Error"));
+    }, 1000);
+  });
+};
 </script>

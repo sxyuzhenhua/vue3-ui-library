@@ -1,12 +1,12 @@
-import { UPDATE_MODEL_EVENT } from '@yu/constants'
-import { useSizeProp } from '@yu/hooks'
-import { buildProps, definePropType, isArray } from '@yu/utils'
+import { UPDATE_MODEL_EVENT } from "@yu/constants";
+import { useSizeProp } from "@yu/hooks";
+import { buildProps, definePropType, isArray } from "@yu/utils";
 
-import type { ExtractPropTypes } from 'vue'
-import type checkboxGroup from './checkbox-group.vue'
-import type { CheckboxValueType } from './checkbox'
+import type { ExtractPropTypes } from "vue";
+import type checkboxGroup from "./checkbox-group.vue";
+import type { CheckboxValueType } from "./checkbox";
 
-export type CheckboxGroupValueType = Exclude<CheckboxValueType, boolean>[]
+export type CheckboxGroupValueType = Exclude<CheckboxValueType, boolean>[];
 
 export const checkboxGroupProps = buildProps({
   /**
@@ -49,7 +49,7 @@ export const checkboxGroupProps = buildProps({
    */
   tag: {
     type: String,
-    default: 'div',
+    default: "div",
   },
   /**
    * @description whether to trigger form validation
@@ -58,13 +58,13 @@ export const checkboxGroupProps = buildProps({
     type: Boolean,
     default: true,
   },
-} as const)
+} as const);
 
 export const checkboxGroupEmits = {
   [UPDATE_MODEL_EVENT]: (val: CheckboxGroupValueType) => isArray(val),
   change: (val: CheckboxValueType[]) => isArray(val),
-}
+};
 
-export type CheckboxGroupProps = ExtractPropTypes<typeof checkboxGroupProps>
-export type CheckboxGroupEmits = typeof checkboxGroupEmits
-export type CheckboxGroupInstance = InstanceType<typeof checkboxGroup>
+export type CheckboxGroupProps = ExtractPropTypes<typeof checkboxGroupProps>;
+export type CheckboxGroupEmits = typeof checkboxGroupEmits;
+export type CheckboxGroupInstance = InstanceType<typeof checkboxGroup>;

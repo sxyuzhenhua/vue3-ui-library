@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useLang } from '../composables/lang'
-import localeData from '../../i18n/pages/not-found.json'
-import Home from './icons/home.vue'
+import { computed } from "vue";
+import { useLang } from "../composables/lang";
+import localeData from "../../i18n/pages/not-found.json";
+import Home from "./icons/home.vue";
 
-const lang = useLang()
+const lang = useLang();
 
-const locale = computed(() => localeData[lang.value])
+const locale = computed(() => localeData[lang.value]);
 
 const goHome = () => {
-  window.location.href = `/${lang.value}/`
-}
+  window.location.href = `/${lang.value}/`;
+};
 </script>
 
 <template>
-    <div class="not-fount-container">
-        <h3 class="not-title">404</h3>
-        <yu-icon class="back-home" :size="80" @click="goHome"><Home /></yu-icon>
-    </div>
+  <div class="not-fount-container">
+    <h3 class="not-title">404</h3>
+    <yu-icon class="back-home" :size="80" @click="goHome"><Home /></yu-icon>
+  </div>
 </template>
 
 <style scoped>
@@ -31,12 +31,12 @@ const goHome = () => {
   padding-top: 150px;
 }
 .not-title {
-    font-size: 100px;
-    font-weight: 400;
-    margin-bottom: 20px;
+  font-size: 100px;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
-.back-home{
-    width: 300px;
-    cursor: pointer;
+.back-home {
+  width: 300px;
+  cursor: pointer;
 }
 </style>

@@ -1,59 +1,50 @@
-import path from 'path'
-import { existsSync } from 'fs'
-import glob from 'fast-glob'
-import { Octokit } from 'octokit'
-import consola from 'consola'
-import chalk from 'chalk'
-import { chunk, mapValues, uniqBy } from 'lodash-es'
-import {
-  ensureDir,
-  errorAndExit,
-  projRoot,
-  writeJson,
-} from '@yu/build-utils'
-import {
-  REPO_BRANCH,
-  REPO_NAME,
-  REPO_OWNER,
-} from '@yu/build-constants'
+import path from "path";
+import { existsSync } from "fs";
+import glob from "fast-glob";
+import { Octokit } from "octokit";
+import consola from "consola";
+import chalk from "chalk";
+import { chunk, mapValues, uniqBy } from "lodash-es";
+import { ensureDir, errorAndExit, projRoot, writeJson } from "@yu/build-utils";
+import { REPO_BRANCH, REPO_NAME, REPO_OWNER } from "@yu/build-constants";
 
 interface FetchOption {
-  key: string
-  path: string
-  after?: string
+  key: string;
+  path: string;
+  after?: string;
 }
 
 interface ApiResult {
   pageInfo: {
-    hasNextPage: boolean
-    endCursor: string
-  }
+    hasNextPage: boolean;
+    endCursor: string;
+  };
   nodes: Array<{
-    oid: string
+    oid: string;
     author: {
-      avatarUrl: string
-      date: string
-      email: string
-      name: string
+      avatarUrl: string;
+      date: string;
+      email: string;
+      name: string;
       user?: {
-        login: string
-      }
-    }
-  }>
+        login: string;
+      };
+    };
+  }>;
 }
 
 interface ApiResponse {
   repository: {
-    object: Record<`path${number}`, ApiResult>
-  }
+    object: Record<`path${number}`, ApiResult>;
+  };
 }
 
 interface ContributorInfo {
-  login: string
-  name: string
-  email: string
-  avatar: string
-  count: number
+  login: string;
+  name: string;
+  email: string;
+  avatar: string;
+  count: number;
 }
 
 const fetchCommits = async (
@@ -67,7 +58,7 @@ const fetchCommits = async (
             .map(({ path, after }, index) => {
               return `
               path${index}: history(path: "${path}"${
-                after ? `, after: "${after}"` : ''
+                after ? `, after: "${after}"` : ""
               }) {
                 nodes {
                   oid
@@ -85,27 +76,28 @@ const fetchCommits = async (
                   hasNextPage
                   endCursor
                 }
-              }`
+              }`;
             })
-            .join('\n')}
+            .join("\n")}
         }
       }
     }
-  }`
-  const response = (await octokit.graphql<ApiResponse>(query)).repository.object
+  }`;
+  const response = (await octokit.graphql<ApiResponse>(query)).repository
+    .object;
   return Object.fromEntries(
     Object.entries(response).map(([key, result]) => {
-      const index = +key.replace('path', '')
-      return [index, result]
+      const index = +key.replace("path", "");
+      return [index, result];
     })
-  )
-}
+  );
+};
 
-const calcContributors = (commits: ApiResult['nodes']) => {
-  const contributors: Record<string, ContributorInfo> = {}
+const calcContributors = (commits: ApiResult["nodes"]) => {
+  const contributors: Record<string, ContributorInfo> = {};
   for (const { author } of commits) {
-    const login = author.user?.login
-    if (!login) continue
+    const login = author.user?.login;
+    if (!login) continue;
 
     if (!contributors[login])
       contributors[login] = {
@@ -114,12 +106,12 @@ const calcContributors = (commits: ApiResult['nodes']) => {
         email: author.email,
         avatar: author.avatarUrl,
         count: 0,
-      }
+      };
 
-    contributors[login].count++
+    contributors[login].count++;
   }
-  return Object.values(contributors).sort((a, b) => b.count - a.count)
-}
+  return Object.values(contributors).sort((a, b) => b.count - a.count);
+};
 
 const getContributorsByComponents = async (components: string[]) => {
   let options: FetchOption[] = components.flatMap((component) => [
@@ -127,75 +119,75 @@ const getContributorsByComponents = async (components: string[]) => {
     { key: component, path: `packages/theme-chalk/src/${component}.scss` },
     { key: component, path: `docs/examples/${component}` },
     { key: component, path: `docs/en-US/component/${component}.md` },
-  ])
-  const commits: Record<string /* component name */, ApiResult['nodes']> = {}
+  ]);
+  const commits: Record<string /* component name */, ApiResult["nodes"]> = {};
   do {
-    const results = await fetchCommits(options)
+    const results = await fetchCommits(options);
 
     for (const [i, result] of Object.values(results).entries()) {
-      const component = options[i].key
-      if (!commits[component]) commits[component] = []
-      commits[component].push(...result.nodes)
+      const component = options[i].key;
+      if (!commits[component]) commits[component] = [];
+      commits[component].push(...result.nodes);
     }
 
     options = options
       .map((option, index) => {
-        const pageInfo = results[index].pageInfo
-        const after = pageInfo.hasNextPage ? pageInfo.endCursor : undefined
-        return { ...option, after }
+        const pageInfo = results[index].pageInfo;
+        const after = pageInfo.hasNextPage ? pageInfo.endCursor : undefined;
+        return { ...option, after };
       })
-      .filter((option) => !!option.after)
-  } while (options.length > 0)
+      .filter((option) => !!option.after);
+  } while (options.length > 0);
 
   return mapValues(commits, (commits) =>
-    calcContributors(uniqBy(commits, 'oid'))
-  )
-}
+    calcContributors(uniqBy(commits, "oid"))
+  );
+};
 
 async function getContributors() {
-  if (!process.env.GITHUB_TOKEN) throw new Error('GITHUB_TOKEN is empty')
+  if (!process.env.GITHUB_TOKEN) throw new Error("GITHUB_TOKEN is empty");
 
-  const components = await glob('*', {
-    cwd: path.resolve(projRoot, 'packages/components'),
+  const components = await glob("*", {
+    cwd: path.resolve(projRoot, "packages/components"),
     onlyDirectories: true,
-  })
-  let contributors: Record<string, ContributorInfo[]> = {}
+  });
+  let contributors: Record<string, ContributorInfo[]> = {};
 
-  consola.info('Fetching contributors...')
+  consola.info("Fetching contributors...");
   for (const chunkComponents of chunk(components, 10)) {
     contributors = {
       ...contributors,
       ...(await getContributorsByComponents(chunkComponents)),
-    }
+    };
     consola.success(
-      chalk.green(`Fetched contributors: ${chunkComponents.join(', ')}`)
-    )
+      chalk.green(`Fetched contributors: ${chunkComponents.join(", ")}`)
+    );
   }
-  return contributors
+  return contributors;
 }
 
-const pathOutput = path.resolve(__dirname, '..', 'dist')
-const pathDest = path.resolve(pathOutput, 'contributors.json')
+const pathOutput = path.resolve(__dirname, "..", "dist");
+const pathDest = path.resolve(pathOutput, "contributors.json");
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
-})
+});
 
 async function main() {
-  await ensureDir(pathOutput)
+  await ensureDir(pathOutput);
 
-  let contributors: Record<string, ContributorInfo[]>
+  let contributors: Record<string, ContributorInfo[]>;
   if (process.env.DEV) {
-    if (existsSync(pathDest)) return
-    contributors = {}
+    if (existsSync(pathDest)) return;
+    contributors = {};
   } else {
     contributors = await getContributors().catch((err) => {
-      errorAndExit(err)
-    })
+      errorAndExit(err);
+    });
   }
 
-  await writeJson(pathDest, contributors)
-  consola.success(chalk.green('Contributors generated'))
+  await writeJson(pathDest, contributors);
+  consola.success(chalk.green("Contributors generated"));
 }
 
-main()
+main();

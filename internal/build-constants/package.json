@@ -2,6 +2,9 @@
   "name": "@yu/build-constants",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,9 +13,6 @@
     "dev": "pnpm run stub",
     "stub": "unbuild --stub"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "unbuild": "^1.0.1"
   }

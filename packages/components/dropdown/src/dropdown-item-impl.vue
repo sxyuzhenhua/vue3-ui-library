@@ -28,43 +28,43 @@
 
 <script lang="ts">
 // @ts-nocheck
-import { computed, defineComponent, inject } from 'vue'
+import { computed, defineComponent, inject } from "vue";
 import {
   ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY,
   ROVING_FOCUS_ITEM_COLLECTION_INJECTION_KEY,
-} from '@yu/components/roving-focus-group'
-import { COLLECTION_ITEM_SIGN } from '@yu/components/collection'
-import { YuIcon } from '@yu/components/icon'
-import { useNamespace } from '@yu/hooks'
-import { composeEventHandlers, composeRefs } from '@yu/utils'
-import { EVENT_CODE } from '@yu/constants'
+} from "@yu/components/roving-focus-group";
+import { COLLECTION_ITEM_SIGN } from "@yu/components/collection";
+import { YuIcon } from "@yu/components/icon";
+import { useNamespace } from "@yu/hooks";
+import { composeEventHandlers, composeRefs } from "@yu/utils";
+import { EVENT_CODE } from "@yu/constants";
 import {
   DROPDOWN_COLLECTION_ITEM_INJECTION_KEY,
   dropdownItemProps,
-} from './dropdown'
-import { DROPDOWN_INJECTION_KEY } from './tokens'
+} from "./dropdown";
+import { DROPDOWN_INJECTION_KEY } from "./tokens";
 
 export default defineComponent({
-  name: 'DropdownItemImpl',
+  name: "DropdownItemImpl",
   components: {
     YuIcon,
   },
   props: dropdownItemProps,
-  emits: ['pointermove', 'pointerleave', 'click', 'clickimpl'],
+  emits: ["pointermove", "pointerleave", "click", "clickimpl"],
   setup(_, { emit }) {
-    const ns = useNamespace('dropdown')
+    const ns = useNamespace("dropdown");
 
-    const { role: menuRole } = inject(DROPDOWN_INJECTION_KEY, undefined)!
+    const { role: menuRole } = inject(DROPDOWN_INJECTION_KEY, undefined)!;
 
     const { collectionItemRef: dropdownCollectionItemRef } = inject(
       DROPDOWN_COLLECTION_ITEM_INJECTION_KEY,
       undefined
-    )!
+    )!;
 
     const { collectionItemRef: rovingFocusCollectionItemRef } = inject(
       ROVING_FOCUS_ITEM_COLLECTION_INJECTION_KEY,
       undefined
-    )!
+    )!;
 
     const {
       rovingFocusGroupItemRef,
@@ -72,45 +72,45 @@ export default defineComponent({
       handleFocus,
       handleKeydown: handleItemKeydown,
       handleMousedown,
-    } = inject(ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY, undefined)!
+    } = inject(ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY, undefined)!;
 
     const itemRef = composeRefs(
       dropdownCollectionItemRef,
       rovingFocusCollectionItemRef,
       rovingFocusGroupItemRef
-    )
+    );
 
     const role = computed<string>(() => {
-      if (menuRole.value === 'menu') {
-        return 'menuitem'
-      } else if (menuRole.value === 'navigation') {
-        return 'link'
+      if (menuRole.value === "menu") {
+        return "menuitem";
+      } else if (menuRole.value === "navigation") {
+        return "link";
       }
-      return 'button'
-    })
+      return "button";
+    });
 
     const handleKeydown = composeEventHandlers((e: KeyboardEvent) => {
-      const { code } = e
+      const { code } = e;
       if (code === EVENT_CODE.enter || code === EVENT_CODE.space) {
-        e.preventDefault()
-        e.stopImmediatePropagation()
-        emit('clickimpl', e)
-        return true
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        emit("clickimpl", e);
+        return true;
       }
-    }, handleItemKeydown)
+    }, handleItemKeydown);
 
     return {
       ns,
       itemRef,
       dataset: {
-        [COLLECTION_ITEM_SIGN]: '',
+        [COLLECTION_ITEM_SIGN]: "",
       },
       role,
       tabIndex,
       handleFocus,
       handleKeydown,
       handleMousedown,
-    }
+    };
   },
-})
+});
 </script>

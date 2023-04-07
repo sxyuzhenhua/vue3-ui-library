@@ -1,8 +1,8 @@
-import { useToggle } from '@vueuse/core'
+import { useToggle } from "@vueuse/core";
 export const useFullScreen = () => {
-  const [isFullScreen, toggleFullScreen] = useToggle()
+  const [isFullScreen, toggleFullScreen] = useToggle();
   return {
     isFullScreen,
     toggleFullScreen,
-  }
-}
+  };
+};

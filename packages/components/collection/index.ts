@@ -1,3 +1,3 @@
-export * from './src/collection'
+export * from "./src/collection";
 
-export * from './src/tokens'
+export * from "./src/tokens";

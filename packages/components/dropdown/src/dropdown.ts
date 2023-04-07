@@ -1,42 +1,42 @@
 // @ts-nocheck
-import { buildProps, definePropType, iconPropType } from '@yu/utils'
-import { EVENT_CODE } from '@yu/constants'
-import { createCollectionWithScope } from '@yu/components/collection'
+import { buildProps, definePropType, iconPropType } from "@yu/utils";
+import { EVENT_CODE } from "@yu/constants";
+import { createCollectionWithScope } from "@yu/components/collection";
 import {
   useTooltipContentProps,
   useTooltipTriggerProps,
-} from '@yu/components/tooltip'
+} from "@yu/components/tooltip";
 
-import type { Options } from '@popperjs/core'
-import type { ButtonProps, ButtonType } from '@yu/components/button'
-import type { Placement } from '@yu/components/popper'
-import type { ComponentInternalInstance, ComputedRef } from 'vue'
-import type { Nullable } from '@yu/utils'
+import type { Options } from "@popperjs/core";
+import type { ButtonProps, ButtonType } from "@yu/components/button";
+import type { Placement } from "@yu/components/popper";
+import type { ComponentInternalInstance, ComputedRef } from "vue";
+import type { Nullable } from "@yu/utils";
 
 export interface IElDropdownInstance {
-  instance?: ComponentInternalInstance
-  dropdownSize?: ComputedRef<string>
-  handleClick?: () => void
-  commandHandler?: (...arg) => void
-  show?: () => void
-  hide?: () => void
-  trigger?: ComputedRef<string>
-  hideOnClick?: ComputedRef<boolean>
-  triggerElm?: ComputedRef<Nullable<HTMLButtonElement>>
+  instance?: ComponentInternalInstance;
+  dropdownSize?: ComputedRef<string>;
+  handleClick?: () => void;
+  commandHandler?: (...arg) => void;
+  show?: () => void;
+  hide?: () => void;
+  trigger?: ComputedRef<string>;
+  hideOnClick?: ComputedRef<boolean>;
+  triggerElm?: ComputedRef<Nullable<HTMLButtonElement>>;
 }
 
 export const dropdownProps = buildProps({
   trigger: useTooltipTriggerProps.trigger,
   effect: {
     ...useTooltipContentProps.effect,
-    default: 'light',
+    default: "light",
   },
   type: {
     type: definePropType<ButtonType>(String),
   },
   placement: {
     type: definePropType<Placement>(String),
-    default: 'bottom',
+    default: "bottom",
   },
   popperOptions: {
     type: definePropType<Partial<Options>>(Object),
@@ -45,7 +45,7 @@ export const dropdownProps = buildProps({
   id: String,
   size: {
     type: String,
-    default: '',
+    default: "",
   },
   splitButton: Boolean,
   hideOnClick: {
@@ -70,11 +70,11 @@ export const dropdownProps = buildProps({
   },
   maxHeight: {
     type: definePropType<number | string>([Number, String]),
-    default: '',
+    default: "",
   },
   popperClass: {
     type: String,
-    default: '',
+    default: "",
   },
   disabled: {
     type: Boolean,
@@ -82,13 +82,13 @@ export const dropdownProps = buildProps({
   },
   role: {
     type: String,
-    default: 'menu',
+    default: "menu",
   },
   buttonProps: {
     type: definePropType<ButtonProps>(Object),
   },
   teleported: useTooltipContentProps.teleported,
-} as const)
+} as const);
 
 export const dropdownItemProps = buildProps({
   command: {
@@ -101,32 +101,32 @@ export const dropdownItemProps = buildProps({
   icon: {
     type: iconPropType,
   },
-} as const)
+} as const);
 
 export const dropdownMenuProps = buildProps({
   onKeydown: { type: definePropType<(e: KeyboardEvent) => void>(Function) },
-})
+});
 
 export const FIRST_KEYS = [
   EVENT_CODE.down,
   EVENT_CODE.pageDown,
   EVENT_CODE.home,
-]
+];
 
-export const LAST_KEYS = [EVENT_CODE.up, EVENT_CODE.pageUp, EVENT_CODE.end]
+export const LAST_KEYS = [EVENT_CODE.up, EVENT_CODE.pageUp, EVENT_CODE.end];
 
-export const FIRST_LAST_KEYS = [...FIRST_KEYS, ...LAST_KEYS]
+export const FIRST_LAST_KEYS = [...FIRST_KEYS, ...LAST_KEYS];
 
 const {
   YuCollection,
   YuCollectionItem,
   COLLECTION_INJECTION_KEY,
   COLLECTION_ITEM_INJECTION_KEY,
-} = createCollectionWithScope('Dropdown')
+} = createCollectionWithScope("Dropdown");
 
 export {
   YuCollection,
   YuCollectionItem,
   COLLECTION_INJECTION_KEY as DROPDOWN_COLLECTION_INJECTION_KEY,
   COLLECTION_ITEM_INJECTION_KEY as DROPDOWN_COLLECTION_ITEM_INJECTION_KEY,
-}
+};

@@ -1,7 +1,7 @@
-import YuFocusTrap from './src/focus-trap.vue'
+import YuFocusTrap from "./src/focus-trap.vue";
 
-export { YuFocusTrap }
+export { YuFocusTrap };
 
-export default YuFocusTrap
-export * from './src/tokens'
-export * from './src/utils'
+export default YuFocusTrap;
+export * from "./src/tokens";
+export * from "./src/utils";

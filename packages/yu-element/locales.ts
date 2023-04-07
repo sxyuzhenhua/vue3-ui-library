@@ -1,1 +1,1 @@
-export * from '@yu/locale'
+export * from "@yu/locale";

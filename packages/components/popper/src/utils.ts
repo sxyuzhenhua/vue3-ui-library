@@ -1,50 +1,50 @@
-import { isClient, unrefElement } from '@vueuse/core'
+import { isClient, unrefElement } from "@vueuse/core";
 
-import type { ComponentPublicInstance } from 'vue'
-import type { MaybeRef } from '@vueuse/core'
-import type { Measurable } from '@yu/tokens'
-import type { PopperCoreConfigProps } from './content'
+import type { ComponentPublicInstance } from "vue";
+import type { MaybeRef } from "@vueuse/core";
+import type { Measurable } from "@yu/tokens";
+import type { PopperCoreConfigProps } from "./content";
 
 type ArrowProps = {
-  arrowEl: HTMLElement | undefined
-  arrowOffset: number | undefined
-}
+  arrowEl: HTMLElement | undefined;
+  arrowOffset: number | undefined;
+};
 
 export const buildPopperOptions = (
   props: PopperCoreConfigProps,
   arrowProps: ArrowProps
 ) => {
-  const { placement, strategy, popperOptions } = props
+  const { placement, strategy, popperOptions } = props;
   const options = {
     placement,
     strategy,
     ...popperOptions,
     modifiers: genModifiers(props),
-  }
+  };
 
-  attachArrow(options, arrowProps)
-  deriveExtraModifiers(options, popperOptions?.modifiers)
-  return options
-}
+  attachArrow(options, arrowProps);
+  deriveExtraModifiers(options, popperOptions?.modifiers);
+  return options;
+};
 
 export const unwrapMeasurableEl = (
   $el: MaybeRef<Measurable | undefined | ComponentPublicInstance>
 ) => {
-  if (!isClient) return
-  return unrefElement($el as HTMLElement)
-}
+  if (!isClient) return;
+  return unrefElement($el as HTMLElement);
+};
 
 function genModifiers(options: PopperCoreConfigProps) {
-  const { offset, gpuAcceleration, fallbackPlacements } = options
+  const { offset, gpuAcceleration, fallbackPlacements } = options;
   return [
     {
-      name: 'offset',
+      name: "offset",
       options: {
         offset: [0, offset ?? 12],
       },
     },
     {
-      name: 'preventOverflow',
+      name: "preventOverflow",
       options: {
         padding: {
           top: 2,
@@ -55,36 +55,36 @@ function genModifiers(options: PopperCoreConfigProps) {
       },
     },
     {
-      name: 'flip',
+      name: "flip",
       options: {
         padding: 5,
         fallbackPlacements,
       },
     },
     {
-      name: 'computeStyles',
+      name: "computeStyles",
       options: {
         gpuAcceleration,
       },
     },
-  ]
+  ];
 }
 
 function attachArrow(options: any, { arrowEl, arrowOffset }: ArrowProps) {
   options.modifiers.push({
-    name: 'arrow',
+    name: "arrow",
     options: {
       element: arrowEl,
       padding: arrowOffset ?? 5,
     },
-  } as any)
+  } as any);
 }
 
 function deriveExtraModifiers(
   options: any,
-  modifiers: PopperCoreConfigProps['popperOptions']['modifiers']
+  modifiers: PopperCoreConfigProps["popperOptions"]["modifiers"]
 ) {
   if (modifiers) {
-    options.modifiers = [...options.modifiers, ...(modifiers ?? [])]
+    options.modifiers = [...options.modifiers, ...(modifiers ?? [])];
   }
 }

@@ -1,6 +1,6 @@
-import { buildProps } from '@yu/utils'
-import type { ExtractPropTypes } from 'vue'
-import type Thumb from './thumb.vue'
+import { buildProps } from "@yu/utils";
+import type { ExtractPropTypes } from "vue";
+import type Thumb from "./thumb.vue";
 
 export const thumbProps = buildProps({
   vertical: Boolean,
@@ -11,7 +11,7 @@ export const thumbProps = buildProps({
     required: true,
   },
   always: Boolean,
-} as const)
-export type ThumbProps = ExtractPropTypes<typeof thumbProps>
+} as const);
+export type ThumbProps = ExtractPropTypes<typeof thumbProps>;
 
-export type ThumbInstance = InstanceType<typeof Thumb>
+export type ThumbInstance = InstanceType<typeof Thumb>;

@@ -1,9 +1,9 @@
-import { withInstall } from '@yu/utils'
+import { withInstall } from "@yu/utils";
 
-import Backtop from './src/backtop.vue'
+import Backtop from "./src/backtop.vue";
 
-export const YuBacktop = withInstall(Backtop)
-export default YuBacktop
+export const YuBacktop = withInstall(Backtop);
+export default YuBacktop;
 
-export * from './src/backtop'
-export type { BacktopInstance } from './src/instance'
+export * from "./src/backtop";
+export type { BacktopInstance } from "./src/instance";

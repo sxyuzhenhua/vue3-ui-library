@@ -1,8 +1,8 @@
-import { withInstall } from '@yu/utils'
+import { withInstall } from "@yu/utils";
 
-import Col from './src/col.vue'
+import Col from "./src/col.vue";
 
-export const YuCol = withInstall(Col)
-export default YuCol
+export const YuCol = withInstall(Col);
+export default YuCol;
 
-export * from './src/col'
+export * from "./src/col";

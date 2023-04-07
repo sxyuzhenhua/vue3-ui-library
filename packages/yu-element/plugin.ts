@@ -1,7 +1,5 @@
-import { YuMessage } from '@yu/components/message'
+import { YuMessage } from "@yu/components/message";
 
-import type { Plugin } from 'vue'
+import type { Plugin } from "vue";
 
-export default [
-    YuMessage,
-] as Plugin[]
+export default [YuMessage] as Plugin[];

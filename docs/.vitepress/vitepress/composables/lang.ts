@@ -1,18 +1,18 @@
-import { computed } from 'vue'
-import { useRoute } from 'vitepress'
-const defaultLang = 'en-US'
+import { computed } from "vue";
+import { useRoute } from "vitepress";
+const defaultLang = "en-US";
 
 export const useLang = () => {
-  const route = useRoute()
+  const route = useRoute();
   return computed(() => {
-    const path = route.data?.relativePath
-    let lang: string
+    const path = route.data?.relativePath;
+    let lang: string;
 
-    if (path?.includes('/')) {
-      lang = path.split('/').shift()! || defaultLang
+    if (path?.includes("/")) {
+      lang = path.split("/").shift()! || defaultLang;
     } else {
-      lang = defaultLang
+      lang = defaultLang;
     }
-    return lang
-  })
-}
+    return lang;
+  });
+};

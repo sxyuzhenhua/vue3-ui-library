@@ -1,19 +1,19 @@
-import { buildProps, definePropType, mutable } from '@yu/utils'
-import type { ExtractPropTypes } from 'vue'
-import type Col from './col.vue'
+import { buildProps, definePropType, mutable } from "@yu/utils";
+import type { ExtractPropTypes } from "vue";
+import type Col from "./col.vue";
 
 export type ColSizeObject = {
-  span?: number
-  offset?: number
-  pull?: number
-  push?: number
-}
-export type ColSize = number | ColSizeObject
+  span?: number;
+  offset?: number;
+  pull?: number;
+  push?: number;
+};
+export type ColSize = number | ColSizeObject;
 
 export const colProps = buildProps({
   tag: {
     type: String,
-    default: 'div',
+    default: "div",
   },
   span: {
     type: Number,
@@ -51,6 +51,6 @@ export const colProps = buildProps({
     type: definePropType<ColSize>([Number, Object]),
     default: () => mutable({} as const),
   },
-} as const)
-export type ColProps = ExtractPropTypes<typeof colProps>
-export type ColInstance = InstanceType<typeof Col>
+} as const);
+export type ColProps = ExtractPropTypes<typeof colProps>;
+export type ColInstance = InstanceType<typeof Col>;

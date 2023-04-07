@@ -1,5 +1,4 @@
 {
-    "root": true,
-    "extends": ["@yu/eslint-config"]
-  }
-  
+  "root": true,
+  "extends": ["@yu/eslint-config"]
+}

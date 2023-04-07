@@ -1,29 +1,20 @@
-import { placements } from '@popperjs/core'
-import {
-  buildProps,
-  definePropType,
-  isArray,
-  isNumber,
-} from '@yu/utils'
-import {
-  CHANGE_EVENT,
-  INPUT_EVENT,
-  UPDATE_MODEL_EVENT,
-} from '@yu/constants'
-import { useSizeProp } from '@yu/hooks'
-import type { Arrayable } from '@yu/utils'
-import type { ExtractPropTypes } from 'vue'
-import type { SliderMarkerProps } from './marker'
-import type Slider from './slider.vue'
+import { placements } from "@popperjs/core";
+import { buildProps, definePropType, isArray, isNumber } from "@yu/utils";
+import { CHANGE_EVENT, INPUT_EVENT, UPDATE_MODEL_EVENT } from "@yu/constants";
+import { useSizeProp } from "@yu/hooks";
+import type { Arrayable } from "@yu/utils";
+import type { ExtractPropTypes } from "vue";
+import type { SliderMarkerProps } from "./marker";
+import type Slider from "./slider.vue";
 
-type SliderMarks = Record<number, string | SliderMarkerProps['mark']>
+type SliderMarks = Record<number, string | SliderMarkerProps["mark"]>;
 
 export interface SliderInitData {
-  firstValue: number
-  secondValue: number
-  oldValue?: Arrayable<number>
-  dragging: boolean
-  sliderSize: number
+  firstValue: number;
+  secondValue: number;
+  oldValue?: Arrayable<number>;
+  dragging: boolean;
+  sliderSize: number;
 }
 
 export const sliderProps = buildProps({
@@ -94,7 +85,7 @@ export const sliderProps = buildProps({
   placement: {
     type: String,
     values: placements,
-    default: 'top',
+    default: "top",
   },
   marks: {
     type: definePropType<SliderMarks>(Object),
@@ -103,16 +94,16 @@ export const sliderProps = buildProps({
     type: Boolean,
     default: true,
   },
-} as const)
-export type SliderProps = ExtractPropTypes<typeof sliderProps>
+} as const);
+export type SliderProps = ExtractPropTypes<typeof sliderProps>;
 
 const isValidValue = (value: Arrayable<number>) =>
-  isNumber(value) || (isArray(value) && value.every(isNumber))
+  isNumber(value) || (isArray(value) && value.every(isNumber));
 export const sliderEmits = {
   [UPDATE_MODEL_EVENT]: isValidValue,
   [INPUT_EVENT]: isValidValue,
   [CHANGE_EVENT]: isValidValue,
-}
-export type SliderEmits = typeof sliderEmits
+};
+export type SliderEmits = typeof sliderEmits;
 
-export type SliderInstance = InstanceType<typeof Slider>
+export type SliderInstance = InstanceType<typeof Slider>;

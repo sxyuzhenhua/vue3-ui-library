@@ -1,2 +1,2 @@
-import '@yu/components/base/style'
-import '@yu/theme-chalk/src/input.scss'
+import "@yu/components/base/style";
+import "@yu/theme-chalk/src/input.scss";

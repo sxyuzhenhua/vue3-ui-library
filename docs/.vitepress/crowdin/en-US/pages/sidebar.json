@@ -1,13 +1,12 @@
 [
-    {
-      "text": "Guide",
-      "link": "/guide/introduce",
-      "activeMatch": "/guide/"
-    },
-    {
-      "text": "Component",
-      "link": "/component/button",
-      "activeMatch": "/component/"
-    }
+  {
+    "text": "Guide",
+    "link": "/guide/introduce",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "Component",
+    "link": "/component/button",
+    "activeMatch": "/component/"
+  }
 ]
-  

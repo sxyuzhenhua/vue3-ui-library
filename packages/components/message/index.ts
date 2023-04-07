@@ -1,8 +1,8 @@
-import { withInstallFunction } from '@yu/utils'
+import { withInstallFunction } from "@yu/utils";
 
-import Message from './src/method'
+import Message from "./src/method";
 
-export const YuMessage = withInstallFunction(Message, '$message')
-export default YuMessage
+export const YuMessage = withInstallFunction(Message, "$message");
+export default YuMessage;
 
-export * from './src/message'
+export * from "./src/message";

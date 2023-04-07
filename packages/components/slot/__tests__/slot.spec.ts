@@ -1,15 +1,15 @@
-import { mount } from '@vue/test-utils'
-import Slot from '../src/index.vue'
+import { mount } from "@vue/test-utils";
+import Slot from "../src/index.vue";
 
-const AXIOM = 'Rem is the best girl'
+const AXIOM = "Rem is the best girl";
 
-describe('Slot.vue', () => {
-  test('render test', () => {
+describe("Slot.vue", () => {
+  test("render test", () => {
     const wrapper = mount(Slot, {
       slots: {
         default: AXIOM,
       },
-    })
-    expect(wrapper.text()).toEqual(AXIOM)
-  })
-})
+    });
+    expect(wrapper.text()).toEqual(AXIOM);
+  });
+});

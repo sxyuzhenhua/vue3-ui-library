@@ -1,8 +1,8 @@
-import { withInstall } from '@yu/utils'
+import { withInstall } from "@yu/utils";
 
-import Badge from './src/badge.vue'
+import Badge from "./src/badge.vue";
 
-export const YuBadge = withInstall(Badge)
-export default YuBadge
+export const YuBadge = withInstall(Badge);
+export default YuBadge;
 
-export * from './src/badge'
+export * from "./src/badge";

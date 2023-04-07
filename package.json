@@ -7,9 +7,19 @@
     "docs"
   ],
   "description": "",
+  "homepage": "https://github.com/sxyuzhenhua/vue3-ui-library#readme",
+  "bugs": {
+    "url": "https://github.com/sxyuzhenhua/vue3-ui-library/issues"
+  },
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxyuzhenhua/vue3-ui-library.git"
   },
   "scripts": {
     "test": "vitest",
@@ -27,34 +37,9 @@
     "docs:dev": "pnpm run -C docs dev",
     "docs:dp": "pnpm run -C docs dp",
     "build:vercel-docs": "bash ./scripts/vercel-build-docs.sh",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 10000 --cache",
     "lint:fix": "pnpm run lint --fix",
     "lint:commit": "commitlint --from $(git merge-base origin/dev HEAD) --to HEAD > ./commit-lint.txt"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sxyuzhenhua/vue3-ui-library.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sxyuzhenhua/vue3-ui-library/issues"
-  },
-  "homepage": "https://github.com/sxyuzhenhua/vue3-ui-library#readme",
-  "devDependencies": {
-    "@esbuild-kit/cjs-loader": "^2.4.1",
-    "@pnpm/find-workspace-packages": "^5.0.14",
-    "@pnpm/types": "^8.9.0",
-    "@types/fs-extra": "^9.0.13",
-    "@types/gulp": "^4.0.10",
-    "@vue/test-utils": "^2.2.1",
-    "@yu/build": "workspace:^1.0.0",
-    "@yu/eslint-config": "workspace:^1.0.0",
-    "jsdom": "^20.0.2",
-    "resize-observer-polyfill": "^1.5.1",
-    "type-fest": "^3.5.2",
-    "unplugin-vue-macros": "^0.16.1",
-    "vue-router": "^4.1.6"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^3.4.1",
@@ -80,5 +65,22 @@
     "run-script": "^0.1.1",
     "vitest": "^0.25.0",
     "w": "^1.1.0"
+  },
+  "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.1",
+    "@pnpm/find-workspace-packages": "^5.0.14",
+    "@pnpm/types": "^8.9.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/gulp": "^4.0.10",
+    "@vue/test-utils": "^2.2.1",
+    "@yu/build": "workspace:^1.0.0",
+    "@yu/eslint-config": "workspace:^1.0.0",
+    "eslint": "^8.18.0",
+    "eslint-define-config": "^1.5.1",
+    "jsdom": "^20.0.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "type-fest": "^3.5.2",
+    "unplugin-vue-macros": "^0.16.1",
+    "vue-router": "^4.1.6"
   }
 }

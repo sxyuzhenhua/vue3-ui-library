@@ -1,6 +1,6 @@
-export const defaultLang = 'en-US'
+export const defaultLang = "en-US";
 
-export const PREFERRED_LANG_KEY = 'preferred_lang'
+export const PREFERRED_LANG_KEY = "preferred_lang";
 
 export const breakpoints = {
   sm: 480,
@@ -8,4 +8,4 @@ export const breakpoints = {
   lg: 960,
   xlg: 1280,
   xxl: 1440,
-}
+};

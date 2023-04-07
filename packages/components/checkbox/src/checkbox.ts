@@ -1,11 +1,11 @@
-import { UPDATE_MODEL_EVENT } from '@yu/constants'
-import { useSizeProp } from '@yu/hooks'
-import { isBoolean, isNumber, isString } from '@yu/utils'
+import { UPDATE_MODEL_EVENT } from "@yu/constants";
+import { useSizeProp } from "@yu/hooks";
+import { isBoolean, isNumber, isString } from "@yu/utils";
 
-import type { ExtractPropTypes } from 'vue'
-import type Checkbox from './checkbox.vue'
+import type { ExtractPropTypes } from "vue";
+import type Checkbox from "./checkbox.vue";
 
-export type CheckboxValueType = string | number | boolean
+export type CheckboxValueType = string | number | boolean;
 
 export const checkboxProps = {
   /**
@@ -87,15 +87,15 @@ export const checkboxProps = {
     type: Boolean,
     default: true,
   },
-}
+};
 
 export const checkboxEmits = {
   [UPDATE_MODEL_EVENT]: (val: CheckboxValueType) =>
     isString(val) || isNumber(val) || isBoolean(val),
   change: (val: CheckboxValueType) =>
     isString(val) || isNumber(val) || isBoolean(val),
-}
+};
 
-export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>
-export type CheckboxEmits = typeof checkboxEmits
-export type CheckboxInstance = InstanceType<typeof Checkbox>
+export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>;
+export type CheckboxEmits = typeof checkboxEmits;
+export type CheckboxInstance = InstanceType<typeof Checkbox>;

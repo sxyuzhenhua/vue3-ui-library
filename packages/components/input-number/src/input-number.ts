@@ -1,13 +1,9 @@
-import { isNil } from 'lodash-unified'
-import { useSizeProp } from '@yu/hooks'
-import { buildProps, isNumber } from '@yu/utils'
-import {
-  CHANGE_EVENT,
-  INPUT_EVENT,
-  UPDATE_MODEL_EVENT,
-} from '@yu/constants'
-import type { ExtractPropTypes } from 'vue'
-import type InputNumber from './input-number.vue'
+import { isNil } from "lodash-unified";
+import { useSizeProp } from "@yu/hooks";
+import { buildProps, isNumber } from "@yu/utils";
+import { CHANGE_EVENT, INPUT_EVENT, UPDATE_MODEL_EVENT } from "@yu/constants";
+import type { ExtractPropTypes } from "vue";
+import type InputNumber from "./input-number.vue";
 
 export const inputNumberProps = buildProps({
   id: {
@@ -37,13 +33,13 @@ export const inputNumberProps = buildProps({
   },
   controlsPosition: {
     type: String,
-    default: '',
-    values: ['', 'right'],
+    default: "",
+    values: ["", "right"],
   },
   valueOnClear: {
     type: [String, Number, null],
-    validator: (val: 'min' | 'max' | number | null) =>
-      val === null || isNumber(val) || ['min', 'max'].includes(val),
+    validator: (val: "min" | "max" | number | null) =>
+      val === null || isNumber(val) || ["min", "max"].includes(val),
     default: null,
   },
   name: String,
@@ -58,8 +54,8 @@ export const inputNumberProps = buildProps({
     type: Boolean,
     default: true,
   },
-} as const)
-export type InputNumberProps = ExtractPropTypes<typeof inputNumberProps>
+} as const);
+export type InputNumberProps = ExtractPropTypes<typeof inputNumberProps>;
 
 export const inputNumberEmits = {
   [CHANGE_EVENT]: (prev: number | undefined, cur: number | undefined) =>
@@ -70,7 +66,7 @@ export const inputNumberEmits = {
     isNumber(val) || isNil(val),
   [UPDATE_MODEL_EVENT]: (val: number | undefined) =>
     isNumber(val) || isNil(val),
-}
-export type InputNumberEmits = typeof inputNumberEmits
+};
+export type InputNumberEmits = typeof inputNumberEmits;
 
-export type InputNumberInstance = InstanceType<typeof InputNumber>
+export type InputNumberInstance = InstanceType<typeof InputNumber>;

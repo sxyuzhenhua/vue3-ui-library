@@ -1,16 +1,11 @@
-import { isString } from '@vue/shared'
-import {
-  buildProps,
-  definePropType,
-  iconPropType,
-  mutable,
-} from '@yu/utils'
-import { UPDATE_MODEL_EVENT } from '@yu/constants'
-import { useSizeProp } from '@yu/hooks'
-import type Input from './input.vue'
-import type { ExtractPropTypes, StyleValue } from 'vue'
+import { isString } from "@vue/shared";
+import { buildProps, definePropType, iconPropType, mutable } from "@yu/utils";
+import { UPDATE_MODEL_EVENT } from "@yu/constants";
+import { useSizeProp } from "@yu/hooks";
+import type Input from "./input.vue";
+import type { ExtractPropTypes, StyleValue } from "vue";
 
-export type InputAutoSize = { minRows?: number; maxRows?: number } | boolean
+export type InputAutoSize = { minRows?: number; maxRows?: number } | boolean;
 
 export const inputProps = buildProps({
   id: {
@@ -25,15 +20,15 @@ export const inputProps = buildProps({
       Number,
       Object,
     ]),
-    default: '',
+    default: "",
   },
   type: {
     type: String,
-    default: 'text',
+    default: "text",
   },
   resize: {
     type: String,
-    values: ['none', 'both', 'horizontal', 'vertical'],
+    values: ["none", "both", "horizontal", "vertical"],
   },
   autosize: {
     type: definePropType<InputAutoSize>([Boolean, Object]),
@@ -41,7 +36,7 @@ export const inputProps = buildProps({
   },
   autocomplete: {
     type: String,
-    default: 'off',
+    default: "off",
   },
   formatter: {
     type: Function,
@@ -97,8 +92,8 @@ export const inputProps = buildProps({
     type: definePropType<StyleValue>([Object, Array, String]),
     default: () => mutable({} as const),
   },
-} as const)
-export type InputProps = ExtractPropTypes<typeof inputProps>
+} as const);
+export type InputProps = ExtractPropTypes<typeof inputProps>;
 
 export const inputEmits = {
   [UPDATE_MODEL_EVENT]: (value: string) => isString(value),
@@ -115,7 +110,7 @@ export const inputEmits = {
   compositionstart: (evt: CompositionEvent) => evt instanceof CompositionEvent,
   compositionupdate: (evt: CompositionEvent) => evt instanceof CompositionEvent,
   compositionend: (evt: CompositionEvent) => evt instanceof CompositionEvent,
-}
-export type InputEmits = typeof inputEmits
+};
+export type InputEmits = typeof inputEmits;
 
-export type InputInstance = InstanceType<typeof Input>
+export type InputInstance = InstanceType<typeof Input>;

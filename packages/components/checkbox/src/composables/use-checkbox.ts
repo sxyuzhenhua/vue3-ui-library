@@ -1,56 +1,56 @@
-import { useFormItem, useFormItemInputId } from '@yu/hooks'
-import { isArray } from '@yu/utils'
-import { useCheckboxDisabled } from './use-checkbox-disabled'
-import { useCheckboxEvent } from './use-checkbox-event'
-import { useCheckboxModel } from './use-checkbox-model'
-import { useCheckboxStatus } from './use-checkbox-status'
+import { useFormItem, useFormItemInputId } from "@yu/hooks";
+import { isArray } from "@yu/utils";
+import { useCheckboxDisabled } from "./use-checkbox-disabled";
+import { useCheckboxEvent } from "./use-checkbox-event";
+import { useCheckboxModel } from "./use-checkbox-model";
+import { useCheckboxStatus } from "./use-checkbox-status";
 
-import type { ComponentInternalInstance } from 'vue'
-import type { CheckboxProps } from '../checkbox'
-import type { CheckboxModel } from './use-checkbox-model'
+import type { ComponentInternalInstance } from "vue";
+import type { CheckboxProps } from "../checkbox";
+import type { CheckboxModel } from "./use-checkbox-model";
 
 const setStoreValue = (
   props: CheckboxProps,
-  { model }: Pick<CheckboxModel, 'model'>
+  { model }: Pick<CheckboxModel, "model">
 ) => {
   function addToStore() {
     if (isArray(model.value) && !model.value.includes(props.label)) {
-      model.value.push(props.label)
+      model.value.push(props.label);
     } else {
-      model.value = props.trueLabel || true
+      model.value = props.trueLabel || true;
     }
   }
-  props.checked && addToStore()
-}
+  props.checked && addToStore();
+};
 
 export const useCheckbox = (
   props: CheckboxProps,
-  slots: ComponentInternalInstance['slots']
+  slots: ComponentInternalInstance["slots"]
 ) => {
-  const { formItem: elFormItem } = useFormItem()
-  const { model, isGroup, isLimitExceeded } = useCheckboxModel(props)
+  const { formItem: elFormItem } = useFormItem();
+  const { model, isGroup, isLimitExceeded } = useCheckboxModel(props);
   const {
     isFocused,
     isChecked,
     checkboxButtonSize,
     checkboxSize,
     hasOwnLabel,
-  } = useCheckboxStatus(props, slots, { model })
-  const { isDisabled } = useCheckboxDisabled({ model, isChecked })
+  } = useCheckboxStatus(props, slots, { model });
+  const { isDisabled } = useCheckboxDisabled({ model, isChecked });
   const { inputId, isLabeledByFormItem } = useFormItemInputId(props, {
     formItemContext: elFormItem,
     disableIdGeneration: hasOwnLabel,
     disableIdManagement: isGroup,
-  })
+  });
   const { handleChange, onClickRoot } = useCheckboxEvent(props, {
     model,
     isLimitExceeded,
     hasOwnLabel,
     isDisabled,
     isLabeledByFormItem,
-  })
+  });
 
-  setStoreValue(props, { model })
+  setStoreValue(props, { model });
 
   return {
     inputId,
@@ -64,5 +64,5 @@ export const useCheckbox = (
     model,
     handleChange,
     onClickRoot,
-  }
-}
+  };
+};

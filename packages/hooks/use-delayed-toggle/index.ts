@@ -1,8 +1,8 @@
-import { unref } from 'vue'
-import { buildProps } from '@yu/utils'
-import { useTimeout } from '../use-timeout'
+import { unref } from "vue";
+import { buildProps } from "@yu/utils";
+import { useTimeout } from "../use-timeout";
 
-import type { ExtractPropTypes, ToRefs } from 'vue'
+import type { ExtractPropTypes, ToRefs } from "vue";
 
 export const useDelayedToggleProps = buildProps({
   showAfter: {
@@ -13,12 +13,12 @@ export const useDelayedToggleProps = buildProps({
     type: Number,
     default: 200,
   },
-} as const)
+} as const);
 
 export type UseDelayedToggleProps = {
-  open: (event?: Event) => void
-  close: (event?: Event) => void
-} & ToRefs<ExtractPropTypes<typeof useDelayedToggleProps>>
+  open: (event?: Event) => void;
+  close: (event?: Event) => void;
+} & ToRefs<ExtractPropTypes<typeof useDelayedToggleProps>>;
 
 export const useDelayedToggle = ({
   showAfter,
@@ -26,22 +26,22 @@ export const useDelayedToggle = ({
   open,
   close,
 }: UseDelayedToggleProps) => {
-  const { registerTimeout } = useTimeout()
+  const { registerTimeout } = useTimeout();
 
   const onOpen = (event?: Event) => {
     registerTimeout(() => {
-      open(event)
-    }, unref(showAfter))
-  }
+      open(event);
+    }, unref(showAfter));
+  };
 
   const onClose = (event?: Event) => {
     registerTimeout(() => {
-      close(event)
-    }, unref(hideAfter))
-  }
+      close(event);
+    }, unref(hideAfter));
+  };
 
   return {
     onOpen,
     onClose,
-  }
-}
+  };
+};

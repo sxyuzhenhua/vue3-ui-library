@@ -1,58 +1,57 @@
 <template>
-    <yu-scrollbar ref="scrollbarRef" height="400px" always @scroll="scroll">
-      <div ref="innerRef">
-        <p v-for="item in 20" :key="item" class="scrollbar-demo-item">
-          {{ item }}
-        </p>
-      </div>
-    </yu-scrollbar>
-  
-    <yu-slider
-      v-model="value"
-      :max="max"
-      :format-tooltip="formatTooltip"
-      @input="inputSlider"
-    />
-  </template>
-  
-  <script lang="ts" setup>
-  import { onMounted, ref } from 'vue'
-  import { YuScrollbar } from 'yu-element'
-  
-  const max = ref(0)
-  const value = ref(0)
-  const innerRef = ref<HTMLDivElement>()
-  const scrollbarRef = ref<InstanceType<typeof YuScrollbar>>()
-  
-  onMounted(() => {
-    max.value = innerRef.value!.clientHeight - 380
-  })
-  
-  const inputSlider = (value: number) => {
-    scrollbarRef.value!.setScrollTop(value)
-  }
-  const scroll = ({ scrollTop }) => {
-    value.value = scrollTop
-  }
-  const formatTooltip = (value: number) => {
-    return `${value} px`
-  }
-  </script>
-  
-  <style scoped>
-  .scrollbar-demo-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 4px;
-    background: var(--yu-color-primary-light-9);
-    color: var(--yu-color-primary);
-  }
-  .yu-slider {
-    margin-top: 20px;
-  }
-  </style>
-  
+  <yu-scrollbar ref="scrollbarRef" height="400px" always @scroll="scroll">
+    <div ref="innerRef">
+      <p v-for="item in 20" :key="item" class="scrollbar-demo-item">
+        {{ item }}
+      </p>
+    </div>
+  </yu-scrollbar>
+
+  <yu-slider
+    v-model="value"
+    :max="max"
+    :format-tooltip="formatTooltip"
+    @input="inputSlider"
+  />
+</template>
+
+<script lang="ts" setup>
+import { onMounted, ref } from "vue";
+import { YuScrollbar } from "yu-element";
+
+const max = ref(0);
+const value = ref(0);
+const innerRef = ref<HTMLDivElement>();
+const scrollbarRef = ref<InstanceType<typeof YuScrollbar>>();
+
+onMounted(() => {
+  max.value = innerRef.value!.clientHeight - 380;
+});
+
+const inputSlider = (value: number) => {
+  scrollbarRef.value!.setScrollTop(value);
+};
+const scroll = ({ scrollTop }) => {
+  value.value = scrollTop;
+};
+const formatTooltip = (value: number) => {
+  return `${value} px`;
+};
+</script>
+
+<style scoped>
+.scrollbar-demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 4px;
+  background: var(--yu-color-primary-light-9);
+  color: var(--yu-color-primary);
+}
+.yu-slider {
+  margin-top: 20px;
+}
+</style>

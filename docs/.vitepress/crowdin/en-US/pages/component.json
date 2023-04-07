@@ -1,87 +1,86 @@
 {
-    "basic": {
-      "text": "Basic",
-      "children": [
-        {
-          "link": "/button",
-          "text": "Button"
-        },
-        {
-          "link": "/border",
-          "text": "Border"
-        },
-        {
-          "link": "/color",
-          "text": "Color"
-        },
-        {
-          "link": "/icon",
-          "text": "Icon"
-        },
-        {
-          "link": "/link",
-          "text": "Link"
-        },
-        {
-            "link": "/layout",
-            "text": "Layout"
-        },
-        {
-            "link": "/switch",
-            "text": "Switch"
-        },
-        {
-          "link": "/scrollbar",
-          "text": "Scrollbar"
-        }
-      ]
-    },
-    "form": {
-        "text": "Form",
-        "children": [
-          {
-            "link": "/input",
-            "text": "Input"
-          },
-          {
-            "link": "/select",
-            "text": "Select"
-          },
-          {
-            "link": "/input-number",
-            "text": "Input Number"
-          },
-          {
-            "link": "/color-picker",
-            "text": "ColorPicker"
-          },
-          {
-            "link": "/checkbox",
-            "text": "Checkbox"
-          }
-        ]
-    },
-    "data": {
-        "text": "Data",
-        "children": [
-            {
-              "link": "/badge",
-              "text": "Badge"
-            }
-        ]
-    },
-    "feedback": {
-        "text": "Feedback",
-        "children": [
-          {
-            "link": "/tooltip",
-            "text": "Tooltip"
-          },
-          {
-            "link": "/message",
-            "text": "Message"
-          }
-        ]
-    }
+  "basic": {
+    "text": "Basic",
+    "children": [
+      {
+        "link": "/button",
+        "text": "Button"
+      },
+      {
+        "link": "/border",
+        "text": "Border"
+      },
+      {
+        "link": "/color",
+        "text": "Color"
+      },
+      {
+        "link": "/icon",
+        "text": "Icon"
+      },
+      {
+        "link": "/link",
+        "text": "Link"
+      },
+      {
+        "link": "/layout",
+        "text": "Layout"
+      },
+      {
+        "link": "/switch",
+        "text": "Switch"
+      },
+      {
+        "link": "/scrollbar",
+        "text": "Scrollbar"
+      }
+    ]
+  },
+  "form": {
+    "text": "Form",
+    "children": [
+      {
+        "link": "/input",
+        "text": "Input"
+      },
+      {
+        "link": "/select",
+        "text": "Select"
+      },
+      {
+        "link": "/input-number",
+        "text": "Input Number"
+      },
+      {
+        "link": "/color-picker",
+        "text": "ColorPicker"
+      },
+      {
+        "link": "/checkbox",
+        "text": "Checkbox"
+      }
+    ]
+  },
+  "data": {
+    "text": "Data",
+    "children": [
+      {
+        "link": "/badge",
+        "text": "Badge"
+      }
+    ]
+  },
+  "feedback": {
+    "text": "Feedback",
+    "children": [
+      {
+        "link": "/tooltip",
+        "text": "Tooltip"
+      },
+      {
+        "link": "/message",
+        "text": "Message"
+      }
+    ]
   }
-  
+}

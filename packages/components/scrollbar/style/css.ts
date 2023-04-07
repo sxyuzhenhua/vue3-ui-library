@@ -1,2 +1,2 @@
-import '@yu/components/base/style/css'
-import '@yu/theme-chalk/yu-scrollbar.css'
+import "@yu/components/base/style/css";
+import "@yu/theme-chalk/yu-scrollbar.css";

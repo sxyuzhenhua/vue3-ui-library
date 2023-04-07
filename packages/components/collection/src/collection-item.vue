@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 defineOptions({
-  name: 'YuCollectionItem',
+  name: "YuCollectionItem",
   inheritAttrs: false,
-})
+});
 </script>

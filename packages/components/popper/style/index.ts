@@ -1,2 +1,2 @@
-import '@yu/components/base/style'
-import '@yu/theme-chalk/src/popper.scss'
+import "@yu/components/base/style";
+import "@yu/theme-chalk/src/popper.scss";

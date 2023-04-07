@@ -1,13 +1,13 @@
-import { buildProps, definePropType } from '@yu/utils'
-import { popperContentProps } from '@yu/components/popper'
+import { buildProps, definePropType } from "@yu/utils";
+import { popperContentProps } from "@yu/components/popper";
 import {
   POPPER_CONTAINER_SELECTOR,
   useDelayedToggleProps,
   useNamespace,
-} from '@yu/hooks'
-import type { ExtractPropTypes } from 'vue'
+} from "@yu/hooks";
+import type { ExtractPropTypes } from "vue";
 
-const ns = useNamespace('tooltip')
+const ns = useNamespace("tooltip");
 
 export const useTooltipContentProps = buildProps({
   ...useDelayedToggleProps,
@@ -18,7 +18,7 @@ export const useTooltipContentProps = buildProps({
   },
   content: {
     type: String,
-    default: '',
+    default: "",
   },
   rawContent: {
     type: Boolean,
@@ -45,8 +45,8 @@ export const useTooltipContentProps = buildProps({
   disabled: {
     type: Boolean,
   },
-} as const)
+} as const);
 
 export type ElTooltipContentProps = ExtractPropTypes<
   typeof useTooltipContentProps
->
+>;

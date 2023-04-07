@@ -1,1 +1,1 @@
-import '@yu/theme-chalk/base.css'
+import "@yu/theme-chalk/base.css";

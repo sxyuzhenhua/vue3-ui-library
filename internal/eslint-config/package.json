@@ -2,10 +2,13 @@
   "name": "@yu/eslint-config",
   "version": "1.0.0",
   "description": "ESLint Config",
-  "main": "index.js",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
   "files": [
     "index.js"
   ],
+  "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -31,8 +34,5 @@
   },
   "devDependencies": {
     "eslint": "^8.18.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  }
 }

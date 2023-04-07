@@ -32,7 +32,7 @@
       <div :class="ns.e('action')">
         <yu-icon v-if="loading" :class="ns.is('loading')"><loading /></yu-icon>
         <yu-icon v-else>
-            <component :is="checked ? activeIcon : inactiveIcon"/>
+          <component :is="checked ? activeIcon : inactiveIcon" />
         </yu-icon>
       </div>
     </span>
@@ -47,16 +47,11 @@ import {
   onMounted,
   ref,
   watch,
-} from 'vue'
-import { isPromise } from '@vue/shared'
-import { addUnit, debugWarn, isBoolean, throwError } from '@yu/utils'
-import YuIcon from '@yu/components/icon'
-import { Loading } from '@element-plus/icons-vue'
-import {
-  CHANGE_EVENT,
-  INPUT_EVENT,
-  UPDATE_MODEL_EVENT,
-} from '@yu/constants'
+} from "vue";
+import { isPromise } from "@vue/shared";
+import { addUnit, debugWarn, isBoolean, throwError } from "@yu/utils";
+import YuIcon from "@yu/components/icon";
+import { CHANGE_EVENT, INPUT_EVENT, UPDATE_MODEL_EVENT } from "@yu/constants";
 import {
   useDeprecated,
   useDisabled,
@@ -64,151 +59,152 @@ import {
   useFormItemInputId,
   useNamespace,
   useSize,
-} from '@yu/hooks'
-import { switchEmits, switchProps } from './switch'
-import type { CSSProperties } from 'vue'
+} from "@yu/hooks";
+import { Loading } from "@element-plus/icons-vue";
+import { switchEmits, switchProps } from "./switch";
+import type { CSSProperties } from "vue";
 
-const COMPONENT_NAME = 'YuSwitch'
+const COMPONENT_NAME = "YuSwitch";
 defineOptions({
   name: COMPONENT_NAME,
-})
+});
 
-const props = defineProps(switchProps)
-const emit = defineEmits(switchEmits)
+const props = defineProps(switchProps);
+const emit = defineEmits(switchEmits);
 
-const vm = getCurrentInstance()!
-const { formItem } = useFormItem()
-const switchSize = useSize()
-const ns = useNamespace('switch')
+const vm = getCurrentInstance()!;
+const { formItem } = useFormItem();
+const switchSize = useSize();
+const ns = useNamespace("switch");
 
 useDeprecated(
   {
     from: '"value"',
     replacement: '"model-value" or "v-model"',
     scope: COMPONENT_NAME,
-    version: '2.3.0',
-    ref: 'https://element-plus.org/en-US/component/switch.html#attributes',
-    type: 'Attribute',
+    version: "2.3.0",
+    ref: "https://element-plus.org/en-US/component/switch.html#attributes",
+    type: "Attribute",
   },
   computed(() => !!vm.vnode.props?.value)
-)
+);
 
 const { inputId } = useFormItemInputId(props, {
   formItemContext: formItem,
-})
+});
 
-const switchDisabled = useDisabled(computed(() => props.loading))
-const isControlled = ref(props.modelValue !== false)
-const input = ref<HTMLInputElement>()
-const core = ref<HTMLSpanElement>()
+const switchDisabled = useDisabled(computed(() => props.loading));
+const isControlled = ref(props.modelValue !== false);
+const input = ref<HTMLInputElement>();
+const core = ref<HTMLSpanElement>();
 
 const switchKls = computed(() => [
   ns.b(),
   ns.m(switchSize.value),
-  ns.is('disabled', switchDisabled.value),
-  ns.is('checked', checked.value),
-])
+  ns.is("disabled", switchDisabled.value),
+  ns.is("checked", checked.value),
+]);
 
 const coreStyle = computed<CSSProperties>(() => ({
   width: addUnit(props.width),
-}))
+}));
 
 watch(
   () => props.modelValue,
   () => {
-    isControlled.value = true
+    isControlled.value = true;
   }
-)
+);
 
 watch(
   () => props.value,
   () => {
-    isControlled.value = false
+    isControlled.value = false;
   }
-)
+);
 
 const actualValue = computed(() => {
-  return isControlled.value ? props.modelValue : props.value
-})
+  return isControlled.value ? props.modelValue : props.value;
+});
 
-const checked = computed(() => actualValue.value === props.activeValue)
+const checked = computed(() => actualValue.value === props.activeValue);
 
 if (![props.activeValue, props.inactiveValue].includes(actualValue.value)) {
-  emit(UPDATE_MODEL_EVENT, props.inactiveValue)
-  emit(CHANGE_EVENT, props.inactiveValue)
-  emit(INPUT_EVENT, props.inactiveValue)
+  emit(UPDATE_MODEL_EVENT, props.inactiveValue);
+  emit(CHANGE_EVENT, props.inactiveValue);
+  emit(INPUT_EVENT, props.inactiveValue);
 }
 
 watch(checked, (val) => {
-  input.value!.checked = val
+  input.value!.checked = val;
 
   if (props.validateEvent) {
-    formItem?.validate?.('change').catch((err) => debugWarn(err))
+    formItem?.validate?.("change").catch((err) => debugWarn(err));
   }
-})
+});
 
 const handleChange = () => {
-  const val = checked.value ? props.inactiveValue : props.activeValue
-  emit(UPDATE_MODEL_EVENT, val)
-  emit(CHANGE_EVENT, val)
-  emit(INPUT_EVENT, val)
+  const val = checked.value ? props.inactiveValue : props.activeValue;
+  emit(UPDATE_MODEL_EVENT, val);
+  emit(CHANGE_EVENT, val);
+  emit(INPUT_EVENT, val);
   nextTick(() => {
-    input.value!.checked = checked.value
-  })
-}
+    input.value!.checked = checked.value;
+  });
+};
 
 const switchValue = () => {
-  if (switchDisabled.value) return
+  if (switchDisabled.value) return;
 
-  const { beforeChange } = props
+  const { beforeChange } = props;
   if (!beforeChange) {
-    handleChange()
-    return
+    handleChange();
+    return;
   }
 
-  const shouldChange = beforeChange()
+  const shouldChange = beforeChange();
 
   const isPromiseOrBool = [
     isPromise(shouldChange),
     isBoolean(shouldChange),
-  ].includes(true)
+  ].includes(true);
   if (!isPromiseOrBool) {
     throwError(
       COMPONENT_NAME,
-      'beforeChange must return type `Promise<boolean>` or `boolean`'
-    )
+      "beforeChange must return type `Promise<boolean>` or `boolean`"
+    );
   }
 
   if (isPromise(shouldChange)) {
     shouldChange
       .then((result) => {
         if (result) {
-          handleChange()
+          handleChange();
         }
       })
       .catch((e) => {
-        debugWarn(COMPONENT_NAME, `some error occurred: ${e}`)
-      })
+        debugWarn(COMPONENT_NAME, `some error occurred: ${e}`);
+      });
   } else if (shouldChange) {
-    handleChange()
+    handleChange();
   }
-}
+};
 
 const styles = computed(() => {
   return ns.cssVarBlock({
-    ...(props.activeColor ? { 'on-color': props.activeColor } : null),
-    ...(props.inactiveColor ? { 'off-color': props.inactiveColor } : null),
-    ...(props.borderColor ? { 'border-color': props.borderColor } : null),
-  })
-})
+    ...(props.activeColor ? { "on-color": props.activeColor } : null),
+    ...(props.inactiveColor ? { "off-color": props.inactiveColor } : null),
+    ...(props.borderColor ? { "border-color": props.borderColor } : null),
+  });
+});
 
 const focus = (): void => {
-  input.value?.focus?.()
-}
+  input.value?.focus?.();
+};
 
 onMounted(() => {
-  input.value!.checked = checked.value
-})
+  input.value!.checked = checked.value;
+});
 
 defineExpose({
   /**
@@ -219,5 +215,5 @@ defineExpose({
    * @description whether Switch is checked
    */
   checked,
-})
+});
 </script>

@@ -1,8 +1,8 @@
-import { withInstall } from '@yu/utils'
+import { withInstall } from "@yu/utils";
 
-import Slider from './src/slider.vue'
+import Slider from "./src/slider.vue";
 
-export const YuSlider = withInstall(Slider)
-export default YuSlider
+export const YuSlider = withInstall(Slider);
+export default YuSlider;
 
-export * from './src/slider'
+export * from "./src/slider";

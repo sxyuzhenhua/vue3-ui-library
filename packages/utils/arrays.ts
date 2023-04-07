@@ -1,4 +1,4 @@
-export const unique = <T>(arr: T[]) => [...new Set(arr)]
+export const unique = <T>(arr: T[]) => [...new Set(arr)];
 
 // type Many<T> = T | ReadonlyArray<T>
 // TODO: rename to `ensureArray`
@@ -8,4 +8,4 @@ export const unique = <T>(arr: T[]) => [...new Set(arr)]
 //   return Array.isArray(arr) ? arr : [arr]
 // }
 
-export { castArray as ensureArray } from 'lodash-unified'
+export { castArray as ensureArray } from "lodash-unified";

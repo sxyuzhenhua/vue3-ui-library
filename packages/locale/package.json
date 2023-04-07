@@ -2,7 +2,9 @@
   "name": "@yu/locale",
   "version": "0.0.1",
   "description": "Yu UI locale",
+  "keywords": [],
   "license": "MIT",
+  "author": "",
   "main": "index.ts",
   "module": "index.ts",
   "unpkg": "index.js",
@@ -10,7 +12,5 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": ""
+  }
 }

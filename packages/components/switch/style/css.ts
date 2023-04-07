@@ -1,2 +1,2 @@
-import '@yu/components/base/style/css'
-import '@yu/theme-chalk/yu-switch.css'
+import "@yu/components/base/style/css";
+import "@yu/theme-chalk/yu-switch.css";

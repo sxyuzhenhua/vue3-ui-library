@@ -1,68 +1,68 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import clipboardCopy from 'clipboard-copy'
-import { YuMessage } from 'yu-element'
-import * as Icons from '@element-plus/icons-vue'
-import { useLang } from '../../composables/lang'
-import localeData from '../../../i18n/component/icons.json'
-import IconCategories from './icons-categories.json'
-import type { DefineComponent } from 'vue'
+import { computed, ref } from "vue";
+import clipboardCopy from "clipboard-copy";
+import { YuMessage } from "yu-element";
+import * as Icons from "@element-plus/icons-vue";
+import { useLang } from "../../composables/lang";
+import localeData from "../../../i18n/component/icons.json";
+import IconCategories from "./icons-categories.json";
+import type { DefineComponent } from "vue";
 
 type CategoriesItem = {
-  name: string
-  icons: DefineComponent[]
-}
+  name: string;
+  icons: DefineComponent[];
+};
 
-const lang = useLang()
-const locale = computed(() => localeData[lang.value])
-const copyIcon = ref(true)
+const lang = useLang();
+const locale = computed(() => localeData[lang.value]);
+const copyIcon = ref(true);
 
 const copyContent = async (content) => {
   try {
-    await clipboardCopy(content)
+    await clipboardCopy(content);
 
     YuMessage({
       showClose: true,
-      message: locale.value['copy-success'],
-      type: 'success',
-    })
+      message: locale.value["copy-success"],
+      type: "success",
+    });
   } catch {
     YuMessage({
       showClose: true,
-      message: locale.value['copy-error'],
-      type: 'error',
-    })
+      message: locale.value["copy-error"],
+      type: "error",
+    });
   }
-}
+};
 
 const copySvgIcon = async (name, refs) => {
   if (copyIcon.value) {
-    await copyContent(`<yu-icon><${name} /></yu-icon>`)
+    await copyContent(`<yu-icon><${name} /></yu-icon>`);
   } else {
-    const content = refs[name]?.[0].querySelector('svg')?.outerHTML ?? ''
-    await copyContent(content)
+    const content = refs[name]?.[0].querySelector("svg")?.outerHTML ?? "";
+    await copyContent(content);
   }
-}
+};
 
-const categories = ref<CategoriesItem[]>([])
-const iconMap = new Map(Object.entries(Icons))
+const categories = ref<CategoriesItem[]>([]);
+const iconMap = new Map(Object.entries(Icons));
 
 IconCategories.categories.forEach((o) => {
   const result: CategoriesItem = {
     name: o.name,
     icons: [],
-  }
+  };
   o.items.forEach((i) => {
-    const icon = iconMap.get(i)
+    const icon = iconMap.get(i);
     if (icon) {
-      result.icons.push(icon)
-      iconMap.delete(i)
+      result.icons.push(icon);
+      iconMap.delete(i);
     }
-  })
-  categories.value.push(result)
-})
+  });
+  categories.value.push(result);
+});
 
-categories.value.push({ name: 'Other', icons: Array.from(iconMap.values()) })
+categories.value.push({ name: "Other", icons: Array.from(iconMap.values()) });
 </script>
 
 <template>

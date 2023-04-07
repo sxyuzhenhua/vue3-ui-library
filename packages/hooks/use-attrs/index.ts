@@ -1,32 +1,32 @@
-import { computed, getCurrentInstance } from 'vue'
-import { fromPairs } from 'lodash-unified'
-import { debugWarn } from '@yu/utils'
+import { computed, getCurrentInstance } from "vue";
+import { fromPairs } from "lodash-unified";
+import { debugWarn } from "@yu/utils";
 
-import type { ComputedRef } from 'vue'
+import type { ComputedRef } from "vue";
 
 interface Params {
-  excludeListeners?: boolean
-  excludeKeys?: ComputedRef<string[]>
+  excludeListeners?: boolean;
+  excludeKeys?: ComputedRef<string[]>;
 }
 
-const DEFAULT_EXCLUDE_KEYS = ['class', 'style']
-const LISTENER_PREFIX = /^on[A-Z]/
+const DEFAULT_EXCLUDE_KEYS = ["class", "style"];
+const LISTENER_PREFIX = /^on[A-Z]/;
 
 export const useAttrs = (
   params: Params = {}
 ): ComputedRef<Record<string, unknown>> => {
-  const { excludeListeners = false, excludeKeys } = params
+  const { excludeListeners = false, excludeKeys } = params;
   const allExcludeKeys = computed<string[]>(() => {
-    return (excludeKeys?.value || []).concat(DEFAULT_EXCLUDE_KEYS)
-  })
+    return (excludeKeys?.value || []).concat(DEFAULT_EXCLUDE_KEYS);
+  });
 
-  const instance = getCurrentInstance()
+  const instance = getCurrentInstance();
   if (!instance) {
     debugWarn(
-      'use-attrs',
-      'getCurrentInstance() returned null. useAttrs() must be called at the top of a setup function'
-    )
-    return computed(() => ({}))
+      "use-attrs",
+      "getCurrentInstance() returned null. useAttrs() must be called at the top of a setup function"
+    );
+    return computed(() => ({}));
   }
 
   return computed(() =>
@@ -37,5 +37,5 @@ export const useAttrs = (
           !(excludeListeners && LISTENER_PREFIX.test(key))
       )
     )
-  )
-}
+  );
+};

@@ -1,15 +1,15 @@
-import type { InjectionKey, ToRefs, WritableComputedRef } from 'vue'
-import type { CheckboxGroupProps } from '@yu/components'
+import type { InjectionKey, ToRefs, WritableComputedRef } from "vue";
+import type { CheckboxGroupProps } from "@yu/components";
 
 type CheckboxGroupContext = {
-  modelValue?: WritableComputedRef<any>
-  changeEvent?: (...args: any) => any
+  modelValue?: WritableComputedRef<any>;
+  changeEvent?: (...args: any) => any;
 } & ToRefs<
   Pick<
     CheckboxGroupProps,
-    'size' | 'min' | 'max' | 'disabled' | 'validateEvent' | 'fill' | 'textColor'
+    "size" | "min" | "max" | "disabled" | "validateEvent" | "fill" | "textColor"
   >
->
+>;
 
 export const checkboxGroupContextKey: InjectionKey<CheckboxGroupContext> =
-  Symbol('checkboxGroupContextKey')
+  Symbol("checkboxGroupContextKey");

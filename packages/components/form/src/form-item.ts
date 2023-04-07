@@ -1,25 +1,25 @@
-import { componentSizes } from '@yu/constants'
-import { buildProps, definePropType } from '@yu/utils'
+import { componentSizes } from "@yu/constants";
+import { buildProps, definePropType } from "@yu/utils";
 
-import type { ExtractPropTypes } from 'vue'
-import type { Arrayable } from '@yu/utils'
-import type { FormItemRule } from '@yu/tokens'
+import type { ExtractPropTypes } from "vue";
+import type { Arrayable } from "@yu/utils";
+import type { FormItemRule } from "@yu/tokens";
 
 export const formItemValidateStates = [
-  '',
-  'error',
-  'validating',
-  'success',
-] as const
-export type FormItemValidateState = typeof formItemValidateStates[number]
+  "",
+  "error",
+  "validating",
+  "success",
+] as const;
+export type FormItemValidateState = (typeof formItemValidateStates)[number];
 
-export type FormItemProp = Arrayable<string>
+export type FormItemProp = Arrayable<string>;
 
 export const formItemProps = buildProps({
   label: String,
   labelWidth: {
     type: [String, Number],
-    default: '',
+    default: "",
   },
   prop: {
     type: definePropType<FormItemProp>([String, Array]),
@@ -39,7 +39,7 @@ export const formItemProps = buildProps({
   for: String,
   inlineMessage: {
     type: [String, Boolean],
-    default: '',
+    default: "",
   },
   showMessage: {
     type: Boolean,
@@ -49,5 +49,5 @@ export const formItemProps = buildProps({
     type: String,
     values: componentSizes,
   },
-} as const)
-export type FormItemProps = ExtractPropTypes<typeof formItemProps>
+} as const);
+export type FormItemProps = ExtractPropTypes<typeof formItemProps>;

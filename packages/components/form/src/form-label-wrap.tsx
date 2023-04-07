@@ -9,15 +9,15 @@ import {
   onUpdated,
   ref,
   watch,
-} from 'vue'
-import { useResizeObserver } from '@vueuse/core'
-import { throwError } from '@yu/utils'
-import { formContextKey, formItemContextKey } from '@yu/tokens'
-import { useNamespace } from '@yu/hooks'
+} from "vue";
+import { useResizeObserver } from "@vueuse/core";
+import { throwError } from "@yu/utils";
+import { formContextKey, formItemContextKey } from "@yu/tokens";
+import { useNamespace } from "@yu/hooks";
 
-import type { CSSProperties } from 'vue'
+import type { CSSProperties } from "vue";
 
-const COMPONENT_NAME = 'YuLabelWrap'
+const COMPONENT_NAME = "YuLabelWrap";
 export default defineComponent({
   name: COMPONENT_NAME,
   props: {
@@ -26,89 +26,89 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-    const formContext = inject(formContextKey, undefined)
-    const formItemContext = inject(formItemContextKey)
+    const formContext = inject(formContextKey, undefined);
+    const formItemContext = inject(formItemContextKey);
     if (!formItemContext)
       throwError(
         COMPONENT_NAME,
-        'usage: <el-form-item><label-wrap /></el-form-item>'
-      )
+        "usage: <el-form-item><label-wrap /></el-form-item>"
+      );
 
-    const ns = useNamespace('form')
+    const ns = useNamespace("form");
 
-    const el = ref<HTMLElement>()
-    const computedWidth = ref(0)
+    const el = ref<HTMLElement>();
+    const computedWidth = ref(0);
 
     const getLabelWidth = () => {
       if (el.value?.firstElementChild) {
-        const width = window.getComputedStyle(el.value.firstElementChild).width
-        return Math.ceil(Number.parseFloat(width))
+        const width = window.getComputedStyle(el.value.firstElementChild).width;
+        return Math.ceil(Number.parseFloat(width));
       } else {
-        return 0
+        return 0;
       }
-    }
+    };
 
-    const updateLabelWidth = (action: 'update' | 'remove' = 'update') => {
+    const updateLabelWidth = (action: "update" | "remove" = "update") => {
       nextTick(() => {
         if (slots.default && props.isAutoWidth) {
-          if (action === 'update') {
-            computedWidth.value = getLabelWidth()
-          } else if (action === 'remove') {
-            formContext?.deregisterLabelWidth(computedWidth.value)
+          if (action === "update") {
+            computedWidth.value = getLabelWidth();
+          } else if (action === "remove") {
+            formContext?.deregisterLabelWidth(computedWidth.value);
           }
         }
-      })
-    }
-    const updateLabelWidthFn = () => updateLabelWidth('update')
+      });
+    };
+    const updateLabelWidthFn = () => updateLabelWidth("update");
 
     onMounted(() => {
-      updateLabelWidthFn()
-    })
+      updateLabelWidthFn();
+    });
     onBeforeUnmount(() => {
-      updateLabelWidth('remove')
-    })
-    onUpdated(() => updateLabelWidthFn())
+      updateLabelWidth("remove");
+    });
+    onUpdated(() => updateLabelWidthFn());
 
     watch(computedWidth, (val, oldVal) => {
       if (props.updateAll) {
-        formContext?.registerLabelWidth(val, oldVal)
+        formContext?.registerLabelWidth(val, oldVal);
       }
-    })
+    });
 
     useResizeObserver(
       computed(
         () => (el.value?.firstElementChild ?? null) as HTMLElement | null
       ),
       updateLabelWidthFn
-    )
+    );
 
     return () => {
-      if (!slots) return null
+      if (!slots) return null;
 
-      const { isAutoWidth } = props
+      const { isAutoWidth } = props;
       if (isAutoWidth) {
-        const autoLabelWidth = formContext?.autoLabelWidth
-        const hasLabel = formItemContext?.hasLabel
-        const style: CSSProperties = {}
-        if (hasLabel && autoLabelWidth && autoLabelWidth !== 'auto') {
+        const autoLabelWidth = formContext?.autoLabelWidth;
+        const hasLabel = formItemContext?.hasLabel;
+        const style: CSSProperties = {};
+        if (hasLabel && autoLabelWidth && autoLabelWidth !== "auto") {
           const marginWidth = Math.max(
             0,
             Number.parseInt(autoLabelWidth, 10) - computedWidth.value
-          )
+          );
           const marginPosition =
-            formContext.labelPosition === 'left' ? 'marginRight' : 'marginLeft'
+            formContext.labelPosition === "left" ? "marginRight" : "marginLeft";
           if (marginWidth) {
-            style[marginPosition] = `${marginWidth}px`
+            style[marginPosition] = `${marginWidth}px`;
           }
         }
         return (
-          <div ref={el} class={[ns.be('item', 'label-wrap')]} style={style}>
+          <div ref={el} class={[ns.be("item", "label-wrap")]} style={style}>
             {slots.default?.()}
           </div>
-        )
+        );
       } else {
-        return <Fragment ref={el}>{slots.default?.()}</Fragment>
+        return <Fragment ref={el}>{slots.default?.()}</Fragment>;
       }
-    }
+    };
   },
-})
+});

@@ -95,26 +95,29 @@ import {
   ref,
   toRef,
   unref,
-} from 'vue'
-import YuButton from '@yu/components/button'
-import YuTooltip from '@yu/components/tooltip'
-import YuScrollbar from '@yu/components/scrollbar'
-import YuIcon from '@yu/components/icon'
-import YuRovingFocusGroup from '@yu/components/roving-focus-group'
-import { YuOnlyChild } from '@yu/components/slot'
-import { addUnit } from '@yu/utils'
-import { ArrowDown } from '@element-plus/icons-vue'
-import { EVENT_CODE } from '@yu/constants'
-import { useId, useLocale, useNamespace, useSize } from '@yu/hooks'
-import { YuCollection as YuDropdownCollection, dropdownProps } from './dropdown'
-import { DROPDOWN_INJECTION_KEY } from './tokens'
+} from "vue";
+import YuButton from "@yu/components/button";
+import YuTooltip from "@yu/components/tooltip";
+import YuScrollbar from "@yu/components/scrollbar";
+import YuIcon from "@yu/components/icon";
+import YuRovingFocusGroup from "@yu/components/roving-focus-group";
+import { YuOnlyChild } from "@yu/components/slot";
+import { addUnit } from "@yu/utils";
+import { EVENT_CODE } from "@yu/constants";
+import { useId, useLocale, useNamespace, useSize } from "@yu/hooks";
+import { ArrowDown } from "@element-plus/icons-vue";
+import {
+  YuCollection as YuDropdownCollection,
+  dropdownProps,
+} from "./dropdown";
+import { DROPDOWN_INJECTION_KEY } from "./tokens";
 
-import type { CSSProperties } from 'vue'
+import type { CSSProperties } from "vue";
 
-const { ButtonGroup: YuButtonGroup } = YuButton
+const { ButtonGroup: YuButtonGroup } = YuButton;
 
 export default defineComponent({
-  name: 'YuDropdown',
+  name: "YuDropdown",
   components: {
     YuButton,
     YuButtonGroup,
@@ -127,47 +130,47 @@ export default defineComponent({
     ArrowDown,
   },
   props: dropdownProps,
-  emits: ['visible-change', 'click', 'command'],
+  emits: ["visible-change", "click", "command"],
   setup(props, { emit }) {
-    const _instance = getCurrentInstance()
-    const ns = useNamespace('dropdown')
-    const { t } = useLocale()
+    const _instance = getCurrentInstance();
+    const ns = useNamespace("dropdown");
+    const { t } = useLocale();
 
-    const triggeringElementRef = ref()
-    const referenceElementRef = ref()
-    const popperRef = ref<InstanceType<typeof YuTooltip> | null>(null)
-    const contentRef = ref<HTMLElement | null>(null)
-    const scrollbar = ref(null)
-    const currentTabId = ref<string | null>(null)
-    const isUsingKeyboard = ref(false)
-    const triggerKeys = [EVENT_CODE.enter, EVENT_CODE.space, EVENT_CODE.down]
+    const triggeringElementRef = ref();
+    const referenceElementRef = ref();
+    const popperRef = ref<InstanceType<typeof YuTooltip> | null>(null);
+    const contentRef = ref<HTMLElement | null>(null);
+    const scrollbar = ref(null);
+    const currentTabId = ref<string | null>(null);
+    const isUsingKeyboard = ref(false);
+    const triggerKeys = [EVENT_CODE.enter, EVENT_CODE.space, EVENT_CODE.down];
 
     const wrapStyle = computed<CSSProperties>(() => ({
       maxHeight: addUnit(props.maxHeight),
-    }))
-    const dropdownTriggerKls = computed(() => [ns.m(dropdownSize.value)])
+    }));
+    const dropdownTriggerKls = computed(() => [ns.m(dropdownSize.value)]);
 
-    const defaultTriggerId = useId().value
+    const defaultTriggerId = useId().value;
     const triggerId = computed<string>(() => {
-      return props.id || defaultTriggerId
-    })
+      return props.id || defaultTriggerId;
+    });
 
     function handleClick() {
-      handleClose()
+      handleClose();
     }
 
     function handleClose() {
-      popperRef.value?.onClose()
+      popperRef.value?.onClose();
     }
 
     function handleOpen() {
-      popperRef.value?.onOpen()
+      popperRef.value?.onOpen();
     }
 
-    const dropdownSize = useSize()
+    const dropdownSize = useSize();
 
     function commandHandler(...args: any[]) {
-      emit('command', ...args)
+      emit("command", ...args);
     }
 
     function onItemEnter() {
@@ -175,35 +178,35 @@ export default defineComponent({
     }
 
     function onItemLeave() {
-      const contentEl = unref(contentRef)
+      const contentEl = unref(contentRef);
 
-      contentEl?.focus()
-      currentTabId.value = null
+      contentEl?.focus();
+      currentTabId.value = null;
     }
 
     function handleCurrentTabIdChange(id: string) {
-      currentTabId.value = id
+      currentTabId.value = id;
     }
 
     function handleEntryFocus(e: Event) {
       if (!isUsingKeyboard.value) {
-        e.preventDefault()
-        e.stopImmediatePropagation()
+        e.preventDefault();
+        e.stopImmediatePropagation();
       }
     }
 
     function handleBeforeShowTooltip() {
-      emit('visible-change', true)
+      emit("visible-change", true);
     }
 
     function handleShowTooltip(event?: Event) {
-      if (event?.type === 'keydown') {
-        contentRef.value.focus()
+      if (event?.type === "keydown") {
+        contentRef.value.focus();
       }
     }
 
     function handleBeforeHideTooltip() {
-      emit('visible-change', false)
+      emit("visible-change", false);
     }
 
     provide(DROPDOWN_INJECTION_KEY, {
@@ -213,27 +216,27 @@ export default defineComponent({
       isUsingKeyboard,
       onItemEnter,
       onItemLeave,
-    })
+    });
 
-    provide('elDropdown', {
+    provide("elDropdown", {
       instance: _instance,
       dropdownSize,
       handleClick,
       commandHandler,
-      trigger: toRef(props, 'trigger'),
-      hideOnClick: toRef(props, 'hideOnClick'),
-    })
+      trigger: toRef(props, "trigger"),
+      hideOnClick: toRef(props, "hideOnClick"),
+    });
 
     const onFocusAfterTrapped = (e: Event) => {
-      e.preventDefault()
+      e.preventDefault();
       contentRef.value?.focus?.({
         preventScroll: true,
-      })
-    }
+      });
+    };
 
     const handlerMainButtonClick = (event: MouseEvent) => {
-      emit('click', event)
-    }
+      emit("click", event);
+    };
 
     return {
       t,
@@ -258,7 +261,7 @@ export default defineComponent({
       contentRef,
       triggeringElementRef,
       referenceElementRef,
-    }
+    };
   },
-})
+});
 </script>

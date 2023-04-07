@@ -1,4 +1,4 @@
-import type { ExtractPropTypes } from 'vue'
+import type { ExtractPropTypes } from "vue";
 
 export const backtopProps = {
   visibilityHeight: {
@@ -7,7 +7,7 @@ export const backtopProps = {
   },
   target: {
     type: String,
-    default: '',
+    default: "",
   },
   right: {
     type: Number,
@@ -17,10 +17,10 @@ export const backtopProps = {
     type: Number,
     default: 40,
   },
-} as const
-export type BacktopProps = ExtractPropTypes<typeof backtopProps>
+} as const;
+export type BacktopProps = ExtractPropTypes<typeof backtopProps>;
 
 export const backtopEmits = {
   click: (evt: MouseEvent) => evt instanceof MouseEvent,
-}
-export type BacktopEmits = typeof backtopEmits
+};
+export type BacktopEmits = typeof backtopEmits;

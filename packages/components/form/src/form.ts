@@ -1,15 +1,15 @@
-import { componentSizes } from '@yu/constants'
+import { componentSizes } from "@yu/constants";
 import {
   buildProps,
   definePropType,
   isArray,
   isBoolean,
   isString,
-} from '@yu/utils'
+} from "@yu/utils";
 
-import type { ExtractPropTypes } from 'vue'
-import type { FormItemProp } from './form-item'
-import type { FormRules } from '@yu/tokens'
+import type { ExtractPropTypes } from "vue";
+import type { FormItemProp } from "./form-item";
+import type { FormRules } from "@yu/tokens";
 
 export const formProps = buildProps({
   model: Object,
@@ -18,21 +18,21 @@ export const formProps = buildProps({
   },
   labelPosition: {
     type: String,
-    values: ['left', 'right', 'top'],
-    default: 'right',
+    values: ["left", "right", "top"],
+    default: "right",
   },
   requireAsteriskPosition: {
     type: String,
-    values: ['left', 'right'],
-    default: 'left',
+    values: ["left", "right"],
+    default: "left",
   },
   labelWidth: {
     type: [String, Number],
-    default: '',
+    default: "",
   },
   labelSuffix: {
     type: String,
-    default: '',
+    default: "",
   },
   inline: Boolean,
   inlineMessage: Boolean,
@@ -55,13 +55,13 @@ export const formProps = buildProps({
     default: false,
   },
   scrollToError: Boolean,
-} as const)
-export type FormProps = ExtractPropTypes<typeof formProps>
+} as const);
+export type FormProps = ExtractPropTypes<typeof formProps>;
 
 export const formEmits = {
   validate: (prop: FormItemProp, isValid: boolean, message: string) =>
     (isArray(prop) || isString(prop)) &&
     isBoolean(isValid) &&
     isString(message),
-}
-export type FormEmits = typeof formEmits
+};
+export type FormEmits = typeof formEmits;

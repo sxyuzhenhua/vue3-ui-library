@@ -1,10 +1,10 @@
-import { isFunction } from '../types'
+import { isFunction } from "../types";
 
-import type { ComponentPublicInstance, Ref } from 'vue'
+import type { ComponentPublicInstance, Ref } from "vue";
 
 export type RefSetter = (
   el: Element | ComponentPublicInstance | undefined
-) => void
+) => void;
 
 export const composeRefs = (
   ...refs: (Ref<HTMLElement | undefined> | RefSetter)[]
@@ -12,10 +12,10 @@ export const composeRefs = (
   return (el: Element | ComponentPublicInstance | null) => {
     refs.forEach((ref) => {
       if (isFunction(ref)) {
-        ref(el as Element | ComponentPublicInstance)
+        ref(el as Element | ComponentPublicInstance);
       } else {
-        ref.value = el as HTMLElement | undefined
+        ref.value = el as HTMLElement | undefined;
       }
-    })
-  }
-}
+    });
+  };
+};

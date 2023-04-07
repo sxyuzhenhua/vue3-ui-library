@@ -1,8 +1,8 @@
-import { withInstall } from '@yu/utils'
+import { withInstall } from "@yu/utils";
 
-import ConfigProvider from './src/config-provider'
+import ConfigProvider from "./src/config-provider";
 
-export const YuConfigProvider = withInstall(ConfigProvider)
-export default YuConfigProvider
+export const YuConfigProvider = withInstall(ConfigProvider);
+export default YuConfigProvider;
 
-export * from './src/config-provider'
+export * from "./src/config-provider";

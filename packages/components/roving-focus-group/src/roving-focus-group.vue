@@ -7,15 +7,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import YuRovingFocusGroupImpl from './roving-focus-group-impl.vue'
-import { YuCollection as YuFocusGroupCollection } from './roving-focus-group'
+import { defineComponent } from "vue";
+import YuRovingFocusGroupImpl from "./roving-focus-group-impl.vue";
+import { YuCollection as YuFocusGroupCollection } from "./roving-focus-group";
 
 export default defineComponent({
-  name: 'YuRovingFocusGroup',
+  name: "YuRovingFocusGroup",
   components: {
     YuFocusGroupCollection,
     YuRovingFocusGroupImpl,
   },
-})
+});
 </script>

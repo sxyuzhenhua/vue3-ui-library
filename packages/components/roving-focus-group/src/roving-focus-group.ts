@@ -1,6 +1,6 @@
-import { buildProps, definePropType } from '@yu/utils'
-import { createCollectionWithScope } from '@yu/components/collection'
-import type { ExtractPropTypes, HTMLAttributes, StyleValue } from 'vue'
+import { buildProps, definePropType } from "@yu/utils";
+import { createCollectionWithScope } from "@yu/components/collection";
+import type { ExtractPropTypes, HTMLAttributes, StyleValue } from "vue";
 
 export const rovingFocusGroupProps = buildProps({
   style: { type: definePropType<StyleValue>([String, Array, Object]) },
@@ -11,33 +11,33 @@ export const rovingFocusGroupProps = buildProps({
   loop: Boolean,
   dir: {
     type: String, // left for direction support
-    values: ['ltr', 'rtl'],
-    default: 'ltr',
+    values: ["ltr", "rtl"],
+    default: "ltr",
   },
   orientation: {
     // left for orientation support
-    type: definePropType<HTMLAttributes['aria-orientation']>(String),
+    type: definePropType<HTMLAttributes["aria-orientation"]>(String),
   },
 
   onBlur: Function,
   onFocus: Function,
   onMousedown: Function,
-})
+});
 
 export type YuRovingFocusGroupProps = ExtractPropTypes<
   typeof rovingFocusGroupProps
->
+>;
 
 const {
   YuCollection,
   YuCollectionItem,
   COLLECTION_INJECTION_KEY,
   COLLECTION_ITEM_INJECTION_KEY,
-} = createCollectionWithScope('RovingFocusGroup')
+} = createCollectionWithScope("RovingFocusGroup");
 
 export {
   YuCollection,
   YuCollectionItem,
   COLLECTION_INJECTION_KEY as ROVING_FOCUS_COLLECTION_INJECTION_KEY,
   COLLECTION_ITEM_INJECTION_KEY as ROVING_FOCUS_ITEM_COLLECTION_INJECTION_KEY,
-}
+};

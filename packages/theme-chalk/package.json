@@ -2,14 +2,14 @@
   "name": "@yu/theme-chalk",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "gulp --require @esbuild-kit/cjs-loader"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@esbuild-kit/cjs-loader": "^2.4.1",
     "@types/gulp-autoprefixer": "^0.0.33",

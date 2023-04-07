@@ -1,67 +1,67 @@
 <script setup lang="ts">
-import { computed, getCurrentInstance, toRef, ref } from 'vue'
-import { isClient, useClipboard, useToggle } from '@vueuse/core'
-import { CaretTop } from '@element-plus/icons-vue'
-import { useLang } from '../composables/lang'
-import { usePlayground } from '../composables/use-playground'
+import { computed, getCurrentInstance, ref, toRef } from "vue";
+import { isClient, useClipboard, useToggle } from "@vueuse/core";
+import { CaretTop } from "@element-plus/icons-vue";
+import { useLang } from "../composables/lang";
+import { usePlayground } from "../composables/use-playground";
 
-import demoBlockLocale from '../../i18n/component/demo-block.json'
+import demoBlockLocale from "../../i18n/component/demo-block.json";
 
-import Example from './demo/vp-example.vue'
-import SourceCode from './demo/vp-source-code.vue'
+import Example from "./demo/vp-example.vue";
+import SourceCode from "./demo/vp-source-code.vue";
 
 const props = defineProps<{
-  demos: object
-  source: string
-  path: string
-  rawSource: string
-  description?: string
-}>()
+  demos: object;
+  source: string;
+  path: string;
+  rawSource: string;
+  description?: string;
+}>();
 
-const vm = getCurrentInstance()!
+const vm = getCurrentInstance()!;
 
 const { copy, isSupported } = useClipboard({
   source: decodeURIComponent(props.rawSource),
   read: false,
-})
+});
 
 // const [sourceVisible, toggleSourceVisible] = useToggle(true)
 const sourceVisible = ref(false);
-const lang = useLang()
+const lang = useLang();
 
 const formatPathDemos = computed(() => {
-  const demos = {}
+  const demos = {};
   Object.keys(props.demos).forEach((key) => {
-    demos[key.replace('../../examples/', '').replace('.vue', '')] =
-      props.demos[key].default
-  })
+    demos[key.replace("../../examples/", "").replace(".vue", "")] =
+      props.demos[key].default;
+  });
 
-  return demos
-})
+  return demos;
+});
 
-const locale = computed(() => demoBlockLocale[lang.value])
+const locale = computed(() => demoBlockLocale[lang.value]);
 const decodedDescription = computed(() =>
   decodeURIComponent(props.description!)
-)
+);
 
 const onPlaygroundClick = () => {
-  const { link } = usePlayground(props.rawSource)
-  if (!isClient) return
-  window.open(link)
-}
+  const { link } = usePlayground(props.rawSource);
+  if (!isClient) return;
+  window.open(link);
+};
 
 const copyCode = async () => {
-  const { $message } = vm.appContext.config.globalProperties
+  const { $message } = vm.appContext.config.globalProperties;
   if (!isSupported) {
-    $message.error(locale.value['copy-error'])
+    $message.error(locale.value["copy-error"]);
   }
   try {
-    await copy()
-    $message.success(locale.value['copy-success'])
+    await copy();
+    $message.success(locale.value["copy-success"]);
   } catch (e: any) {
-    $message.error(e.message)
+    $message.error(e.message);
   }
-}
+};
 </script>
 
 <template>
@@ -79,14 +79,18 @@ const copyCode = async () => {
           </YuIcon>
         </YuTooltip>
         <YuTooltip :content="locale['view-source']" :show-arrow="false">
-          <YuIcon :size="16" class="op-btn" @click="sourceVisible = !sourceVisible">
+          <YuIcon
+            :size="16"
+            class="op-btn"
+            @click="sourceVisible = !sourceVisible"
+          >
             <i-ri-code-line />
           </YuIcon>
         </YuTooltip>
       </div>
 
       <!-- <ElCollapseTransition> -->
-        <SourceCode v-show="sourceVisible" :source="source" />
+      <SourceCode v-show="sourceVisible" :source="source" />
       <!-- </ElCollapseTransition> -->
 
       <Transition name="el-fade-in-linear">
@@ -98,7 +102,7 @@ const copyCode = async () => {
           <YuIcon :size="16">
             <CaretTop />
           </YuIcon>
-          <span>{{ locale['hide-source'] }}</span>
+          <span>{{ locale["hide-source"] }}</span>
         </div>
       </Transition>
     </div>

@@ -1,29 +1,29 @@
-import path from 'path'
-import fs from 'fs/promises'
-import chalk from 'chalk'
-import consola from 'consola'
-import { docRoot, errorAndExit } from '@yu/build-utils'
+import path from "path";
+import fs from "fs/promises";
+import chalk from "chalk";
+import consola from "consola";
+import { docRoot, errorAndExit } from "@yu/build-utils";
 
-const credentialPlaceholder = 'API_TOKEN_PLACEHOLDER'
+const credentialPlaceholder = "API_TOKEN_PLACEHOLDER";
 
-const CREDENTIAL = process.env.CROWDIN_TOKEN
+const CREDENTIAL = process.env.CROWDIN_TOKEN;
 if (!CREDENTIAL) {
-  errorAndExit(new Error('Environment variable CROWDIN_TOKEN cannot be empty'))
+  errorAndExit(new Error("Environment variable CROWDIN_TOKEN cannot be empty"));
 }
 
-;(async () => {
-  consola.debug(chalk.cyan('Fetching Crowdin credential'))
-  const configPath = path.resolve(docRoot, 'crowdin.yml')
+(async () => {
+  consola.debug(chalk.cyan("Fetching Crowdin credential"));
+  const configPath = path.resolve(docRoot, "crowdin.yml");
   try {
     const file = await fs.readFile(configPath, {
-      encoding: 'utf-8',
-    })
+      encoding: "utf-8",
+    });
     await fs.writeFile(
       configPath,
       file.replace(credentialPlaceholder, CREDENTIAL)
-    )
-    consola.success(chalk.green('Crowdin credential update successfully'))
+    );
+    consola.success(chalk.green("Crowdin credential update successfully"));
   } catch (e: any) {
-    errorAndExit(e)
+    errorAndExit(e);
   }
-})()
+})();

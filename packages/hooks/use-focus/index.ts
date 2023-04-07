@@ -1,13 +1,13 @@
-import type { Ref } from 'vue'
+import type { Ref } from "vue";
 
 export const useFocus = (
   el: Ref<{
-    focus: () => void
+    focus: () => void;
   } | null>
 ) => {
   return {
     focus: () => {
-      el.value?.focus?.()
+      el.value?.focus?.();
     },
-  }
-}
+  };
+};

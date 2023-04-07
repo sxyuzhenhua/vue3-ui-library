@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { getColorValue, useCopyColor } from '../../utils'
+import { getColorValue, useCopyColor } from "../../utils";
 
-const colorsType = ['success', 'warning', 'danger', 'info']
+const colorsType = ["success", "warning", "danger", "info"];
 
-const colorLevel = [3, 5, 7, 8, 9].map((item) => `light-${item}`)
-colorLevel.unshift('dark-2')
+const colorLevel = [3, 5, 7, 8, 9].map((item) => `light-${item}`);
+colorLevel.unshift("dark-2");
 
-const { copyColor } = useCopyColor()
+const { copyColor } = useCopyColor();
 </script>
 
 <template>

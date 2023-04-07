@@ -1,8 +1,8 @@
-import { withInstall } from '@yu/utils'
+import { withInstall } from "@yu/utils";
 
-import ColorPicker from './src/color-picker.vue'
+import ColorPicker from "./src/color-picker.vue";
 
-export const YuColorPicker = withInstall(ColorPicker)
-export default YuColorPicker
+export const YuColorPicker = withInstall(ColorPicker);
+export default YuColorPicker;
 
-export * from './src/color-picker'
+export * from "./src/color-picker";

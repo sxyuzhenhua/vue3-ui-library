@@ -1,47 +1,47 @@
-import path from 'path'
-import { defineConfig, loadEnv } from 'vite'
-import VueMacros from 'unplugin-vue-macros/vite'
-import UnoCSS from 'unocss/vite'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import Components from 'unplugin-vue-components/vite'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import { getPackageDependencies } from './pkg'
-import { projRoot, docRoot } from '@yu/build-utils'
+import path from "path";
+import { defineConfig, loadEnv } from "vite";
+import VueMacros from "unplugin-vue-macros/vite";
+import UnoCSS from "unocss/vite";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import Components from "unplugin-vue-components/vite";
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
+import { docRoot, projRoot } from "@yu/build-utils";
+import { getPackageDependencies } from "./pkg";
 
+import { MarkdownTransform } from "./.vitepress/plugins/markdown-transform";
 
-import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
-
-import type { Alias } from 'vite'
+import type { Alias } from "vite";
 
 const alias: Alias[] = [
+  {
+    find: "~/",
+    replacement: `${path.resolve(__dirname, "./.vitepress/vitepress")}/`,
+  },
+];
+if (process.env.DOC_ENV !== "production") {
+  alias.push(
     {
-      find: '~/',
-      replacement: `${path.resolve(__dirname, './.vitepress/vitepress')}/`,
+      find: /^yu-element(\/(es|lib))?$/,
+      replacement: path.resolve(projRoot, "packages/yu-element/index.ts"),
     },
-  ]
-  if (process.env.DOC_ENV !== 'production') {
-    alias.push(
-      {
-        find: /^yu-element(\/(es|lib))?$/,
-        replacement: path.resolve(projRoot, 'packages/yu-element/index.ts'),
-      },
-      {
-        find: /^yu-element\/(es|lib)\/(.*)$/,
-        replacement: `${path.resolve(projRoot, 'packages')}/$2`,
-      }
-    )
-  }
+    {
+      find: /^yu-element\/(es|lib)\/(.*)$/,
+      replacement: `${path.resolve(projRoot, "packages")}/$2`,
+    }
+  );
+}
 
 export default defineConfig(async ({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
+  const env = loadEnv(mode, process.cwd(), "");
 
-  const { dependencies: epDeps } = getPackageDependencies(path.resolve(docRoot, 'package.json'))
+  const { dependencies: epDeps } = getPackageDependencies(
+    path.resolve(docRoot, "package.json")
+  );
 
   const optimizeDeps = [...new Set([...epDeps])].filter(
-    (dep) =>
-      !dep.startsWith('@types/')
-  )
+    (dep) => !dep.startsWith("@types/")
+  );
 
   return {
     server: {
@@ -65,7 +65,7 @@ export default defineConfig(async ({ mode }) => {
 
       // https://github.com/antfu/unplugin-vue-components
       Components({
-        dirs: ['.vitepress/vitepress/components'],
+        dirs: [".vitepress/vitepress/components"],
 
         allowOverrides: true,
 
@@ -90,5 +90,5 @@ export default defineConfig(async ({ mode }) => {
     optimizeDeps: {
       include: optimizeDeps, // 默认情况下，不在 node_modules 中的，链接的包不会被预构建。使用此选项可强制预构建链接的包。
     },
-  }
-})
+  };
+});

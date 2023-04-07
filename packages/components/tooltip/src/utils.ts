@@ -1,18 +1,18 @@
-import { unref } from 'vue'
-import { isArray } from '@yu/utils'
-import type { Arrayable } from '@yu/utils'
-import type { Ref } from 'vue'
-import type { TooltipTriggerType } from './trigger'
+import { unref } from "vue";
+import { isArray } from "@yu/utils";
+import type { Arrayable } from "@yu/utils";
+import type { Ref } from "vue";
+import type { TooltipTriggerType } from "./trigger";
 
 export const isTriggerType = (
   trigger: Arrayable<TooltipTriggerType>,
   type: TooltipTriggerType
 ) => {
   if (isArray(trigger)) {
-    return trigger.includes(type)
+    return trigger.includes(type);
   }
-  return trigger === type
-}
+  return trigger === type;
+};
 
 export const whenTrigger = (
   trigger: Ref<Arrayable<TooltipTriggerType>>,
@@ -20,6 +20,6 @@ export const whenTrigger = (
   handler: (e: Event) => void
 ) => {
   return (e: Event) => {
-    isTriggerType(unref(trigger), type) && handler(e)
-  }
-}
+    isTriggerType(unref(trigger), type) && handler(e);
+  };
+};

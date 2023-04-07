@@ -30,6 +30,8 @@ importers:
       '@yu/tokens': workspace:^0.0.1
       '@yu/utils': workspace:*
       dayjs: ^1.11.6
+      eslint: ^8.18.0
+      eslint-define-config: ^1.5.1
       jsdom: ^20.0.2
       lodash-es: ^4.17.21
       lodash-unified: ^1.0.3
@@ -73,6 +75,8 @@ importers:
       '@vue/test-utils': 2.2.1
       '@yu/build': link:internal/build
       '@yu/eslint-config': link:internal/eslint-config
+      eslint: 8.37.0
+      eslint-define-config: 1.17.0
       jsdom: 20.0.2
       resize-observer-polyfill: 1.5.1
       type-fest: 3.5.2
@@ -5045,7 +5049,7 @@ packages:
       '@types/semver': 7.3.13
       '@types/treeify': 1.0.0
       '@yarnpkg/fslib': 3.0.0-rc.32
-      '@yarnpkg/libzip': 3.0.0-rc.32
+      '@yarnpkg/libzip': 3.0.0-rc.32_@yarnpkg+fslib@3.0.0-rc.32
       '@yarnpkg/parsers': 3.0.0-rc.32
       '@yarnpkg/shell': 4.0.0-rc.32
       camelcase: 5.3.1
@@ -5075,7 +5079,7 @@ packages:
       '@types/semver': 7.3.13
       '@types/treeify': 1.0.0
       '@yarnpkg/fslib': 3.0.0-rc.32
-      '@yarnpkg/libzip': 3.0.0-rc.32
+      '@yarnpkg/libzip': 3.0.0-rc.32_@yarnpkg+fslib@3.0.0-rc.32
       '@yarnpkg/parsers': 3.0.0-rc.32
       '@yarnpkg/shell': 4.0.0-rc.32
       camelcase: 5.3.1
@@ -5123,9 +5127,11 @@ packages:
       '@types/emscripten': 1.39.6
       tslib: 1.14.1
 
-  /@yarnpkg/libzip/3.0.0-rc.32:
+  /@yarnpkg/libzip/3.0.0-rc.32_@yarnpkg+fslib@3.0.0-rc.32:
     resolution: {integrity: sha512-ZGmuf05YyDXvdnkmx9tq02x8fn7E0KRccCOJ1srNuHy8FAF673AGlZOz32dr94hiJN2r0bF/NZgZsZXS58jMtg==}
     engines: {node: '>=14.15.0'}
+    peerDependencies:
+      '@yarnpkg/fslib': ^3.0.0-rc.32
     dependencies:
       '@types/emscripten': 1.39.6
       '@yarnpkg/fslib': 3.0.0-rc.32
@@ -7403,7 +7409,6 @@ packages:
   /eslint-define-config/1.17.0:
     resolution: {integrity: sha512-J1sweMoWsLcokaiAlfOCC4yMoHbvC/kDAxorm5TkUcD74w+kauMIyjKLM3dOadNxVKOjDiYN1Tu2x9N+4EUuuQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13', pnpm: '>= 7.0.0'}
-    dev: false
 
   /eslint-import-resolver-node/0.3.7:
     resolution: {integrity: sha512-gozW2blMLJCeFpBwugLTGyvVjNoeo1knonXAcatC6bjPBZitotxdWf7Gimr25N4c0AAOo4eOUfaG82IJPDpqCA==}

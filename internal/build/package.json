@@ -2,6 +2,9 @@
   "name": "@yu/build",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,9 +13,6 @@
     "dev": "pnpm run stub",
     "stub": "unbuild --stub"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@yu/build-constants": "workspace:^1.0.0",
     "components-helper": "^2.1.4",

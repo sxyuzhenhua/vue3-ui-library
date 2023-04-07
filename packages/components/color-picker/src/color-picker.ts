@@ -1,10 +1,10 @@
-import { isNil } from 'lodash-unified'
-import { buildProps, definePropType, isString } from '@yu/utils'
-import { useSizeProp } from '@yu/hooks'
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@yu/constants'
+import { isNil } from "lodash-unified";
+import { buildProps, definePropType, isString } from "@yu/utils";
+import { useSizeProp } from "@yu/hooks";
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from "@yu/constants";
 
-import type { ComputedRef, ExtractPropTypes, InjectionKey } from 'vue'
-import type ColorPicker from './color-picker.vue'
+import type { ComputedRef, ExtractPropTypes, InjectionKey } from "vue";
+import type ColorPicker from "./color-picker.vue";
 
 export const colorPickerProps = buildProps({
   /**
@@ -36,7 +36,7 @@ export const colorPickerProps = buildProps({
    */
   popperClass: {
     type: String,
-    default: '',
+    default: "",
   },
   /**
    * @description ColorPicker aria-label
@@ -65,21 +65,21 @@ export const colorPickerProps = buildProps({
     type: Boolean,
     default: true,
   },
-} as const)
+} as const);
 export const colorPickerEmits = {
   [UPDATE_MODEL_EVENT]: (val: string | null) => isString(val) || isNil(val),
   [CHANGE_EVENT]: (val: string | null) => isString(val) || isNil(val),
   activeChange: (val: string | null) => isString(val) || isNil(val),
-}
+};
 
-export type ColorPickerProps = ExtractPropTypes<typeof colorPickerProps>
-export type ColorPickerEmits = typeof colorPickerEmits
-export type ColorPickerInstance = InstanceType<typeof ColorPicker>
+export type ColorPickerProps = ExtractPropTypes<typeof colorPickerProps>;
+export type ColorPickerEmits = typeof colorPickerEmits;
+export type ColorPickerInstance = InstanceType<typeof ColorPicker>;
 
 export interface ColorPickerContext {
-  currentColor: ComputedRef<string>
+  currentColor: ComputedRef<string>;
 }
 
 export const colorPickerContextKey: InjectionKey<ColorPickerContext> = Symbol(
-  'colorPickerContextKey'
-)
+  "colorPickerContextKey"
+);

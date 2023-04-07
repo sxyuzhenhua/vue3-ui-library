@@ -1,10 +1,9 @@
 {
-    "name": "@yu/utils",
-    "private": true,
-    "license": "MIT",
-    "main": "index.ts",
-    "peerDependencies": {
-      "vue": "^3.2.0"
-    }
+  "name": "@yu/utils",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
   }
-  
+}

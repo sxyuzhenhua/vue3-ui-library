@@ -1,2 +1,2 @@
-import '@yu/components/base/style'
-import '@yu/theme-chalk/src/badge.scss'
+import "@yu/components/base/style";
+import "@yu/theme-chalk/src/badge.scss";

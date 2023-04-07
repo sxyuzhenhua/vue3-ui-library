@@ -1,4 +1,3 @@
 export type ExperimentalFeatures = {
-    // TO BE Defined
-  }
-  
+  // TO BE Defined
+};
