@@ -1,0 +1,9 @@
+{
+  "name": "@yu/test-utils",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "main": "dist/index.js"
+}

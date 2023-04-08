@@ -24,12 +24,12 @@ describe("Backtop.vue", () => {
     ));
     await nextTick();
 
-    expect(wrapper.find(".el-backtop").exists()).toBe(false);
+    expect(wrapper.find(".yu-backtop").exists()).toBe(false);
     wrapper.element.scrollTop = 2000;
     await wrapper.trigger("scroll");
-    expect(wrapper.find(".el-backtop").exists()).toBe(true);
+    expect(wrapper.find(".yu-backtop").exists()).toBe(true);
 
-    expect(wrapper.find(".el-backtop").attributes("style")).toBe(
+    expect(wrapper.find(".yu-backtop").attributes("style")).toBe(
       "right: 100px; bottom: 200px;"
     );
     // expect(wrapper.findComponent(CaretTop).exists()).toBe(true)
