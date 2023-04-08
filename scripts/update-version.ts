@@ -19,12 +19,12 @@ async function main() {
   consola.log(chalk.cyan(`$TAG_VERSION: ${tagVersion}`));
   consola.log(chalk.cyan(`$GIT_HEAD: ${gitHead}`));
 
-  consola.debug(chalk.yellow(`Updating package.json for yu-element`));
+  consola.debug(chalk.yellow(`Updating package.json for vue-yu-mi`));
 
   const pkgs = Object.fromEntries(
     (await getWorkspacePackages()).map((pkg) => [pkg.manifest.name!, pkg])
   );
-  const elementPlus = pkgs["yu-element"] || pkgs["@yu-element/nightly"];
+  const elementPlus = pkgs["vue-yu-mi"] || pkgs["@vue-yu-mi/nightly"];
   const eslintConfig = pkgs["@yu/eslint-config"];
   const metadata = pkgs["@element-plus/metadata"];
 

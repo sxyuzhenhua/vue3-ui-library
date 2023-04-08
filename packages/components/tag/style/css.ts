@@ -1,2 +1,2 @@
-import "@yu-element/components/base/style/css";
-import "@yu-element/theme-chalk/yu-tag.css";
+import "@vue-yu-mi/components/base/style/css";
+import "@vue-yu-mi/theme-chalk/yu-tag.css";

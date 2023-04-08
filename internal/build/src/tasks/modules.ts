@@ -8,7 +8,7 @@ import esbuild from "rollup-plugin-esbuild";
 import glob from "fast-glob";
 import { epRoot, excludeFiles, pkgRoot } from "@yu/build-utils";
 import { generateExternal, writeBundles } from "../utils";
-import { YuElementAlias } from "../plugins/yu-element-alias";
+import { VueYuMiAlias } from "../plugins/vue-yu-mi-alias";
 import { buildConfigEntries, target } from "../build-info";
 
 import type { OutputOptions } from "rollup";
@@ -24,7 +24,7 @@ export const buildModules = async () => {
   const bundle = await rollup({
     input,
     plugins: [
-      YuElementAlias(),
+      VueYuMiAlias(),
       VueMacros({
         setupComponent: false,
         setupSFC: false,

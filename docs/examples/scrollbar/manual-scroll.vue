@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import { YuScrollbar } from "yu-element";
+import { YuScrollbar } from "vue-yu-mi";
 
 const max = ref(0);
 const value = ref(0);

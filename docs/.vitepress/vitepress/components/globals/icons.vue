@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import clipboardCopy from "clipboard-copy";
-import { YuMessage } from "yu-element";
+import { YuMessage } from "vue-yu-mi";
 import * as Icons from "@element-plus/icons-vue";
 import { useLang } from "../../composables/lang";
 import localeData from "../../../i18n/component/icons.json";

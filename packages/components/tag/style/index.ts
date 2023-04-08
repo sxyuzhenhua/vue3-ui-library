@@ -1,2 +1,2 @@
-import "@yu-element/components/base/style";
-import "@yu-element/theme-chalk/src/tag.scss";
+import "@vue-yu-mi/components/base/style";
+import "@vue-yu-mi/theme-chalk/src/tag.scss";

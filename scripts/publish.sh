@@ -7,7 +7,7 @@ pnpm update:version
 
 pnpm build
 
-cd dist/yu-element
+cd dist/vue-yu-mi
 npm publish
 cd -
 

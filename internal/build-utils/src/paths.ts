@@ -7,7 +7,7 @@ export const themeRoot = resolve(pkgRoot, "theme-chalk");
 export const hookRoot = resolve(pkgRoot, "hooks");
 export const localeRoot = resolve(pkgRoot, "locale");
 export const directiveRoot = resolve(pkgRoot, "directives");
-export const epRoot = resolve(pkgRoot, "yu-element");
+export const epRoot = resolve(pkgRoot, "vue-yu-mi");
 export const utilRoot = resolve(pkgRoot, "utils");
 export const buildRoot = resolve(projRoot, "internal", "build");
 
@@ -19,7 +19,7 @@ export const vpRoot = resolve(docRoot, ".vitepress");
 /** `/dist` */
 export const buildOutput = resolve(projRoot, "dist");
 /** `/dist/element-plus` */
-export const epOutput = resolve(buildOutput, "yu-element");
+export const epOutput = resolve(buildOutput, "vue-yu-mi");
 
 export const projPackage = resolve(projRoot, "package.json");
 export const compPackage = resolve(compRoot, "package.json");

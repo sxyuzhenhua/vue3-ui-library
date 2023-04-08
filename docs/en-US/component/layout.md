@@ -46,7 +46,6 @@ layout/hybrid-layout
 
 :::
 
-
 ## Column offset
 
 You can specify column offsets.
@@ -78,7 +77,6 @@ layout/responsive-layout
 
 :::
 
-
 ## Utility classes for hiding elements
 
 Additionally, Yu Element provides a series of classes for hiding elements under
@@ -86,7 +84,7 @@ certain conditions. These classes can be added to any DOM elements or custom com
 You need to import the following CSS file to use these classes:
 
 ```js
-import 'yu-element/theme-chalk/display.css'
+import "vue-yu-mi/theme-chalk/display.css";
 ```
 
 The classes are:
@@ -142,7 +140,6 @@ The classes are:
 | Name    | Description               |
 | ------- | ------------------------- |
 | default | customize default content |
-
 
 <style lang="scss">
 @use '../../examples/layout/index.scss';

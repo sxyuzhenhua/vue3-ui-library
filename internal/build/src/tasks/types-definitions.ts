@@ -91,7 +91,7 @@ async function addSourceFiles(project: Project) {
 
   const globSourceFile = "**/*.{js?(x),ts?(x),vue}";
   const filePaths = excludeFiles(
-    await glob([globSourceFile, "!yu-element/**/*"], {
+    await glob([globSourceFile, "!vue-yu-mi/**/*"], {
       cwd: pkgRoot,
       absolute: true,
       onlyFiles: true,
@@ -99,7 +99,7 @@ async function addSourceFiles(project: Project) {
   );
   const epPaths = excludeFiles(
     await glob(globSourceFile, {
-      cwd: epRoot, // packages/yu-element
+      cwd: epRoot, // packages/vue-yu-mi
       onlyFiles: true,
     })
   );

@@ -30,7 +30,6 @@ const route = useRoute();
         :href="item.link"
         >{{ item.text }}</a
       >
-      >
       <VPThemeToggler class="theme-toggler" />
       <Translation />
     </div>

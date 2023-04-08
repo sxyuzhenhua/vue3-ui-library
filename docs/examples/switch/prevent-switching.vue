@@ -13,7 +13,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import { YuMessage } from "yu-element";
+import { YuMessage } from "vue-yu-mi";
 
 const value1 = ref(false);
 const value2 = ref(false);

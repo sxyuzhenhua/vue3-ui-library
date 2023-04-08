@@ -11,7 +11,7 @@ Used to show feedback after an activity. The difference with Notification is tha
 
 Displays at the top, and disappears after 3 seconds.
 
-:::demo The setup of Message is very similar to notification, so parts of the options won't be explained in detail here. You can check the options table below combined with notification doc to understand it. Yu Element  has registered a `$message` method for invoking. Message can take a string or a VNode as parameter, and it will be shown as the main body.
+:::demo The setup of Message is very similar to notification, so parts of the options won't be explained in detail here. You can check the options table below combined with notification doc to understand it. Yu Element has registered a `$message` method for invoking. Message can take a string or a VNode as parameter, and it will be shown as the main body.
 
 message/basic
 
@@ -26,7 +26,6 @@ Used to show the feedback of Success, Warning, Message and Error activities.
 message/different-types
 
 :::
-
 
 ## Closable
 
@@ -76,12 +75,12 @@ message/grouping
 
 ## Global method
 
-Yu Element  has added a global method `$message` for `app.config.globalProperties`. So in a vue instance you can call `Message` like what we did in this page.
+Yu Element has added a global method `$message` for `app.config.globalProperties`. So in a vue instance you can call `Message` like what we did in this page.
 
 ## Local import
 
 ```ts
-import { YuMessage } from 'yu-element'
+import { YuMessage } from "vue-yu-mi";
 ```
 
 In this case you should call `ElMessage(options)`. We have also registered methods for different types, e.g. `ElMessage.success(options)`. You can call `ElMessage.closeAll()` to manually close all the instances.
@@ -99,12 +98,12 @@ If you globally registered ElMessage component, it will automatically inherit yo
 :::
 
 ```ts
-import { getCurrentInstance } from 'vue'
-import { YuMessage } from 'yu-element'
+import { getCurrentInstance } from "vue";
+import { YuMessage } from "vue-yu-mi";
 
 // in your setup method
-const { appContext } = getCurrentInstance()!
-YuMessage({}, appContext)
+const { appContext } = getCurrentInstance()!;
+YuMessage({}, appContext);
 ```
 
 ## Message API

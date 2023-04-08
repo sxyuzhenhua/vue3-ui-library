@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "lib": ["WebWorker"],
     "paths": {
-      "yu-element": ["../packages/yu-element"],
+      "vue-yu-mi": ["../packages/vue-yu-mi"],
       "~/*": ["./.vitepress/vitepress/*"]
     },
     "types": ["../typings/components"],

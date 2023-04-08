@@ -44,11 +44,11 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       alias: [
         {
-          find: /^yu-element(\/(es|lib))?$/,
+          find: /^vue-yu-mi(\/(es|lib))?$/,
           replacement: path.resolve(epRoot, 'index.ts'),
         },
         {
-          find: /^yu-element\/(es|lib)\/(.*)$/,
+          find: /^vue-yu-mi\/(es|lib)\/(.*)$/,
           replacement: `${pkgRoot}/$2`,
         },
       ],

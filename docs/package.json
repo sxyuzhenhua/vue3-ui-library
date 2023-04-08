@@ -26,7 +26,7 @@
     "prismjs": "^1.29.0",
     "rimraf": "^3.0.2",
     "vite-plugin-pwa": "^0.12.1",
-    "yu-element": "npm:element-plus@^2.2.20"
+    "vue-yu-mi": "npm:element-plus@^2.2.20"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.3",

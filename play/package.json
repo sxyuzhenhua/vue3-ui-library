@@ -9,7 +9,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
     "vue": "^3.2.37",
-    "yu-element": "workspace:^1.0.0"
+    "vue-yu-mi": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",

@@ -1,30 +1,30 @@
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    YuBacktop: typeof import("yu-element")["YuBacktop"];
-    YuBadge: typeof import("yu-element")["YuBadge"];
-    YuButton: typeof import("yu-element")["YuButton"];
-    YuButtonGroup: typeof import("yu-element")["YuButtonGroup"];
-    YuCol: typeof import("yu-element")["YuCol"];
-    YuColorPicker: typeof import("yu-element")["YuColorPicker"];
-    YuDropdown: typeof import("yu-element")["YuDropdown"];
-    YuDropdownItem: typeof import("yu-element")["YuDropdownItem"];
-    YuDropdownMenu: typeof import("yu-element")["YuDropdownMenu"];
-    YuIcon: typeof import("yu-element")["YuIcon"];
-    YuInput: typeof import("yu-element")["YuInput"];
-    YuInputNumber: typeof import("yu-element")["YuInputNumber"];
-    YuLink: typeof import("yu-element")["YuLink"];
-    YuOption: typeof import("yu-element")["YuOption"];
-    YuOptionGroup: typeof import("yu-element")["YuOptionGroup"];
-    YuRow: typeof import("yu-element")["YuRow"];
-    YuScrollbar: typeof import("yu-element")["YuScrollbar"];
-    YuSelect: typeof import("yu-element")["YuSelect"];
-    YuSlider: typeof import("yu-element")["YuSlider"];
-    YuSwitch: typeof import("yu-element")["YuSwitch"];
-    YuTag: typeof import("yu-element")["YuTag"];
-    YuTooltip: typeof import("yu-element")["YuTooltip"];
+    YuBacktop: typeof import("vue-yu-mi")["YuBacktop"];
+    YuBadge: typeof import("vue-yu-mi")["YuBadge"];
+    YuButton: typeof import("vue-yu-mi")["YuButton"];
+    YuButtonGroup: typeof import("vue-yu-mi")["YuButtonGroup"];
+    YuCol: typeof import("vue-yu-mi")["YuCol"];
+    YuColorPicker: typeof import("vue-yu-mi")["YuColorPicker"];
+    YuDropdown: typeof import("vue-yu-mi")["YuDropdown"];
+    YuDropdownItem: typeof import("vue-yu-mi")["YuDropdownItem"];
+    YuDropdownMenu: typeof import("vue-yu-mi")["YuDropdownMenu"];
+    YuIcon: typeof import("vue-yu-mi")["YuIcon"];
+    YuInput: typeof import("vue-yu-mi")["YuInput"];
+    YuInputNumber: typeof import("vue-yu-mi")["YuInputNumber"];
+    YuLink: typeof import("vue-yu-mi")["YuLink"];
+    YuOption: typeof import("vue-yu-mi")["YuOption"];
+    YuOptionGroup: typeof import("vue-yu-mi")["YuOptionGroup"];
+    YuRow: typeof import("vue-yu-mi")["YuRow"];
+    YuScrollbar: typeof import("vue-yu-mi")["YuScrollbar"];
+    YuSelect: typeof import("vue-yu-mi")["YuSelect"];
+    YuSlider: typeof import("vue-yu-mi")["YuSlider"];
+    YuSwitch: typeof import("vue-yu-mi")["YuSwitch"];
+    YuTag: typeof import("vue-yu-mi")["YuTag"];
+    YuTooltip: typeof import("vue-yu-mi")["YuTooltip"];
   }
 
   interface ComponentCustomProperties {
-    $message: typeof import("yu-element")["YuMessage"];
+    $message: typeof import("vue-yu-mi")["YuMessage"];
   }
 }

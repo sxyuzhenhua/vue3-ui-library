@@ -11,8 +11,8 @@
     "internal/**/*.json",
     "scripts/**/*",
     "packages/theme-chalk/*",
-    "packages/yu-element/version.ts",
-    "packages/yu-element/package.json"
+    "packages/vue-yu-mi/version.ts",
+    "packages/vue-yu-mi/package.json"
   ],
   "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

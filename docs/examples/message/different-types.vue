@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { YuMessage } from "yu-element";
+import { YuMessage } from "vue-yu-mi";
 
 const open1 = () => {
   YuMessage("this is a message.");

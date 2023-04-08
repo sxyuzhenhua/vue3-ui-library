@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import '@yu/theme-chalk/src/dark/css-vars.scss'
 import '@yu/theme-chalk/dist/index.css'
-import { YuButton, YuTooltip, YuTag, YuRow, YuCol, YuColorPicker } from 'yu-element';
+import { YuButton, YuTooltip, YuTag, YuRow, YuCol, YuColorPicker } from 'vue-yu-mi';
 
 const coms = [
     ['YuButton', YuButton], 

@@ -1,4 +1,4 @@
-import YuElement from "yu-element";
+import VueYuMi from "vue-yu-mi";
 
 import Layout, { NotFound, globals } from "../vitepress";
 import { define } from "../utils/types";
@@ -14,7 +14,7 @@ export default define<Theme>({
   NotFound,
 
   enhanceApp({ app }) {
-    app.use(YuElement);
+    app.use(VueYuMi);
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp);
     });

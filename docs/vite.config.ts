@@ -22,11 +22,11 @@ const alias: Alias[] = [
 if (process.env.DOC_ENV !== "production") {
   alias.push(
     {
-      find: /^yu-element(\/(es|lib))?$/,
-      replacement: path.resolve(projRoot, "packages/yu-element/index.ts"),
+      find: /^vue-yu-mi(\/(es|lib))?$/,
+      replacement: path.resolve(projRoot, "packages/vue-yu-mi/index.ts"),
     },
     {
-      find: /^yu-element\/(es|lib)\/(.*)$/,
+      find: /^vue-yu-mi\/(es|lib)\/(.*)$/,
       replacement: `${path.resolve(projRoot, "packages")}/$2`,
     }
   );
