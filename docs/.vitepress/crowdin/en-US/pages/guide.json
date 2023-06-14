@@ -3,12 +3,20 @@
     "text": "Basics",
     "children": [
       {
-        "text": "Design",
+        "text": "Introduce",
         "link": "/guide/introduce"
+      },
+      {
+        "text": "Install",
+        "link": "/guide/install"
       },
       {
         "text": "Quick Start",
         "link": "/guide/start"
+      },
+      {
+        "text": "i18n",
+        "link": "/guide/i18n"
       }
     ]
   }

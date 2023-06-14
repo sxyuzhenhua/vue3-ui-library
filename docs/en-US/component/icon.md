@@ -2,6 +2,7 @@
 title: Icon
 lang: en-US
 ---
+
 # Icon
 
 Element Plus provides a set of common icons.
@@ -35,11 +36,11 @@ You need import all icons from `@element-plus/icons-vue` and register them globa
 // main.ts
 
 // if you're using CDN, please remove this line.
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import * as VueYuMiIconsVue from "@element-plus/icons-vue";
 
-const app = createApp(App)
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  app.component(key, component)
+const app = createApp(App);
+for (const [key, component] of Object.entries(VueYuMiIconsVue)) {
+  app.component(key, component);
 }
 ```
 
@@ -47,7 +48,7 @@ You can also refer to [this template](https://codepen.io/sxzz/pen/xxpvdrg).
 
 ### Import in Browser
 
-Import Element Plus Icons through browser HTML tags directly, and use global variable `ElementPlusIconsVue`.
+Import Element Plus Icons through browser HTML tags directly, and use global variable `VueYuMiIconsVue`.
 
 According to different CDN providers, there are different introduction methods.
 Here we use [unpkg](https://unpkg.com) and [jsDelivr](https://jsdelivr.com) as example.

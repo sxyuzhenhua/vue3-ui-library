@@ -24,7 +24,7 @@ async function main() {
   const pkgs = Object.fromEntries(
     (await getWorkspacePackages()).map((pkg) => [pkg.manifest.name!, pkg])
   );
-  const elementPlus = pkgs["vue-yu-mi"] || pkgs["@vue-yu-mi/nightly"];
+  const VueYuMi = pkgs["vue-yu-mi"] || pkgs["@vue-yu-mi/nightly"];
   const eslintConfig = pkgs["@yu/eslint-config"];
   const metadata = pkgs["@element-plus/metadata"];
 
@@ -37,7 +37,7 @@ async function main() {
   };
 
   try {
-    await writeVersion(elementPlus);
+    await writeVersion(VueYuMi);
     await writeVersion(eslintConfig);
     await writeVersion(metadata);
   } catch (err: any) {
